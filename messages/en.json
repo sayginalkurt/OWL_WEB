@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "fwbm": "FWBM",
+    "fuzzyowl": "FuzzyOwl",
+    "solutions": "Solutions",
+    "technology": "Technology & AI",
+    "insights": "Insights",
+    "about": "About",
+    "founders": "Founders",
+    "investors": "Investors & Partners",
+    "contact": "Contact",
+    "agent": "Talk to Agent",
+    "menu": "Menu"
+  },
+  "home": {
+    "heroTitle": "AI-Powered Intelligence Products",
+    "heroSubtitle": "Grounded in Authentic Field Data",
+    "heroDescription": "OWL Intelligence builds commercial AI products that transform real-world field data into actionable business intelligence.",
+    "exploreProducts": "Explore Products",
+    "talkToAgent": "Talk to Our Agent",
+    "fwbmTitle": "FWBM",
+    "fwbmDescription": "Field-Weighted Barometer Model — real-time consumer and market sentiment intelligence with weekly-updated dashboards and AI-powered analysis.",
+    "fuzzyowlTitle": "FuzzyOwl",
+    "fuzzyowlDescription": "Fuzzy Cognitive Mapping for strategic scenario analysis — model complex systems, simulate decisions, and visualize outcomes.",
+    "solutionsTitle": "Solutions by Sector",
+    "solutionsDescription": "Tailored intelligence solutions for your industry.",
+    "techTitle": "Technology & AI",
+    "techDescription": "Our proprietary methodology combines field research rigor with advanced AI to deliver intelligence products you can trust.",
+    "ctaTitle": "Not sure which product fits?",
+    "ctaDescription": "Our AI agent can help you find the right solution for your needs.",
+    "ctaButton": "Start a Conversation"
+  },
+  "solutions": {
+    "banking": "Banks & Insurers",
+    "bankingDesc": "Risk assessment, consumer confidence tracking, and market sentiment for financial decision-making.",
+    "fmcg": "FMCG / Retail / Telecom",
+    "fmcgDesc": "Consumer behavior insights, brand perception monitoring, and demand forecasting.",
+    "public": "Public Institutions",
+    "publicDesc": "Policy impact analysis, public sentiment tracking, and evidence-based governance support.",
+    "investors": "Investors & ESG",
+    "investorsDesc": "Alternative data for investment decisions, ESG sentiment tracking, and market intelligence.",
+    "research": "Research & Strategy",
+    "researchDesc": "Deep analytical tools for strategy teams, consultancies, and academic research."
+  },
+  "footer": {
+    "description": "AI-powered intelligence products grounded in authentic field data.",
+    "products": "Products",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved.",
+    "uk": "United Kingdom",
+    "turkey": "Türkiye"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team to discuss how OWL Intelligence can help your business.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "company": "Company",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Thank you! We'll be in touch shortly.",
+    "error": "Something went wrong. Please try again."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "requestDemo": "Request Demo",
+    "startTrial": "Start Free Trial",
+    "viewMore": "View More",
+    "backToHome": "Back to Home",
+    "language": "Language",
+    "loading": "Loading..."
+  }
+}

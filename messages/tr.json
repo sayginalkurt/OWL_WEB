@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "products": "Ürünler",
+    "fwbm": "FWBM",
+    "fuzzyowl": "FuzzyOwl",
+    "solutions": "Çözümler",
+    "technology": "Teknoloji ve Yapay Zeka",
+    "insights": "İçgörüler",
+    "about": "Hakkımızda",
+    "founders": "Kurucular",
+    "investors": "Yatırımcılar ve Ortaklar",
+    "contact": "İletişim",
+    "agent": "Asistanla Konuş",
+    "menu": "Menü"
+  },
+  "home": {
+    "heroTitle": "Yapay Zeka Destekli İstihbarat Ürünleri",
+    "heroSubtitle": "Gerçek Saha Verisine Dayalı",
+    "heroDescription": "OWL Intelligence, gerçek dünya saha verilerini eyleme dönüştürülebilir iş istihbaratına çeviren ticari yapay zeka ürünleri geliştirir.",
+    "exploreProducts": "Ürünleri Keşfet",
+    "talkToAgent": "Asistanımızla Konuşun",
+    "fwbmTitle": "FWBM",
+    "fwbmDescription": "Saha Ağırlıklı Barometre Modeli — haftalık güncellenen gösterge panelleri ve yapay zeka destekli analizle gerçek zamanlı tüketici ve pazar duyarlılığı istihbaratı.",
+    "fuzzyowlTitle": "FuzzyOwl",
+    "fuzzyowlDescription": "Stratejik senaryo analizi için Bulanık Bilişsel Haritalama — karmaşık sistemleri modelleyin, kararları simüle edin ve sonuçları görselleştirin.",
+    "solutionsTitle": "Sektöre Özel Çözümler",
+    "solutionsDescription": "Sektörünüze özel istihbarat çözümleri.",
+    "techTitle": "Teknoloji ve Yapay Zeka",
+    "techDescription": "Tescilli metodolojimiz, güvenebileceğiniz istihbarat ürünleri sunmak için saha araştırma titizliğini gelişmiş yapay zeka ile birleştirir.",
+    "ctaTitle": "Hangi ürün size uygun emin değil misiniz?",
+    "ctaDescription": "Yapay zeka asistanımız ihtiyaçlarınıza uygun çözümü bulmanıza yardımcı olabilir.",
+    "ctaButton": "Sohbet Başlat"
+  },
+  "solutions": {
+    "banking": "Bankalar ve Sigortacılar",
+    "bankingDesc": "Finansal karar alma için risk değerlendirmesi, tüketici güven takibi ve pazar duyarlılığı.",
+    "fmcg": "FMCG / Perakende / Telekom",
+    "fmcgDesc": "Tüketici davranış içgörüleri, marka algısı izleme ve talep tahminleme.",
+    "public": "Kamu Kurumları",
+    "publicDesc": "Politika etki analizi, kamuoyu duyarlılığı takibi ve kanıta dayalı yönetişim desteği.",
+    "investors": "Yatırımcılar ve ESG",
+    "investorsDesc": "Yatırım kararları için alternatif veri, ESG duyarlılık takibi ve pazar istihbaratı.",
+    "research": "Araştırma ve Strateji",
+    "researchDesc": "Strateji ekipleri, danışmanlıklar ve akademik araştırma için derin analitik araçlar."
+  },
+  "footer": {
+    "description": "Gerçek saha verisine dayalı yapay zeka destekli istihbarat ürünleri.",
+    "products": "Ürünler",
+    "company": "Şirket",
+    "legal": "Yasal",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "rights": "Tüm hakları saklıdır.",
+    "uk": "Birleşik Krallık",
+    "turkey": "Türkiye"
+  },
+  "contact": {
+    "title": "İletişim",
+    "description": "OWL Intelligence'ın işletmenize nasıl yardımcı olabileceğini görüşmek için ekibimizle iletişime geçin.",
+    "name": "Ad Soyad",
+    "email": "E-posta Adresi",
+    "company": "Şirket",
+    "message": "Mesaj",
+    "send": "Mesaj Gönder",
+    "success": "Teşekkürler! En kısa sürede sizinle iletişime geçeceğiz.",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "common": {
+    "learnMore": "Daha Fazla",
+    "getStarted": "Başlayın",
+    "requestDemo": "Demo Talep Et",
+    "startTrial": "Ücretsiz Deneme",
+    "viewMore": "Daha Fazla Gör",
+    "backToHome": "Ana Sayfaya Dön",
+    "language": "Dil",
+    "loading": "Yükleniyor..."
+  }
+}

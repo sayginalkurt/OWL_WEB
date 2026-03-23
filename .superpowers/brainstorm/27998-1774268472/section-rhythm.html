@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OWL — Section Rhythm & Transitions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Geist', system-ui, -apple-system, sans-serif; background: #0a0a0a; color: #f0f0f0; }
+
+  .page-header { padding: 28px 40px 16px; border-bottom: 1px solid #1a1a1a; }
+  .page-header .q { font-size: 22px; font-weight: 600; }
+  .page-header .sub { margin-top: 6px; font-size: 13px; color: #666; max-width: 700px; line-height: 1.6; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding: 24px 40px 40px; }
+
+  .col-card {
+    border: 1.5px solid #1e1e1e; border-radius: 12px; overflow: hidden;
+    cursor: pointer; transition: border-color 0.2s; position: relative;
+  }
+  .col-card:hover { border-color: #444; }
+  .col-card.selected { border-color: #5a8fff; box-shadow: 0 0 0 3px rgba(90,143,255,0.1); }
+  .col-card.selected::after {
+    content: '✓'; position: absolute; top: 10px; right: 12px;
+    background: #5a8fff; color: #fff; font-size: 11px; font-weight: 700;
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 20px; text-align: center;
+  }
+  .col-label { padding: 12px 16px 10px; background: #111; border-bottom: 1px solid #1e1e1e; display: flex; align-items: baseline; gap: 10px; }
+  .col-letter { font-size: 10px; font-weight: 700; color: #444; text-transform: uppercase; letter-spacing: 0.1em; }
+  .col-name { font-size: 13px; font-weight: 600; color: #ddd; }
+
+  /* Scroll strip — simulate the page vertically at a small scale */
+  .strip { width: 100%; display: flex; flex-direction: column; }
+
+  /* shared primitives */
+  .s-label { font-size: 6px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .s-heading { font-size: 11px; font-weight: 700; line-height: 1.2; }
+  .s-body { font-size: 7px; line-height: 1.6; }
+  .s-bar { height: 2px; border-radius: 2px; }
+  .s-rule { height: 1px; }
+
+  /* ---- DIRECTION A: Hard Cuts — sharp, confident boundaries ---- */
+  .a-hero { background: linear-gradient(160deg,#07090f,#0d1422); padding: 16px 18px 14px; }
+  .a-hero .s-label { color: #3a5a8a; margin-bottom: 8px; }
+  .a-hero .s-heading { color: #dde; font-size: 13px; }
+  .a-hero .s-body { color: #3a4a66; margin-top: 6px; max-width: 160px; }
+
+  .a-light { background: #fafaf8; padding: 14px 18px; border-top: 2px solid #111; }
+  .a-light .s-label { color: #bbb; margin-bottom: 6px; }
+  .a-light .s-heading { color: #111; }
+  .a-light .s-body { color: #888; margin-top: 5px; }
+
+  .a-dark2 { background: #0d1422; padding: 14px 18px; border-top: 2px solid #fafaf8; }
+  .a-dark2 .s-label { color: #3a5a8a; margin-bottom: 6px; }
+  .a-dark2 .s-heading { color: #ccd; }
+  .a-dark2 .tl { padding-left: 12px; border-left: 1px solid #1e2e4a; margin-top: 8px; }
+  .a-dark2 .tl-step { font-size: 6.5px; color: #4a6a9a; margin-bottom: 6px; }
+  .a-dark2 .tl-step span { display: block; font-size: 8px; font-weight: 700; color: #9ab; }
+
+  .a-light2 { background: #fafaf8; padding: 14px 18px; border-top: 2px solid #111; }
+  .a-light2 .s-label { color: #bbb; margin-bottom: 6px; }
+  .a-light2 .s-heading { color: #111; }
+  .a-light2 .pill-row { display: flex; gap: 6px; margin-top: 8px; }
+  .a-light2 .pill { height: 16px; background: #eee; border-radius: 20px; padding: 0 8px; font-size: 6px; color: #555; display: flex; align-items: center; }
+
+  /* ---- DIRECTION B: Gradient Fades — cinematic dissolves ---- */
+  .b-hero { background: linear-gradient(160deg,#07090f,#0d1422); padding: 16px 18px 14px; }
+  .b-hero .s-label { color: #3a5a8a; margin-bottom: 8px; }
+  .b-hero .s-heading { color: #dde; font-size: 13px; }
+  .b-hero .s-body { color: #3a4a66; margin-top: 6px; max-width: 160px; }
+
+  .b-fade1 { background: linear-gradient(to bottom, #0d1422, #fafaf8); padding: 14px 18px; }
+  .b-fade1 .s-label { color: #8899bb; margin-bottom: 6px; }
+  .b-fade1 .s-heading { color: #334; }
+  .b-fade1 .s-body { color: #667; margin-top: 5px; }
+
+  .b-light { background: #fafaf8; padding: 14px 18px; }
+  .b-light .s-label { color: #bbb; margin-bottom: 6px; }
+  .b-light .s-heading { color: #111; }
+  .b-light .s-body { color: #888; margin-top: 5px; }
+
+  .b-fade2 { background: linear-gradient(to bottom, #fafaf8, #0d1422); padding: 14px 18px; }
+  .b-fade2 .s-label { color: #8899bb; margin-bottom: 6px; }
+  .b-fade2 .s-heading { color: #99aabb; }
+  .b-fade2 .tl { padding-left: 12px; border-left: 1px solid #2a3a55; margin-top: 8px; }
+  .b-fade2 .tl-step { font-size: 6.5px; color: #4a6a9a; margin-bottom: 6px; }
+  .b-fade2 .tl-step span { display: block; font-size: 8px; font-weight: 700; color: #7a9abb; }
+
+  /* ---- DIRECTION C: Chapter Numbers + Anchor Dividers ---- */
+  .c-hero { background: linear-gradient(160deg,#07090f,#0d1422); padding: 16px 18px 14px; }
+  .c-hero .s-label { color: #3a5a8a; margin-bottom: 8px; }
+  .c-hero .s-heading { color: #dde; font-size: 13px; }
+  .c-hero .s-body { color: #3a4a66; margin-top: 6px; max-width: 160px; }
+
+  .c-divider { padding: 10px 18px; background: #fafaf8; border-top: 1px solid #e0ddd8; display: flex; align-items: center; gap: 10px; }
+  .c-chapter-num { font-size: 10px; font-weight: 800; color: #ddd; letter-spacing: -0.02em; }
+  .c-chapter-label { font-size: 7px; font-weight: 600; color: #bbb; letter-spacing: 0.1em; text-transform: uppercase; flex: 1; }
+  .c-chapter-line { flex: 1; height: 1px; background: #e0ddd8; }
+
+  .c-light { background: #fafaf8; padding: 12px 18px 14px; }
+  .c-light .s-label { color: #bbb; margin-bottom: 6px; }
+  .c-light .s-heading { color: #111; }
+  .c-light .s-body { color: #888; margin-top: 5px; }
+
+  .c-divider2 { padding: 10px 18px; background: #0d1422; border-top: 1px solid #1e2e44; display: flex; align-items: center; gap: 10px; }
+  .c-chapter-num2 { font-size: 10px; font-weight: 800; color: #2a3a55; letter-spacing: -0.02em; }
+  .c-chapter-label2 { font-size: 7px; font-weight: 600; color: #2a3a55; letter-spacing: 0.1em; text-transform: uppercase; flex: 1; }
+  .c-chapter-line2 { flex: 1; height: 1px; background: #1e2e44; }
+
+  .c-dark2 { background: #0d1422; padding: 12px 18px 14px; }
+  .c-dark2 .s-label { color: #3a5a8a; margin-bottom: 6px; }
+  .c-dark2 .s-heading { color: #ccd; }
+  .c-dark2 .tl { padding-left: 12px; border-left: 1px solid #1e2e4a; margin-top: 8px; }
+  .c-dark2 .tl-step { font-size: 6.5px; color: #4a6a9a; margin-bottom: 6px; }
+  .c-dark2 .tl-step span { display: block; font-size: 8px; font-weight: 700; color: #9ab; }
+
+  .col-desc { padding: 12px 16px 16px; background: #0d0d0d; }
+  .col-desc-title { font-size: 12px; font-weight: 600; color: #ccc; margin-bottom: 5px; }
+  .col-desc-body { font-size: 11px; color: #555; line-height: 1.6; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .tag { font-size: 10px; color: #444; border: 1px solid #222; border-radius: 20px; padding: 2px 8px; }
+
+  .note { padding: 0 40px 32px; font-size: 12px; color: #444; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="q">Question 4 of 5 — Section rhythm &amp; transitions</div>
+  <div class="sub">As the user scrolls through the 12 sections, light and dark areas alternate. How should the boundaries between them feel? Each column simulates a vertical slice of the full page scroll.</div>
+</div>
+
+<div class="cols">
+
+  <!-- A: Hard Cuts -->
+  <div class="col-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="col-label"><span class="col-letter">A</span><span class="col-name">Hard Cuts</span></div>
+    <div class="strip">
+      <div class="a-hero">
+        <div class="s-label">Intelligence infrastructure</div>
+        <div class="s-heading">Business decisions<br>need live intelligence</div>
+        <div class="s-body">Field data · AI synthesis · strategic clarity</div>
+      </div>
+      <div class="a-light">
+        <div class="s-label">The problem</div>
+        <div class="s-heading">Traditional data moves<br>too slowly</div>
+        <div class="s-body">Markets move faster than quarterly reports and analyst briefs can follow.</div>
+      </div>
+      <div class="a-dark2">
+        <div class="s-label">How it works</div>
+        <div class="s-heading">The intelligence layer</div>
+        <div class="tl">
+          <div class="tl-step">Step 01 <span>Field signals captured</span></div>
+          <div class="tl-step">Step 02 <span>AI synthesis applied</span></div>
+          <div class="tl-step">Step 03 <span>Decision layer delivers</span></div>
+        </div>
+      </div>
+      <div class="a-light2">
+        <div class="s-label">Who we serve</div>
+        <div class="s-heading">Built for institutions<br>that decide fast</div>
+        <div class="pill-row">
+          <div class="pill">Banking</div>
+          <div class="pill">FMCG</div>
+          <div class="pill">Investors</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-desc">
+      <div class="col-desc-title">Hard Cuts</div>
+      <div class="col-desc-body">Sharp, confident transitions between sections — like turning a page. Dark backgrounds cut directly into light with a visible edge. No softening. Creates a deliberate, editorial pacing. Each section is its own distinct chapter.</div>
+      <div class="tags">
+        <span class="tag">Confident</span><span class="tag">Editorial</span><span class="tag">Precise</span><span class="tag">Highest contrast</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Gradient Fades -->
+  <div class="col-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="col-label"><span class="col-letter">B</span><span class="col-name">Gradient Fades</span></div>
+    <div class="strip">
+      <div class="b-hero">
+        <div class="s-label">Intelligence infrastructure</div>
+        <div class="s-heading">Business decisions<br>need live intelligence</div>
+        <div class="s-body">Field data · AI synthesis · strategic clarity</div>
+      </div>
+      <div class="b-fade1">
+        <div class="s-label" style="color:#889;">The problem</div>
+        <div class="s-heading">Traditional data moves<br>too slowly</div>
+        <div class="s-body">Markets move faster than quarterly reports can follow.</div>
+      </div>
+      <div class="b-light">
+        <div class="s-label">Value creation</div>
+        <div class="s-heading">How OWL creates value</div>
+        <div class="s-body">Three products, one coherent intelligence system.</div>
+      </div>
+      <div class="b-fade2">
+        <div class="s-label">How it works</div>
+        <div class="s-heading">The intelligence layer</div>
+        <div class="tl">
+          <div class="tl-step">Step 01 <span>Field signals captured</span></div>
+          <div class="tl-step">Step 02 <span>AI synthesis applied</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-desc">
+      <div class="col-desc-title">Gradient Fades</div>
+      <div class="col-desc-body">Cinematic dissolves between dark and light zones. The page breathes as it scrolls — sections bleed into each other. Softer and more continuous. Risks feeling less structured. Best for a more immersive, flowing narrative feeling.</div>
+      <div class="tags">
+        <span class="tag">Cinematic</span><span class="tag">Continuous</span><span class="tag">Immersive</span><span class="tag">Softer pacing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Chapter Anchors -->
+  <div class="col-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="col-label"><span class="col-letter">C</span><span class="col-name">Chapter Anchors</span></div>
+    <div class="strip">
+      <div class="c-hero">
+        <div class="s-label">Intelligence infrastructure</div>
+        <div class="s-heading">Business decisions<br>need live intelligence</div>
+        <div class="s-body">Field data · AI synthesis · strategic clarity</div>
+      </div>
+      <div class="c-divider">
+        <div class="c-chapter-num">02</div>
+        <div class="c-chapter-label">The Problem</div>
+        <div class="c-chapter-line"></div>
+      </div>
+      <div class="c-light">
+        <div class="s-heading">Traditional data moves<br>too slowly</div>
+        <div class="s-body">Markets move faster than quarterly reports can follow.</div>
+      </div>
+      <div class="c-divider">
+        <div class="c-chapter-num">03</div>
+        <div class="c-chapter-label">Value Creation</div>
+        <div class="c-chapter-line"></div>
+      </div>
+      <div class="c-light" style="padding-top:8px;">
+        <div class="s-heading">How OWL creates value</div>
+        <div class="s-body">Three products, one coherent intelligence system.</div>
+      </div>
+      <div class="c-divider2">
+        <div class="c-chapter-num2">05</div>
+        <div class="c-chapter-label2">Intelligence Layer</div>
+        <div class="c-chapter-line2"></div>
+      </div>
+      <div class="c-dark2">
+        <div class="s-heading" style="font-size:9px;">How the intelligence layer works</div>
+        <div class="tl">
+          <div class="tl-step">Step 01 <span>Field signals captured</span></div>
+          <div class="tl-step">Step 02 <span>AI synthesis applied</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-desc">
+      <div class="col-desc-title">Chapter Anchors</div>
+      <div class="col-desc-body">Numbered divider bars visually announce each section before it begins — like chapter titles in a book. Creates strong narrative structure. The number + label acts as a spatial anchor that orients the reader. Most distinctively editorial.</div>
+      <div class="tags">
+        <span class="tag">Numbered chapters</span><span class="tag">Book-like</span><span class="tag">Structured</span><span class="tag">Most editorial</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">Click to select, then reply in terminal. Mixing is fine — e.g. "A hard cuts but with a subtle chapter number like C".</div>
+
+<script>
+function toggleSelect(el) {
+  document.querySelectorAll('.col-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const choice = el.dataset.choice;
+  const text = el.querySelector('.col-name').textContent;
+  const ev = {type:'click', choice, text, timestamp: Math.floor(Date.now()/1000)};
+  fetch('/__event', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(ev)}).catch(()=>{});
+}
+</script>
+</body>
+</html>

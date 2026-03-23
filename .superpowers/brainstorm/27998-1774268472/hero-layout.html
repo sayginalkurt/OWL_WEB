@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OWL Intelligence — Hero Layout</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Geist', system-ui, -apple-system, sans-serif; background: #0a0a0a; color: #f0f0f0; }
+
+  .page-header { padding: 28px 40px 20px; border-bottom: 1px solid #1a1a1a; }
+  .page-header .q { font-size: 22px; font-weight: 600; color: #f0f0f0; }
+  .page-header .sub { margin-top: 6px; font-size: 13px; color: #666; max-width: 660px; line-height: 1.6; }
+
+  .options-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding: 28px 40px 40px; }
+
+  .opt-card {
+    border: 1.5px solid #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    position: relative;
+  }
+  .opt-card:hover { border-color: #444; }
+  .opt-card.selected { border-color: #5a8fff; box-shadow: 0 0 0 3px rgba(90, 143, 255, 0.12); }
+  .opt-card.selected::after {
+    content: '✓';
+    position: absolute; top: 10px; right: 12px;
+    background: #5a8fff; color: #fff;
+    font-size: 11px; font-weight: 700;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 20px; text-align: center;
+  }
+
+  .opt-label { padding: 12px 16px 10px; background: #111; border-bottom: 1px solid #1e1e1e; display: flex; align-items: baseline; gap: 10px; }
+  .opt-letter { font-size: 10px; font-weight: 700; color: #444; text-transform: uppercase; letter-spacing: 0.1em; }
+  .opt-name { font-size: 13px; font-weight: 600; color: #ddd; }
+
+  /* Hero mockups */
+  .hero-frame {
+    width: 100%;
+    background: linear-gradient(160deg, #07090f 0%, #0b0f1c 55%, #0e1422 100%);
+    padding-bottom: 16px;
+  }
+
+  /* NAV shared */
+  .nav-bar { height: 40px; display: flex; align-items: center; padding: 0 20px; border-bottom: 1px solid #151b2e; background: rgba(7,9,15,0.95); gap: 10px; }
+  .nav-logo { font-size: 11px; font-weight: 800; color: #e0e0e0; letter-spacing: 0.05em; background: #1e2a44; padding: 3px 7px; border-radius: 3px; }
+  .nav-spacer { flex: 1; }
+  .nav-dot { width: 24px; height: 5px; background: #1e2a44; border-radius: 2px; }
+  .nav-btn { width: 44px; height: 22px; background: #1e3a6a; border-radius: 4px; }
+
+  /* ---- Layout A: Full-width Centered ---- */
+  .hero-a { padding: 48px 24px 32px; text-align: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 8px; font-weight: 600; color: #5a80cc; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
+  .eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: #3a60aa; }
+  .h1-a { font-size: 26px; font-weight: 800; line-height: 1.1; color: #f0f0f0; letter-spacing: -0.02em; }
+  .h1-a .em { color: #8aaeef; }
+  .h1-a .light { color: #6888cc; font-weight: 400; }
+  .hero-a .sub { font-size: 9px; color: #5a6888; line-height: 1.7; max-width: 260px; margin: 14px auto 0; }
+  .cta-row { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+  .cta-p { height: 26px; padding: 0 14px; background: #eee; border-radius: 5px; font-size: 8px; color: #111; font-weight: 700; display: flex; align-items: center; }
+  .cta-s { height: 26px; padding: 0 14px; border: 1px solid #2a3a5a; border-radius: 5px; font-size: 8px; color: #8899bb; display: flex; align-items: center; }
+  .scroll-cue-center { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 22px; }
+  .scroll-line-v { width: 1px; height: 18px; background: linear-gradient(to bottom, transparent, #2a3a5a); }
+  .scroll-txt { font-size: 7px; color: #3a4a66; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ---- Layout B: Left-aligned, split ---- */
+  .hero-b { padding: 40px 20px 28px; display: flex; gap: 16px; }
+  .hero-b-left { flex: 1; }
+  .hero-b-right { width: 80px; display: flex; flex-direction: column; gap: 8px; justify-content: flex-start; padding-top: 32px; }
+  .metric-card { background: #0e1624; border: 1px solid #1a2640; border-radius: 6px; padding: 8px 10px; }
+  .metric-val { font-size: 14px; font-weight: 700; color: #8aaeef; letter-spacing: -0.01em; }
+  .metric-label { font-size: 7px; color: #3a4a66; margin-top: 2px; line-height: 1.4; }
+  .h1-b { font-size: 22px; font-weight: 800; line-height: 1.12; color: #f0f0f0; letter-spacing: -0.02em; }
+  .h1-b .em { color: #8aaeef; }
+  .hero-b .sub { font-size: 8.5px; color: #5a6888; line-height: 1.7; max-width: 180px; margin-top: 10px; }
+  .hero-b .cta-row { justify-content: flex-start; }
+  .scroll-cue-left { display: flex; align-items: center; gap: 6px; margin-top: 16px; }
+
+  /* ---- Layout C: Large type + bottom metadata strip ---- */
+  .hero-c { padding: 40px 20px 0; }
+  .h1-c { font-size: 28px; font-weight: 800; line-height: 1.08; color: #f0f0f0; letter-spacing: -0.03em; }
+  .h1-c .em { color: #8aaeef; display: block; }
+  .h1-c .muted { color: #2e4066; font-weight: 400; }
+  .hero-c .sub { font-size: 8.5px; color: #5a6888; line-height: 1.7; max-width: 230px; margin-top: 12px; }
+  .hero-c .cta-row { justify-content: flex-start; margin-top: 14px; }
+  .hero-c .scroll-cue-left { margin-top: 14px; }
+  .meta-strip { margin-top: 18px; border-top: 1px solid #141c2e; display: flex; }
+  .meta-item { flex: 1; padding: 10px 12px; border-right: 1px solid #141c2e; }
+  .meta-item:last-child { border-right: none; }
+  .meta-num { font-size: 13px; font-weight: 700; color: #6888cc; }
+  .meta-desc { font-size: 7px; color: #3a4a66; margin-top: 2px; line-height: 1.4; }
+
+  .opt-desc { padding: 12px 16px 16px; background: #0d0d0d; }
+  .opt-desc-title { font-size: 12px; font-weight: 600; color: #ccc; margin-bottom: 5px; }
+  .opt-desc-body { font-size: 11px; color: #555; line-height: 1.6; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .tag { font-size: 10px; color: #444; border: 1px solid #222; border-radius: 20px; padding: 2px 8px; }
+
+  .footer-note { padding: 0 40px 32px; font-size: 12px; color: #444; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="q">Question 2 of 5 — Hero layout composition</div>
+  <div class="sub">All three use the dark cinematic hero direction (C) you selected. The question is how the content is structured within it — pure typographic vs. split with data accents vs. oversized type with a metadata strip.</div>
+</div>
+
+<div class="options-row">
+
+  <!-- OPTION A: Full-width centered -->
+  <div class="opt-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="opt-label"><span class="opt-letter">A</span><span class="opt-name">Centered Typographic</span></div>
+    <div class="hero-frame">
+      <div class="nav-bar">
+        <div class="nav-logo">OWL</div>
+        <div class="nav-spacer"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-btn"></div>
+      </div>
+      <div class="hero-a">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Intelligence Infrastructure</div>
+        <div class="h1-a">The intelligence layer<br>your business <span class="em">decisions</span><br><span class="light">have been missing</span></div>
+        <div class="sub">Research-grade insight systems built for the speed of modern markets. Field data. AI analysis. Strategic clarity.</div>
+        <div class="cta-row">
+          <div class="cta-p">Explore Products</div>
+          <div class="cta-s">Talk to Our Agent →</div>
+        </div>
+        <div class="scroll-cue-center">
+          <div class="scroll-line-v"></div>
+          <div class="scroll-txt">scroll to explore</div>
+          <div class="scroll-line-v"></div>
+        </div>
+      </div>
+    </div>
+    <div class="opt-desc">
+      <div class="opt-desc-title">Centered Typographic</div>
+      <div class="opt-desc-body">Classic editorial staging. Pure typography, centered stage. The headline carries all the weight. Clean, confident, easy to read. Least complex to implement but requires strong copy.</div>
+      <div class="tags">
+        <span class="tag">Editorial</span><span class="tag">Centered</span><span class="tag">Type-led</span><span class="tag">Minimal</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION B: Left-aligned split with metric cards -->
+  <div class="opt-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="opt-label"><span class="opt-letter">B</span><span class="opt-name">Left + Data Accent</span></div>
+    <div class="hero-frame">
+      <div class="nav-bar">
+        <div class="nav-logo">OWL</div>
+        <div class="nav-spacer"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-btn"></div>
+      </div>
+      <div class="hero-b">
+        <div class="hero-b-left">
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Intelligence Infrastructure</div>
+          <div class="h1-b">The intelligence layer<br>your business<br><span class="em">decisions need</span></div>
+          <div class="sub">Research-grade insight systems for the speed of modern markets.</div>
+          <div class="cta-row" style="display:flex; gap:8px; margin-top:12px;">
+            <div class="cta-p">Explore</div>
+            <div class="cta-s">Agent →</div>
+          </div>
+          <div class="scroll-cue-left">
+            <div class="scroll-line-v" style="height:14px;"></div>
+            <div class="scroll-txt">scroll</div>
+          </div>
+        </div>
+        <div class="hero-b-right">
+          <div class="metric-card">
+            <div class="metric-val">14+</div>
+            <div class="metric-label">Industries mapped</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">3×</div>
+            <div class="metric-label">Faster than traditional research</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">AI</div>
+            <div class="metric-label">+ Field data synthesis</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="opt-desc">
+      <div class="opt-desc-title">Left + Data Accent</div>
+      <div class="opt-desc-body">Left-aligned headline with a right column carrying data or product highlights. Asymmetric — deliberately not centered. Suggests analytical depth. The right column can hold metrics, product previews, or a subtle diagram.</div>
+      <div class="tags">
+        <span class="tag">Asymmetric</span><span class="tag">Data accent</span><span class="tag">Analytical feel</span><span class="tag">Split layout</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION C: Oversized type + metadata strip -->
+  <div class="opt-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="opt-label"><span class="opt-letter">C</span><span class="opt-name">Oversized + Metadata Strip</span></div>
+    <div class="hero-frame">
+      <div class="nav-bar">
+        <div class="nav-logo">OWL</div>
+        <div class="nav-spacer"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-btn"></div>
+      </div>
+      <div class="hero-c">
+        <div class="eyebrow" style="display:inline-flex;"><span class="eyebrow-dot"></span>Intelligence Infrastructure</div>
+        <div class="h1-c">Intelligence<br><span class="em">for decisions</span><br>that <span class="muted">cannot wait</span></div>
+        <div class="sub">Research-grade insight systems. Field data. AI synthesis. Strategic clarity at market speed.</div>
+        <div class="cta-row" style="display:flex; gap:8px; margin-top:14px;">
+          <div class="cta-p">Explore Products</div>
+          <div class="cta-s">Talk to Agent →</div>
+        </div>
+        <div class="scroll-cue-left" style="display:flex; align-items:center; gap:6px; margin-top:14px;">
+          <div class="scroll-line-v" style="height:14px;"></div>
+          <div class="scroll-txt">scroll</div>
+        </div>
+        <div class="meta-strip">
+          <div class="meta-item">
+            <div class="meta-num">FWBM</div>
+            <div class="meta-desc">Field & Market<br>Intelligence</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-num">FuzzyOwl</div>
+            <div class="meta-desc">Semantic<br>Analysis Engine</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-num">Agent</div>
+            <div class="meta-desc">Decision<br>Support Layer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="opt-desc">
+      <div class="opt-desc-title">Oversized + Metadata Strip</div>
+      <div class="opt-desc-body">Maximum typographic impact — very large headline. A bottom-anchored strip introduces the three products before the user scrolls. Creates an immediate sense of scale and completeness. Editorial newspapers / financial media aesthetic.</div>
+      <div class="tags">
+        <span class="tag">Large type</span><span class="tag">Product teaser</span><span class="tag">Editorial</span><span class="tag">Anchored strip</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-note">Click to select, then reply in terminal. Mix feedback welcome — e.g. "B but without the metric cards" or "C but centered like A".</div>
+
+<script>
+function toggleSelect(el) {
+  document.querySelectorAll('.opt-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const choice = el.dataset.choice;
+  const text = el.querySelector('.opt-name').textContent;
+  const ev = {type:'click', choice, text, timestamp: Math.floor(Date.now()/1000)};
+  fetch('/__event', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(ev)}).catch(()=>{});
+}
+</script>
+</body>
+</html>

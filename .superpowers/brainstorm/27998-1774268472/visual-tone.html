@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OWL Intelligence — Homepage Visual Tone</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Geist', system-ui, -apple-system, sans-serif; background: #0a0a0a; color: #f0f0f0; }
+
+  .page-header {
+    padding: 28px 40px 20px;
+    border-bottom: 1px solid #222;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .page-header h1 { font-size: 14px; font-weight: 500; color: #888; letter-spacing: 0.05em; text-transform: uppercase; }
+  .page-header .q { font-size: 22px; font-weight: 600; color: #f0f0f0; }
+
+  .question-area { padding: 28px 40px 12px; }
+  .question-area p { font-size: 15px; color: #aaa; line-height: 1.6; max-width: 700px; }
+
+  .directions { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding: 24px 40px 40px; }
+
+  .dir-card {
+    border: 1.5px solid #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .dir-card:hover { border-color: #555; }
+  .dir-card.selected { border-color: #6b9fff; box-shadow: 0 0 0 3px rgba(107, 159, 255, 0.15); }
+  .dir-card.selected::after {
+    content: '✓ Selected';
+    position: absolute;
+    top: 12px; right: 12px;
+    background: #6b9fff;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .dir-label {
+    padding: 14px 18px 10px;
+    display: flex; align-items: baseline; gap: 10px;
+    background: #111;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .dir-letter { font-size: 11px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: 0.08em; }
+  .dir-name { font-size: 15px; font-weight: 600; color: #eee; }
+
+  .mockup-frame { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; }
+
+  /* --- DIRECTION A: Light Editorial --- */
+  .mockup-a { background: #fafaf8; }
+  .ma-nav { height: 44px; background: rgba(250,250,248,0.9); border-bottom: 1px solid #e8e6e0; display: flex; align-items: center; padding: 0 18px; gap: 12px; }
+  .ma-nav-logo { width: 28px; height: 20px; background: #111; border-radius: 3px; }
+  .ma-nav-links { display: flex; gap: 8px; margin-left: auto; }
+  .ma-nav-dot { width: 28px; height: 6px; background: #ccc; border-radius: 2px; }
+
+  .ma-hero { padding: 36px 20px 24px; }
+  .ma-eyebrow { font-size: 8px; font-weight: 600; letter-spacing: 0.12em; color: #888; text-transform: uppercase; margin-bottom: 12px; }
+  .ma-h1 { font-size: 22px; font-weight: 700; color: #111; line-height: 1.15; max-width: 240px; }
+  .ma-h1 em { font-style: normal; color: #555; }
+  .ma-sub { font-size: 9px; color: #777; line-height: 1.6; max-width: 220px; margin-top: 10px; }
+  .ma-ctas { display: flex; gap: 8px; margin-top: 16px; }
+  .ma-btn-p { height: 24px; padding: 0 12px; background: #111; border-radius: 4px; font-size: 8px; color: #fff; display: flex; align-items: center; }
+  .ma-btn-s { height: 24px; padding: 0 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 8px; color: #555; display: flex; align-items: center; }
+  .ma-scroll-cue { display: flex; align-items: center; gap: 6px; margin-top: 20px; }
+  .ma-scroll-line { width: 1px; height: 20px; background: #ccc; }
+  .ma-scroll-txt { font-size: 7px; color: #999; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .ma-section { padding: 16px 20px; border-top: 1px solid #e8e6e0; }
+  .ma-section-label { font-size: 7px; color: #aaa; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .ma-section-heading { font-size: 13px; font-weight: 700; color: #111; line-height: 1.2; max-width: 200px; }
+  .ma-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .ma-card { background: #f0ede8; border-radius: 6px; height: 40px; padding: 8px; }
+  .ma-card-dot { width: 16px; height: 4px; background: #bbb; border-radius: 2px; margin-bottom: 4px; }
+  .ma-card-line { width: 60%; height: 3px; background: #d0cdc8; border-radius: 2px; }
+
+  /* --- DIRECTION B: Dark Cinematic --- */
+  .mockup-b { background: #080808; }
+  .mb-nav { height: 44px; background: rgba(8,8,8,0.95); border-bottom: 1px solid #1c1c1c; display: flex; align-items: center; padding: 0 18px; gap: 12px; }
+  .mb-nav-logo { width: 28px; height: 20px; background: #e0e0e0; border-radius: 3px; }
+  .mb-nav-links { display: flex; gap: 8px; margin-left: auto; }
+  .mb-nav-dot { width: 28px; height: 6px; background: #2a2a2a; border-radius: 2px; }
+  .mb-btn-accent { width: 48px; height: 22px; background: #2a4a8a; border-radius: 4px; }
+
+  .mb-hero { padding: 36px 20px 24px; position: relative; }
+  .mb-hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 40%, rgba(40, 80, 180, 0.12) 0%, transparent 70%); pointer-events: none; }
+  .mb-eyebrow { font-size: 8px; font-weight: 600; letter-spacing: 0.12em; color: #4a6eaa; text-transform: uppercase; margin-bottom: 12px; }
+  .mb-h1 { font-size: 22px; font-weight: 700; color: #f0f0f0; line-height: 1.15; max-width: 240px; position: relative; }
+  .mb-h1 em { font-style: normal; color: #7a9edf; }
+  .mb-sub { font-size: 9px; color: #888; line-height: 1.6; max-width: 220px; margin-top: 10px; position: relative; }
+  .mb-ctas { display: flex; gap: 8px; margin-top: 16px; position: relative; }
+  .mb-btn-p { height: 24px; padding: 0 12px; background: #eee; border-radius: 4px; font-size: 8px; color: #111; display: flex; align-items: center; font-weight: 600; }
+  .mb-btn-s { height: 24px; padding: 0 12px; border: 1px solid #333; border-radius: 4px; font-size: 8px; color: #bbb; display: flex; align-items: center; }
+  .mb-scroll-cue { display: flex; align-items: center; gap: 6px; margin-top: 20px; position: relative; }
+  .mb-scroll-line { width: 1px; height: 20px; background: #333; }
+  .mb-scroll-dot { width: 4px; height: 4px; background: #4a6eaa; border-radius: 50%; }
+  .mb-scroll-txt { font-size: 7px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .mb-section { padding: 16px 20px; border-top: 1px solid #1c1c1c; }
+  .mb-section-label { font-size: 7px; color: #444; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .mb-section-heading { font-size: 13px; font-weight: 700; color: #e0e0e0; line-height: 1.2; max-width: 200px; }
+  .mb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .mb-card { background: #111; border: 1px solid #1e1e1e; border-radius: 6px; height: 40px; padding: 8px; }
+  .mb-card-dot { width: 16px; height: 4px; background: #2a4a8a; border-radius: 2px; margin-bottom: 4px; }
+  .mb-card-line { width: 60%; height: 3px; background: #222; border-radius: 2px; }
+
+  /* --- DIRECTION C: Split / Layered --- */
+  .mockup-c { background: #fafaf8; }
+  .mc-nav { height: 44px; background: #fafaf8; border-bottom: 1px solid #e8e6e0; display: flex; align-items: center; padding: 0 18px; gap: 12px; }
+  .mc-nav-logo { width: 28px; height: 20px; background: #111; border-radius: 3px; }
+  .mc-nav-links { display: flex; gap: 8px; margin-left: auto; }
+  .mc-nav-dot { width: 28px; height: 6px; background: #ccc; border-radius: 2px; }
+
+  .mc-hero { padding: 36px 20px 24px; background: linear-gradient(160deg, #0a0e1a 0%, #0d1420 60%, #111827 100%); }
+  .mc-eyebrow { font-size: 8px; font-weight: 600; letter-spacing: 0.12em; color: #5a7ecc; text-transform: uppercase; margin-bottom: 12px; }
+  .mc-h1 { font-size: 22px; font-weight: 700; color: #f0f0f0; line-height: 1.15; max-width: 240px; }
+  .mc-h1 em { font-style: normal; color: #8aaeef; }
+  .mc-sub { font-size: 9px; color: #8888aa; line-height: 1.6; max-width: 220px; margin-top: 10px; }
+  .mc-ctas { display: flex; gap: 8px; margin-top: 16px; }
+  .mc-btn-p { height: 24px; padding: 0 12px; background: #eee; border-radius: 4px; font-size: 8px; color: #111; display: flex; align-items: center; font-weight: 600; }
+  .mc-btn-s { height: 24px; padding: 0 12px; border: 1px solid #2e3a55; border-radius: 4px; font-size: 8px; color: #aab; display: flex; align-items: center; }
+  .mc-scroll-cue { display: flex; align-items: center; gap: 6px; margin-top: 20px; }
+  .mc-scroll-line { width: 1px; height: 20px; background: #2a3550; }
+  .mc-scroll-txt { font-size: 7px; color: #556; letter-spacing: 0.08em; text-transform: uppercase; }
+  .mc-scroll-dot { width: 3px; height: 3px; border-radius: 50%; background: #6688cc; }
+
+  .mc-section-light { padding: 16px 20px; border-top: 3px solid #111; background: #fafaf8; }
+  .mc-section-label { font-size: 7px; color: #aaa; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .mc-section-heading { font-size: 13px; font-weight: 700; color: #111; line-height: 1.2; max-width: 200px; }
+  .mc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .mc-card { background: #f0ede8; border-radius: 6px; height: 40px; padding: 8px; }
+  .mc-card-dot { width: 16px; height: 4px; background: #2a4a8a; border-radius: 2px; margin-bottom: 4px; }
+  .mc-card-line { width: 60%; height: 3px; background: #d0cdc8; border-radius: 2px; }
+  .mc-dark-section { padding: 16px 20px; background: #0d1420; border-top: 1px solid #1e2a3d; }
+  .mc-dark-label { font-size: 7px; color: #445; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .mc-dark-heading { font-size: 11px; font-weight: 700; color: #c0c8e0; line-height: 1.2; max-width: 200px; }
+  .mc-dark-bar { height: 2px; width: 100%; background: linear-gradient(90deg, #2a4a8a, transparent); margin-top: 10px; border-radius: 2px; }
+
+  /* Description area */
+  .dir-desc { padding: 12px 18px 16px; background: #0d0d0d; }
+  .dir-desc-name { font-size: 12px; font-weight: 600; color: #ccc; margin-bottom: 6px; }
+  .dir-desc-body { font-size: 11px; color: #666; line-height: 1.6; }
+  .dir-desc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .tag { font-size: 10px; color: #555; border: 1px solid #2a2a2a; border-radius: 20px; padding: 2px 8px; }
+
+  .footer-note { padding: 16px 40px 28px; font-size: 12px; color: #555; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div>
+    <div class="q">Question 1 of 5 — Overall visual tone</div>
+    <div style="margin-top:4px; font-size:13px; color:#666;">Which visual direction feels right for OWL Intelligence's homepage?</div>
+  </div>
+</div>
+
+<div class="question-area">
+  <p>The existing site uses a monochromatic light palette (white, off-white, black). The homepage needs to feel distinct — more editorial, more cinematic — without clashing with the rest of the site. These three directions show different ways to achieve that.</p>
+</div>
+
+<div class="directions">
+
+  <!-- DIRECTION A -->
+  <div class="dir-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="dir-label">
+      <span class="dir-letter">A</span>
+      <span class="dir-name">Light &amp; Editorial</span>
+    </div>
+    <div class="mockup-frame mockup-a">
+      <div class="ma-nav">
+        <div class="ma-nav-logo"></div>
+        <div class="ma-nav-links">
+          <div class="ma-nav-dot"></div>
+          <div class="ma-nav-dot"></div>
+          <div class="ma-nav-dot"></div>
+          <div class="ma-nav-dot" style="background:#111; width:36px;"></div>
+        </div>
+      </div>
+      <div class="ma-hero">
+        <div class="ma-eyebrow">Intelligence infrastructure</div>
+        <div class="ma-h1">Business decisions need <em>live</em> intelligence</div>
+        <div class="ma-sub">OWL Intelligence delivers research-grade insight systems built for the speed of modern markets.</div>
+        <div class="ma-ctas">
+          <div class="ma-btn-p">Explore OWL</div>
+          <div class="ma-btn-s">Talk to agent →</div>
+        </div>
+        <div class="ma-scroll-cue">
+          <div class="ma-scroll-line"></div>
+          <div class="ma-scroll-txt">scroll</div>
+        </div>
+      </div>
+      <div class="ma-section">
+        <div class="ma-section-label">The problem</div>
+        <div class="ma-section-heading">Traditional data moves too slow for modern strategy</div>
+        <div class="ma-grid">
+          <div class="ma-card"><div class="ma-card-dot"></div><div class="ma-card-line"></div></div>
+          <div class="ma-card"><div class="ma-card-dot" style="background:#888;"></div><div class="ma-card-line"></div></div>
+          <div class="ma-card"><div class="ma-card-dot" style="background:#aaa;"></div><div class="ma-card-line"></div></div>
+          <div class="ma-card"><div class="ma-card-dot" style="background:#999;"></div><div class="ma-card-line"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="dir-desc">
+      <div class="dir-desc-name">Light &amp; Editorial</div>
+      <div class="dir-desc-body">Cream-white background throughout. Typography-led hierarchy. Layout tension through asymmetric column structures. Intelligence implied through restraint — what's absent is as important as what's present. Consistent with the current site aesthetic, elevated with better composition.</div>
+      <div class="dir-desc-tags">
+        <span class="tag">Consistent with current site</span>
+        <span class="tag">Typographic-led</span>
+        <span class="tag">Restrained</span>
+        <span class="tag">Editorial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECTION B -->
+  <div class="dir-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="dir-label">
+      <span class="dir-letter">B</span>
+      <span class="dir-name">Dark Cinematic</span>
+    </div>
+    <div class="mockup-frame mockup-b">
+      <div class="mb-nav">
+        <div class="mb-nav-logo"></div>
+        <div class="mb-nav-links">
+          <div class="mb-nav-dot"></div>
+          <div class="mb-nav-dot"></div>
+          <div class="mb-nav-dot"></div>
+          <div class="mb-btn-accent"></div>
+        </div>
+      </div>
+      <div class="mb-hero">
+        <div class="mb-hero-bg"></div>
+        <div class="mb-eyebrow">Intelligence infrastructure</div>
+        <div class="mb-h1">Business decisions need <em>live</em> intelligence</div>
+        <div class="mb-sub">OWL Intelligence delivers research-grade insight systems built for the speed of modern markets.</div>
+        <div class="mb-ctas">
+          <div class="mb-btn-p">Explore OWL</div>
+          <div class="mb-btn-s">Talk to agent →</div>
+        </div>
+        <div class="mb-scroll-cue">
+          <div class="mb-scroll-line"></div>
+          <div class="mb-scroll-dot"></div>
+          <div class="mb-scroll-txt">scroll</div>
+        </div>
+      </div>
+      <div class="mb-section">
+        <div class="mb-section-label">The problem</div>
+        <div class="mb-section-heading" style="color:#e0e0e0;">Traditional data moves too slow for modern strategy</div>
+        <div class="mb-grid">
+          <div class="mb-card"><div class="mb-card-dot"></div><div class="mb-card-line"></div></div>
+          <div class="mb-card"><div class="mb-card-dot" style="background:#1e3a6a;"></div><div class="mb-card-line"></div></div>
+          <div class="mb-card"><div class="mb-card-dot" style="background:#152a50;"></div><div class="mb-card-line"></div></div>
+          <div class="mb-card"><div class="mb-card-dot" style="background:#1a3060;"></div><div class="mb-card-line"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="dir-desc">
+      <div class="dir-desc-name">Dark Cinematic</div>
+      <div class="dir-desc-body">Full dark background throughout the homepage. Deep navy-to-black gradients. Selective blue accent from the existing chart color tokens. Maximum visual differentiation from the rest of the site. Premium intelligence-platform feeling. Highest visual impact — but creates the most contrast with the existing site design.</div>
+      <div class="dir-desc-tags">
+        <span class="tag">Maximum impact</span>
+        <span class="tag">Premium intelligence feel</span>
+        <span class="tag">High contrast to rest of site</span>
+        <span class="tag">Cinematic</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECTION C -->
+  <div class="dir-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="dir-label">
+      <span class="dir-letter">C</span>
+      <span class="dir-name">Dark Hero → Light Body</span>
+    </div>
+    <div class="mockup-frame mockup-c">
+      <div class="mc-nav">
+        <div class="mc-nav-logo"></div>
+        <div class="mc-nav-links">
+          <div class="mc-nav-dot"></div>
+          <div class="mc-nav-dot"></div>
+          <div class="mc-nav-dot"></div>
+          <div class="mc-nav-dot" style="background:#111; width:36px;"></div>
+        </div>
+      </div>
+      <div class="mc-hero">
+        <div class="mc-eyebrow">Intelligence infrastructure</div>
+        <div class="mc-h1">Business decisions need <em>live</em> intelligence</div>
+        <div class="mc-sub">OWL Intelligence delivers research-grade insight systems built for the speed of modern markets.</div>
+        <div class="mc-ctas">
+          <div class="mc-btn-p">Explore OWL</div>
+          <div class="mc-btn-s">Talk to agent →</div>
+        </div>
+        <div class="mc-scroll-cue">
+          <div class="mc-scroll-line"></div>
+          <div class="mc-scroll-dot"></div>
+          <div class="mc-scroll-txt">scroll</div>
+        </div>
+      </div>
+      <div class="mc-section-light">
+        <div class="mc-section-label">The problem</div>
+        <div class="mc-section-heading">Traditional data moves too slow for modern strategy</div>
+        <div class="mc-grid">
+          <div class="mc-card"><div class="mc-card-dot"></div><div class="mc-card-line"></div></div>
+          <div class="mc-card"><div class="mc-card-dot" style="background:#1e3a8a; opacity:0.6;"></div><div class="mc-card-line"></div></div>
+        </div>
+      </div>
+      <div class="mc-dark-section">
+        <div class="mc-dark-label">Intelligence layer</div>
+        <div class="mc-dark-heading">How OWL's intelligence infrastructure works</div>
+        <div class="mc-dark-bar"></div>
+      </div>
+    </div>
+    <div class="dir-desc">
+      <div class="dir-desc-name">Dark Hero → Light Body</div>
+      <div class="dir-desc-body">Dark, cinematic hero section that transitions cleanly into the light site aesthetic. Selective dark sections for technically dense content (intelligence layer, ecosystem). Narrative pacing through background transitions. Best of both worlds — maximum first impression, then seamless hand-off to the rest of the site.</div>
+      <div class="dir-desc-tags">
+        <span class="tag">Best of both worlds</span>
+        <span class="tag">Cinematic hero</span>
+        <span class="tag">Smooth site handoff</span>
+        <span class="tag">Narrative pacing</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-note">Click a direction to select it, then tell me in the terminal what you think. You can also mix elements — e.g. "C but with a warmer dark color" or "A but with a dark section for the intelligence layer."</div>
+
+<script>
+function toggleSelect(el) {
+  const cards = document.querySelectorAll('.dir-card');
+  cards.forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const choice = el.dataset.choice;
+  const text = el.querySelector('.dir-name').textContent;
+  if (window.__owl_record) window.__owl_record(choice, text);
+  const ev = {type:'click', choice, text, timestamp: Math.floor(Date.now()/1000)};
+  fetch('/__event', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(ev)}).catch(()=>{});
+}
+</script>
+</body>
+</html>

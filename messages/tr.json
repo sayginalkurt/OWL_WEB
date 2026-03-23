@@ -15,22 +15,135 @@
     "menu": "Menü"
   },
   "home": {
-    "heroTitle": "Yapay Zeka Destekli İstihbarat Ürünleri",
-    "heroSubtitle": "Gerçek Saha Verisine Dayalı",
-    "heroDescription": "OWL Intelligence, gerçek dünya saha verilerini eyleme dönüştürülebilir iş istihbaratına çeviren ticari yapay zeka ürünleri geliştirir.",
-    "exploreProducts": "Ürünleri Keşfet",
-    "talkToAgent": "Asistanımızla Konuşun",
-    "fwbmTitle": "FWBM",
-    "fwbmDescription": "Saha Ağırlıklı Barometre Modeli — haftalık güncellenen gösterge panelleri ve yapay zeka destekli analizle gerçek zamanlı tüketici ve pazar duyarlılığı istihbaratı.",
-    "fuzzyowlTitle": "FuzzyOwl",
-    "fuzzyowlDescription": "Stratejik senaryo analizi için Bulanık Bilişsel Haritalama — karmaşık sistemleri modelleyin, kararları simüle edin ve sonuçları görselleştirin.",
-    "solutionsTitle": "Sektöre Özel Çözümler",
-    "solutionsDescription": "Sektörünüze özel istihbarat çözümleri.",
-    "techTitle": "Teknoloji ve Yapay Zeka",
-    "techDescription": "Tescilli metodolojimiz, güvenebileceğiniz istihbarat ürünleri sunmak için saha araştırma titizliğini gelişmiş yapay zeka ile birleştirir.",
-    "ctaTitle": "Hangi ürün size uygun emin değil misiniz?",
-    "ctaDescription": "Yapay zeka asistanımız ihtiyaçlarınıza uygun çözümü bulmanıza yardımcı olabilir.",
-    "ctaButton": "Sohbet Başlat"
+    "meta": {
+      "title": "[TR] OWL Intelligence — Advanced Analytics Grounded in Field Data",
+      "description": "[TR] Decision-support products for institutions combining validated field data, structured analytics, and AI."
+    },
+    "hero": {
+      "eyebrow": "[TR] Next-Gen Research",
+      "headline": "[TR] Advanced Analytics Grounded in Field Data",
+      "body": "[TR] OWL Intelligence develops decision-support products for institutions by combining validated field data, structured analytics, and AI governed within a clear oversight framework.",
+      "ctaPrimary": "[TR] Explore Products",
+      "ctaSecondary": "[TR] Talk to Our Agent",
+      "metric1Value": "81",
+      "metric1Label": "[TR] Provinces of field coverage across Turkey",
+      "metric2Value": "15+",
+      "metric2Label": "[TR] Years of institutional research experience",
+      "metric3Value": "2",
+      "metric3Label": "[TR] AI-supported decision products in the ecosystem"
+    },
+    "businessSpeed": {
+      "eyebrow": "[TR] Business Moves Faster Than Traditional Data",
+      "statement1": "[TR] Static measurement cannot keep pace with changing conditions.",
+      "statement2": "[TR] Delayed signals weaken response quality.",
+      "statement3": "[TR] Better decisions require higher-frequency, ground-level evidence."
+    },
+    "value": {
+      "eyebrow": "[TR] How OWL Intelligence Creates Value",
+      "heading": "[TR] Measurement, analytics, and AI in one decision-support layer",
+      "body": "[TR] OWL Intelligence brings measurement, analytics, and AI together within a single decision-support layer. It continuously monitors real-world conditions, processes emerging signals, and makes them usable for institutional contexts.",
+      "col1Title": "[TR] Measurement",
+      "col1Body": "[TR] Continuously monitors real-world conditions through structured fieldwork and validated data pipelines.",
+      "col2Title": "[TR] Analytics",
+      "col2Body": "[TR] Transforms raw signals into analytical structures that connect directly to decision-making processes.",
+      "col3Title": "[TR] AI",
+      "col3Body": "[TR] Governed AI layers interpret findings, explain patterns, and deliver decision-ready intelligence."
+    },
+    "productEcosystem": {
+      "eyebrow": "[TR] Product Ecosystem",
+      "heading": "[TR] An integrated structure that turns field data into stronger decisions",
+      "intro": "[TR] Our product ecosystem provides an integrated structure that turns field data into stronger measurement, analysis, and decision support.",
+      "fwbmName": "[TR] Financial Well-Being Monitor",
+      "fwbmDescriptor": "[TR] Next-generation household financial resilience measurement at institutional scale.",
+      "fwbmLayer1": "[TR] Validated Field Data",
+      "fwbmLayer2": "[TR] Structured Analytics",
+      "fwbmLayer3": "[TR] Decision Infrastructure",
+      "fuzzyowlName": "[TR] FuzzyOwl",
+      "fuzzyowlDescriptor": "[TR] Makes visible which variables shape decisions, how they influence each other, and how interventions affect the system as a whole.",
+      "fuzzyowlLayer1": "[TR] Relational Mapping",
+      "fuzzyowlLayer2": "[TR] AI-Supported Analytics",
+      "fuzzyowlLayer3": "[TR] Scenario Simulation"
+    },
+    "intelligenceLayer": {
+      "eyebrow": "[TR] How Our Intelligence Layer Works",
+      "heading": "[TR] Eight integrated stages from raw signal to institutional decision",
+      "step01Title": "[TR] Methodology Design",
+      "step01Body": "[TR] Each product begins with an embedded methodology that defines what is measured and how it is measured.",
+      "step02Title": "[TR] Data Collection",
+      "step02Body": "[TR] A regular, structured, and highly reliable flow of real-world data is generated through fieldwork.",
+      "step03Title": "[TR] Validation and Audit Control",
+      "step03Body": "[TR] The AuditorAI layer subjects the data to quality, consistency, and validation checks, creating a fully validated foundation.",
+      "step04Title": "[TR] Unified Data Integration",
+      "step04Body": "[TR] Validated field data is brought together with integrated databases and relevant external data sources within a single data structure.",
+      "step05Title": "[TR] Classification and Structuring",
+      "step05Body": "[TR] The ClassifyAI layer organizes the data into meaningful categories, labels it, and prepares it for analysis.",
+      "step06Title": "[TR] Computation Engines",
+      "step06Body": "[TR] Deterministic computation engines consistently generate indicators, scores, segments, and decision rules.",
+      "step07Title": "[TR] Live Decision Dashboards",
+      "step07Body": "[TR] Processed data becomes trackable, comparable, and ready for institutional use through live dashboards.",
+      "step08Title": "[TR] Governed AI Analysis Layer",
+      "step08Body": "[TR] Governed AI analysis assistants such as Monet and FuzzyOwl interpret findings, explain patterns, and complete the analytical layer."
+    },
+    "sectors": {
+      "eyebrow": "[TR] Who We Serve",
+      "heading": "[TR] Built for institutions that operate at complexity",
+      "context": "[TR] Nine sectors. One coherent intelligence infrastructure.",
+      "item1": "[TR] Finance and Banking",
+      "item2": "[TR] Insurance",
+      "item3": "[TR] Retail",
+      "item4": "[TR] Fast-Moving Consumer Goods",
+      "item5": "[TR] E-Commerce",
+      "item6": "[TR] Durable Goods and Home Appliances",
+      "item7": "[TR] Real Estate",
+      "item8": "[TR] Technology and Telecommunications",
+      "item9": "[TR] International Organizations"
+    },
+    "whyOwl": {
+      "eyebrow": "[TR] Why OWL Intelligence",
+      "heading": "[TR] Not a research firm. An intelligence infrastructure.",
+      "intro": "[TR] Unlike conventional research firms, OWL Intelligence does not leave data confined to reports; it turns data into productized analytics and decision support. With more than 15 years of experience, a field network spanning all 81 provinces of Turkey, and in-house technology capabilities, it transforms research into an infrastructure that operates at institutional scale.",
+      "diff1Title": "[TR] Methodology",
+      "diff1Body": "[TR] Drawing on deep methodological expertise shaped by national and international projects, our team specializes in quantitative, qualitative, mixed, and experimental methods.",
+      "diff2Title": "[TR] Advanced Analytics",
+      "diff2Body": "[TR] OWL Intelligence does not simply collect data; it transforms it into analytical structures that connect directly to decision-making processes.",
+      "diff3Title": "[TR] AI Infrastructure",
+      "diff3Body": "[TR] Our technology and software infrastructure is developed in-house and designed with a product logic."
+    },
+    "founders": {
+      "eyebrow": "[TR] Founders",
+      "heading": "[TR] Built from a conviction, not a gap in the market",
+      "beyza": {
+        "quote": "[TR] We built OWL because institutions kept making critical decisions on data that was already six months old — and the technology to fix that already existed.",
+        "name": "[TR] Beyza Polat, Ph.D.",
+        "role": "[TR] CEO & Co-Founder",
+        "credential": "[TR] Economist. Bilkent University · London School of Economics."
+      },
+      "saygin": {
+        "quote": "[TR] Field research told us everything we needed to know. The gap was never the data — it was the infrastructure to make it actionable at scale.",
+        "name": "[TR] Saygın Vedat Alkurt",
+        "role": "[TR] Co-Founder",
+        "credential": "[TR] Sociologist. Middle East Technical University. 15+ years in data-driven research."
+      }
+    },
+    "partnerships": {
+      "eyebrow": "[TR] Partnerships, Investment & Institutional Collaboration",
+      "heading": "[TR] Open to those who want to build and grow together",
+      "body": "[TR] OWL Intelligence is open to working with stakeholders who want to build, grow, and open up new areas together. We see strategic partnerships and institutional collaboration as a natural part of our long-term vision.",
+      "ctaLabel": "[TR] Get in Touch"
+    },
+    "agent": {
+      "eyebrow": "[TR] Talk to Our Agent",
+      "heading": "[TR] Ask anything you would like to know about OWL Intelligence.",
+      "subCopy": "[TR] Our AI agent is available to answer questions about our products, methodology, and how we work with institutions.",
+      "ctaLabel": "[TR] Open Agent"
+    },
+    "contactDemo": {
+      "eyebrow": "[TR] Contact",
+      "heading": "[TR] Start a conversation.",
+      "body": "[TR] Whether you're exploring for your institution, looking to invest, or interested in collaboration, we're ready to talk.",
+      "cardHeading": "[TR] Ready to see it in action?",
+      "ctaLabel": "[TR] Book a Demo"
+    }
   },
   "solutions": {
     "banking": "Bankalar ve Sigortacılar",

@@ -15,22 +15,135 @@
     "menu": "Menu"
   },
   "home": {
-    "heroTitle": "AI-Powered Intelligence Products",
-    "heroSubtitle": "Grounded in Authentic Field Data",
-    "heroDescription": "OWL Intelligence builds commercial AI products that transform real-world field data into actionable business intelligence.",
-    "exploreProducts": "Explore Products",
-    "talkToAgent": "Talk to Our Agent",
-    "fwbmTitle": "FWBM",
-    "fwbmDescription": "Field-Weighted Barometer Model — real-time consumer and market sentiment intelligence with weekly-updated dashboards and AI-powered analysis.",
-    "fuzzyowlTitle": "FuzzyOwl",
-    "fuzzyowlDescription": "Fuzzy Cognitive Mapping for strategic scenario analysis — model complex systems, simulate decisions, and visualize outcomes.",
-    "solutionsTitle": "Solutions by Sector",
-    "solutionsDescription": "Tailored intelligence solutions for your industry.",
-    "techTitle": "Technology & AI",
-    "techDescription": "Our proprietary methodology combines field research rigor with advanced AI to deliver intelligence products you can trust.",
-    "ctaTitle": "Not sure which product fits?",
-    "ctaDescription": "Our AI agent can help you find the right solution for your needs.",
-    "ctaButton": "Start a Conversation"
+    "meta": {
+      "title": "OWL Intelligence — Advanced Analytics Grounded in Field Data",
+      "description": "Decision-support products for institutions combining validated field data, structured analytics, and AI."
+    },
+    "hero": {
+      "eyebrow": "Next-Gen Research",
+      "headline": "Advanced Analytics Grounded in Field Data",
+      "body": "OWL Intelligence develops decision-support products for institutions by combining validated field data, structured analytics, and AI governed within a clear oversight framework.",
+      "ctaPrimary": "Explore Products",
+      "ctaSecondary": "Talk to Our Agent",
+      "metric1Value": "81",
+      "metric1Label": "Provinces of field coverage across Turkey",
+      "metric2Value": "15+",
+      "metric2Label": "Years of institutional research experience",
+      "metric3Value": "2",
+      "metric3Label": "AI-supported decision products in the ecosystem"
+    },
+    "businessSpeed": {
+      "eyebrow": "Business Moves Faster Than Traditional Data",
+      "statement1": "Static measurement cannot keep pace with changing conditions.",
+      "statement2": "Delayed signals weaken response quality.",
+      "statement3": "Better decisions require higher-frequency, ground-level evidence."
+    },
+    "value": {
+      "eyebrow": "How OWL Intelligence Creates Value",
+      "heading": "Measurement, analytics, and AI in one decision-support layer",
+      "body": "OWL Intelligence brings measurement, analytics, and AI together within a single decision-support layer. It continuously monitors real-world conditions, processes emerging signals, and makes them usable for institutional contexts.",
+      "col1Title": "Measurement",
+      "col1Body": "Continuously monitors real-world conditions through structured fieldwork and validated data pipelines.",
+      "col2Title": "Analytics",
+      "col2Body": "Transforms raw signals into analytical structures that connect directly to decision-making processes.",
+      "col3Title": "AI",
+      "col3Body": "Governed AI layers interpret findings, explain patterns, and deliver decision-ready intelligence."
+    },
+    "productEcosystem": {
+      "eyebrow": "Product Ecosystem",
+      "heading": "An integrated structure that turns field data into stronger decisions",
+      "intro": "Our product ecosystem provides an integrated structure that turns field data into stronger measurement, analysis, and decision support.",
+      "fwbmName": "Financial Well-Being Monitor",
+      "fwbmDescriptor": "Next-generation household financial resilience measurement at institutional scale.",
+      "fwbmLayer1": "Validated Field Data",
+      "fwbmLayer2": "Structured Analytics",
+      "fwbmLayer3": "Decision Infrastructure",
+      "fuzzyowlName": "FuzzyOwl",
+      "fuzzyowlDescriptor": "Makes visible which variables shape decisions, how they influence each other, and how interventions affect the system as a whole.",
+      "fuzzyowlLayer1": "Relational Mapping",
+      "fuzzyowlLayer2": "AI-Supported Analytics",
+      "fuzzyowlLayer3": "Scenario Simulation"
+    },
+    "intelligenceLayer": {
+      "eyebrow": "How Our Intelligence Layer Works",
+      "heading": "Eight integrated stages from raw signal to institutional decision",
+      "step01Title": "Methodology Design",
+      "step01Body": "Each product begins with an embedded methodology that defines what is measured and how it is measured.",
+      "step02Title": "Data Collection",
+      "step02Body": "A regular, structured, and highly reliable flow of real-world data is generated through fieldwork.",
+      "step03Title": "Validation and Audit Control",
+      "step03Body": "The AuditorAI layer subjects the data to quality, consistency, and validation checks, creating a fully validated foundation.",
+      "step04Title": "Unified Data Integration",
+      "step04Body": "Validated field data is brought together with integrated databases and relevant external data sources within a single data structure.",
+      "step05Title": "Classification and Structuring",
+      "step05Body": "The ClassifyAI layer organizes the data into meaningful categories, labels it, and prepares it for analysis.",
+      "step06Title": "Computation Engines",
+      "step06Body": "Deterministic computation engines consistently generate indicators, scores, segments, and decision rules.",
+      "step07Title": "Live Decision Dashboards",
+      "step07Body": "Processed data becomes trackable, comparable, and ready for institutional use through live dashboards.",
+      "step08Title": "Governed AI Analysis Layer",
+      "step08Body": "Governed AI analysis assistants such as Monet and FuzzyOwl interpret findings, explain patterns, and complete the analytical layer."
+    },
+    "sectors": {
+      "eyebrow": "Who We Serve",
+      "heading": "Built for institutions that operate at complexity",
+      "context": "Nine sectors. One coherent intelligence infrastructure.",
+      "item1": "Finance and Banking",
+      "item2": "Insurance",
+      "item3": "Retail",
+      "item4": "Fast-Moving Consumer Goods",
+      "item5": "E-Commerce",
+      "item6": "Durable Goods and Home Appliances",
+      "item7": "Real Estate",
+      "item8": "Technology and Telecommunications",
+      "item9": "International Organizations"
+    },
+    "whyOwl": {
+      "eyebrow": "Why OWL Intelligence",
+      "heading": "Not a research firm. An intelligence infrastructure.",
+      "intro": "Unlike conventional research firms, OWL Intelligence does not leave data confined to reports; it turns data into productized analytics and decision support. With more than 15 years of experience, a field network spanning all 81 provinces of Turkey, and in-house technology capabilities, it transforms research into an infrastructure that operates at institutional scale.",
+      "diff1Title": "Methodology",
+      "diff1Body": "Drawing on deep methodological expertise shaped by national and international projects, our team specializes in quantitative, qualitative, mixed, and experimental methods.",
+      "diff2Title": "Advanced Analytics",
+      "diff2Body": "OWL Intelligence does not simply collect data; it transforms it into analytical structures that connect directly to decision-making processes.",
+      "diff3Title": "AI Infrastructure",
+      "diff3Body": "Our technology and software infrastructure is developed in-house and designed with a product logic."
+    },
+    "founders": {
+      "eyebrow": "Founders",
+      "heading": "Built from a conviction, not a gap in the market",
+      "beyza": {
+        "quote": "We built OWL because institutions kept making critical decisions on data that was already six months old — and the technology to fix that already existed.",
+        "name": "Beyza Polat, Ph.D.",
+        "role": "CEO & Co-Founder",
+        "credential": "Economist. Bilkent University · London School of Economics."
+      },
+      "saygin": {
+        "quote": "Field research told us everything we needed to know. The gap was never the data — it was the infrastructure to make it actionable at scale.",
+        "name": "Saygın Vedat Alkurt",
+        "role": "Co-Founder",
+        "credential": "Sociologist. Middle East Technical University. 15+ years in data-driven research."
+      }
+    },
+    "partnerships": {
+      "eyebrow": "Partnerships, Investment & Institutional Collaboration",
+      "heading": "Open to those who want to build and grow together",
+      "body": "OWL Intelligence is open to working with stakeholders who want to build, grow, and open up new areas together. We see strategic partnerships and institutional collaboration as a natural part of our long-term vision.",
+      "ctaLabel": "Get in Touch"
+    },
+    "agent": {
+      "eyebrow": "Talk to Our Agent",
+      "heading": "Ask anything you would like to know about OWL Intelligence.",
+      "subCopy": "Our AI agent is available to answer questions about our products, methodology, and how we work with institutions.",
+      "ctaLabel": "Open Agent"
+    },
+    "contactDemo": {
+      "eyebrow": "Contact",
+      "heading": "Start a conversation.",
+      "body": "Whether you're exploring for your institution, looking to invest, or interested in collaboration, we're ready to talk.",
+      "cardHeading": "Ready to see it in action?",
+      "ctaLabel": "Book a Demo"
+    }
   },
   "solutions": {
     "banking": "Banks & Insurers",

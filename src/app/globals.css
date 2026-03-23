@@ -45,6 +45,16 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ── Homepage dark section backgrounds ── */
+  --color-dark-base: #07090f;
+  --color-dark-mid: #0d1422;
+  --color-dark-surface: #0e1624;
+  --color-dark-border: #1a2640;
+
+  /* ── OWL brand colors (logo/wordmark only) ── */
+  --color-owl-gold: #d3af37;
+  --color-owl-navy: #292d69;
 }
 
 :root {

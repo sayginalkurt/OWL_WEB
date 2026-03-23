@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { SectionContainer } from './shared/section-container'
 import { Eyebrow } from './shared/eyebrow'
 import { SectionHeading } from './shared/section-heading'
@@ -31,9 +32,9 @@ export function ContactDemoSection({ eyebrow, heading, body, cardHeading, ctaLab
             <p className="text-sm text-muted-foreground mt-2 mb-6">
               See OWL Intelligence in action with a guided walkthrough tailored to your institution.
             </p>
-            <Button asChild>
-              <Link href={ctaHref}>{ctaLabel}</Link>
-            </Button>
+            <Link href={ctaHref} className={cn(buttonVariants())}>
+              {ctaLabel}
+            </Link>
           </div>
         </RevealWrapper>
       </div>

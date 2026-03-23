@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { Eyebrow } from './shared/eyebrow'
 import { ScrollCue } from './shared/scroll-cue'
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/motion'
@@ -56,12 +57,12 @@ export function HeroSection({ eyebrow, headline, body, ctaPrimary, ctaSecondary,
             </motion.p>
 
             <motion.div variants={staggerItem} className="flex flex-wrap gap-3 mt-8">
-              <Button asChild>
-                <Link href="/products">{ctaPrimary}</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-[#1a2640] text-[#8899bb] hover:bg-dark-surface hover:text-[#f0f0f0]">
-                <Link href="/agent">{ctaSecondary} →</Link>
-              </Button>
+              <Link href="/products" className={cn(buttonVariants())}>
+                {ctaPrimary}
+              </Link>
+              <Link href="/agent" className={cn(buttonVariants({ variant: 'outline' }), 'border-[#1a2640] text-[#8899bb] hover:bg-dark-surface hover:text-[#f0f0f0]')}>
+                {ctaSecondary} →
+              </Link>
             </motion.div>
 
             <motion.div variants={staggerItem}>

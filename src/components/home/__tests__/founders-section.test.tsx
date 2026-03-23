@@ -21,7 +21,7 @@ const props = {
       photoSrc: '/images/sayginalkurt.png',
       photoAlt: 'Saygın Vedat Alkurt',
     },
-  ] as [typeof props['founders'][0], typeof props['founders'][0]],
+  ] as [{ quote: string; name: string; role: string; credential: string; photoSrc: string; photoAlt: string }, { quote: string; name: string; role: string; credential: string; photoSrc: string; photoAlt: string }],
 }
 
 describe('FoundersSection', () => {

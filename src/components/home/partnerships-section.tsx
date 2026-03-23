@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { SectionContainer } from './shared/section-container'
 import { Eyebrow } from './shared/eyebrow'
 import { SectionHeading } from './shared/section-heading'
@@ -24,9 +25,9 @@ export function PartnershipsSection({ eyebrow, heading, body, ctaLabel, ctaHref 
           <Eyebrow dark className="justify-center">{eyebrow}</Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
           <p className="text-base text-[#5a6888] leading-relaxed mt-6 mb-10">{body}</p>
-          <Button asChild variant="outline" className="border-[#1a2640] text-[#8899bb] hover:bg-dark-surface hover:text-[#f0f0f0]">
-            <Link href={ctaHref}>{ctaLabel}</Link>
-          </Button>
+          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'outline' }), 'border-[#1a2640] text-[#8899bb] hover:bg-dark-surface hover:text-[#f0f0f0]')}>
+            {ctaLabel}
+          </Link>
         </RevealWrapper>
       </div>
     </SectionContainer>

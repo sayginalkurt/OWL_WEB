@@ -28,7 +28,7 @@ const props = {
         'Scenario Simulation',
       ] as [string, string, string],
     },
-  ] as [typeof props['products'][0], typeof props['products'][0]],
+  ] as [{ logoSrc: string; logoAlt: string; name: string; descriptor: string; layers: [string, string, string] }, { logoSrc: string; logoAlt: string; name: string; descriptor: string; layers: [string, string, string] }],
 }
 
 describe('ProductEcosystemSection', () => {

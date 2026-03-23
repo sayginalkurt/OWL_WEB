@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { MessageSquare } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { SectionContainer } from './shared/section-container'
 import { Eyebrow } from './shared/eyebrow'
 import { SectionHeading } from './shared/section-heading'
@@ -27,9 +27,9 @@ export function AgentSection({ eyebrow, heading, subCopy, ctaLabel, ctaHref }: A
           </Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
           <p className="text-base text-[#5a6888] leading-relaxed mt-6 mb-10">{subCopy}</p>
-          <Button asChild>
-            <Link href={ctaHref}>{ctaLabel}</Link>
-          </Button>
+          <Link href={ctaHref} className={buttonVariants()}>
+            {ctaLabel}
+          </Link>
         </RevealWrapper>
       </div>
     </SectionContainer>

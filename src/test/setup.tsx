@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import { vi } from 'vitest'
 
 // Mock IntersectionObserver (not available in jsdom)
 global.IntersectionObserver = class IntersectionObserver {

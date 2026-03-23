@@ -1,0 +1,42 @@
+'use client'
+
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { SectionContainer } from './shared/section-container'
+import { Eyebrow } from './shared/eyebrow'
+import { SectionHeading } from './shared/section-heading'
+import { RevealWrapper } from './shared/reveal-wrapper'
+
+interface ContactDemoSectionProps {
+  eyebrow: string
+  heading: string
+  body: string
+  cardHeading: string
+  ctaLabel: string
+  ctaHref: string
+}
+
+export function ContactDemoSection({ eyebrow, heading, body, cardHeading, ctaLabel, ctaHref }: ContactDemoSectionProps) {
+  return (
+    <SectionContainer>
+      <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <RevealWrapper>
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <SectionHeading>{heading}</SectionHeading>
+          <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mt-6">{body}</p>
+        </RevealWrapper>
+        <RevealWrapper delay={0.1}>
+          <div className="rounded-lg border border-border p-8">
+            <h3 className="text-lg font-bold text-foreground">{cardHeading}</h3>
+            <p className="text-sm text-muted-foreground mt-2 mb-6">
+              See OWL Intelligence in action with a guided walkthrough tailored to your institution.
+            </p>
+            <Button asChild>
+              <Link href={ctaHref}>{ctaLabel}</Link>
+            </Button>
+          </div>
+        </RevealWrapper>
+      </div>
+    </SectionContainer>
+  )
+}

@@ -1,261 +1,177 @@
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
-import { buttonVariants } from "@/lib/button-variants";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  ArrowRight,
-  BarChart3,
-  Brain,
-  Building2,
-  Globe,
-  MessageSquare,
-  ShoppingCart,
-  Landmark,
-  TrendingUp,
-  GraduationCap,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
+import { getTranslations } from 'next-intl/server'
+import { HeroSection } from '@/components/home/hero-section'
+import { BusinessSpeedSection } from '@/components/home/business-speed-section'
+import { ValueSection } from '@/components/home/value-section'
+import { ProductEcosystemSection } from '@/components/home/product-ecosystem-section'
+import { IntelligenceLayerSection } from '@/components/home/intelligence-layer-section'
+import { WhoWeServeSection } from '@/components/home/who-we-serve-section'
+import { WhyOwlSection } from '@/components/home/why-owl-section'
+import { FoundersSection } from '@/components/home/founders-section'
+import { PartnershipsSection } from '@/components/home/partnerships-section'
+import { AgentSection } from '@/components/home/agent-section'
+import { ContactDemoSection } from '@/components/home/contact-demo-section'
 
-export default function HomePage() {
-  const t = useTranslations("home");
-  const st = useTranslations("solutions");
-  const ct = useTranslations("common");
-
-  return (
-    <>
-      {/* Hero */}
-      <section className="relative overflow-hidden px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background" />
-        <div className="mx-auto max-w-4xl text-center">
-          <Badge variant="secondary" className="mb-6">
-            AI-Powered Intelligence
-          </Badge>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            {t("heroTitle")}
-          </h1>
-          <p className="mt-2 text-2xl font-medium text-primary sm:text-3xl">
-            {t("heroSubtitle")}
-          </p>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            {t("heroDescription")}
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/products"
-              className={cn(buttonVariants({ size: "lg" }))}
-            >
-              {t("exploreProducts")}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link
-              href="/agent"
-              className={cn(buttonVariants({ size: "lg", variant: "outline" }))}
-            >
-              <MessageSquare className="mr-2 h-4 w-4" />
-              {t("talkToAgent")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Products */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 md:grid-cols-2">
-            <Card className="group relative overflow-hidden border-border/50 transition-all hover:border-primary/30 hover:shadow-lg">
-              <CardHeader>
-                <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <BarChart3 className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">{t("fwbmTitle")}</CardTitle>
-                <CardDescription className="text-base">
-                  {t("fwbmDescription")}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Real-time Dashboards</Badge>
-                  <Badge variant="outline">AI Analysis</Badge>
-                  <Badge variant="outline">Weekly Updates</Badge>
-                  <Badge variant="outline">Consumer Sentiment</Badge>
-                </div>
-                <Link
-                  href="/products/fwbm"
-                  className={cn(
-                    buttonVariants({ variant: "ghost" }),
-                    "mt-6"
-                  )}
-                >
-                  {ct("learnMore")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="group relative overflow-hidden border-border/50 transition-all hover:border-primary/30 hover:shadow-lg">
-              <CardHeader>
-                <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Brain className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">
-                  {t("fuzzyowlTitle")}
-                </CardTitle>
-                <CardDescription className="text-base">
-                  {t("fuzzyowlDescription")}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Fuzzy Cognitive Maps</Badge>
-                  <Badge variant="outline">Scenario Analysis</Badge>
-                  <Badge variant="outline">Decision Modeling</Badge>
-                  <Badge variant="outline">Visualization</Badge>
-                </div>
-                <Link
-                  href="/products/fuzzyowl"
-                  className={cn(
-                    buttonVariants({ variant: "ghost" }),
-                    "mt-6"
-                  )}
-                >
-                  {ct("learnMore")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions by Sector */}
-      <section className="bg-muted/30 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight">
-              {t("solutionsTitle")}
-            </h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              {t("solutionsDescription")}
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <SolutionCard
-              icon={<Landmark className="h-5 w-5" />}
-              title={st("banking")}
-              description={st("bankingDesc")}
-            />
-            <SolutionCard
-              icon={<ShoppingCart className="h-5 w-5" />}
-              title={st("fmcg")}
-              description={st("fmcgDesc")}
-            />
-            <SolutionCard
-              icon={<Building2 className="h-5 w-5" />}
-              title={st("public")}
-              description={st("publicDesc")}
-            />
-            <SolutionCard
-              icon={<TrendingUp className="h-5 w-5" />}
-              title={st("investors")}
-              description={st("investorsDesc")}
-            />
-            <SolutionCard
-              icon={<GraduationCap className="h-5 w-5" />}
-              title={st("research")}
-              description={st("researchDesc")}
-            />
-          </div>
-          <div className="mt-8 text-center">
-            <Link
-              href="/solutions"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" })
-              )}
-            >
-              {ct("viewMore")}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Technology */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-            <Globe className="h-7 w-7 text-primary" />
-          </div>
-          <h2 className="text-3xl font-bold tracking-tight">
-            {t("techTitle")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            {t("techDescription")}
-          </p>
-          <Link
-            href="/technology"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "mt-8"
-            )}
-          >
-            {ct("learnMore")}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </div>
-      </section>
-
-      {/* Agent CTA */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center sm:p-12">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-              <MessageSquare className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <h2 className="text-2xl font-bold sm:text-3xl">{t("ctaTitle")}</h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              {t("ctaDescription")}
-            </p>
-            <Link
-              href="/agent"
-              className={cn(buttonVariants({ size: "lg" }), "mt-6")}
-            >
-              {t("ctaButton")}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'home' })
+  return {
+    title: t('meta.title'),
+    description: t('meta.description'),
+  }
 }
 
-function SolutionCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
+export default async function HomePage() {
+  const t = await getTranslations('home')
+
   return (
-    <Card className="border-border/50 transition-all hover:border-primary/20 hover:shadow-md">
-      <CardHeader className="pb-3">
-        <div className="mb-1 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-          {icon}
-        </div>
-        <CardTitle className="text-lg">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground">{description}</p>
-      </CardContent>
-    </Card>
-  );
+    <main>
+      <HeroSection
+        eyebrow={t('hero.eyebrow')}
+        headline={t('hero.headline')}
+        body={t('hero.body')}
+        ctaPrimary={t('hero.ctaPrimary')}
+        ctaSecondary={t('hero.ctaSecondary')}
+        metrics={[
+          { value: t('hero.metric1Value'), label: t('hero.metric1Label') },
+          { value: t('hero.metric2Value'), label: t('hero.metric2Label') },
+          { value: t('hero.metric3Value'), label: t('hero.metric3Label') },
+        ]}
+      />
+
+      <BusinessSpeedSection
+        eyebrow={t('businessSpeed.eyebrow')}
+        statements={[
+          t('businessSpeed.statement1'),
+          t('businessSpeed.statement2'),
+          t('businessSpeed.statement3'),
+        ]}
+      />
+
+      <ValueSection
+        eyebrow={t('value.eyebrow')}
+        heading={t('value.heading')}
+        body={t('value.body')}
+        columns={[
+          { title: t('value.col1Title'), body: t('value.col1Body') },
+          { title: t('value.col2Title'), body: t('value.col2Body') },
+          { title: t('value.col3Title'), body: t('value.col3Body') },
+        ]}
+      />
+
+      <ProductEcosystemSection
+        eyebrow={t('productEcosystem.eyebrow')}
+        heading={t('productEcosystem.heading')}
+        intro={t('productEcosystem.intro')}
+        products={[
+          {
+            logoSrc: '/images/fwbmlogo.svg',
+            logoAlt: 'FWBM',
+            name: t('productEcosystem.fwbmName'),
+            descriptor: t('productEcosystem.fwbmDescriptor'),
+            layers: [
+              t('productEcosystem.fwbmLayer1'),
+              t('productEcosystem.fwbmLayer2'),
+              t('productEcosystem.fwbmLayer3'),
+            ],
+          },
+          {
+            logoSrc: '/images/fuzzyowl.png',
+            logoAlt: 'FuzzyOwl',
+            name: t('productEcosystem.fuzzyowlName'),
+            descriptor: t('productEcosystem.fuzzyowlDescriptor'),
+            layers: [
+              t('productEcosystem.fuzzyowlLayer1'),
+              t('productEcosystem.fuzzyowlLayer2'),
+              t('productEcosystem.fuzzyowlLayer3'),
+            ],
+          },
+        ]}
+      />
+
+      <IntelligenceLayerSection
+        eyebrow={t('intelligenceLayer.eyebrow')}
+        heading={t('intelligenceLayer.heading')}
+        steps={[
+          { number: '01', title: t('intelligenceLayer.step01Title'), body: t('intelligenceLayer.step01Body') },
+          { number: '02', title: t('intelligenceLayer.step02Title'), body: t('intelligenceLayer.step02Body') },
+          { number: '03', title: t('intelligenceLayer.step03Title'), body: t('intelligenceLayer.step03Body') },
+          { number: '04', title: t('intelligenceLayer.step04Title'), body: t('intelligenceLayer.step04Body') },
+          { number: '05', title: t('intelligenceLayer.step05Title'), body: t('intelligenceLayer.step05Body') },
+          { number: '06', title: t('intelligenceLayer.step06Title'), body: t('intelligenceLayer.step06Body') },
+          { number: '07', title: t('intelligenceLayer.step07Title'), body: t('intelligenceLayer.step07Body') },
+          { number: '08', title: t('intelligenceLayer.step08Title'), body: t('intelligenceLayer.step08Body') },
+        ]}
+      />
+
+      <WhoWeServeSection
+        eyebrow={t('sectors.eyebrow')}
+        heading={t('sectors.heading')}
+        context={t('sectors.context')}
+        sectors={[
+          t('sectors.item1'), t('sectors.item2'), t('sectors.item3'),
+          t('sectors.item4'), t('sectors.item5'), t('sectors.item6'),
+          t('sectors.item7'), t('sectors.item8'), t('sectors.item9'),
+        ]}
+      />
+
+      <WhyOwlSection
+        eyebrow={t('whyOwl.eyebrow')}
+        heading={t('whyOwl.heading')}
+        intro={t('whyOwl.intro')}
+        differentiators={[
+          { title: t('whyOwl.diff1Title'), body: t('whyOwl.diff1Body') },
+          { title: t('whyOwl.diff2Title'), body: t('whyOwl.diff2Body') },
+          { title: t('whyOwl.diff3Title'), body: t('whyOwl.diff3Body') },
+        ]}
+      />
+
+      <FoundersSection
+        eyebrow={t('founders.eyebrow')}
+        heading={t('founders.heading')}
+        founders={[
+          {
+            quote: t('founders.beyza.quote'),
+            name: t('founders.beyza.name'),
+            role: t('founders.beyza.role'),
+            credential: t('founders.beyza.credential'),
+            photoSrc: '/images/beyzapolat.png',
+            photoAlt: t('founders.beyza.name'),
+          },
+          {
+            quote: t('founders.saygin.quote'),
+            name: t('founders.saygin.name'),
+            role: t('founders.saygin.role'),
+            credential: t('founders.saygin.credential'),
+            photoSrc: '/images/sayginalkurt.png',
+            photoAlt: t('founders.saygin.name'),
+          },
+        ]}
+      />
+
+      <PartnershipsSection
+        eyebrow={t('partnerships.eyebrow')}
+        heading={t('partnerships.heading')}
+        body={t('partnerships.body')}
+        ctaLabel={t('partnerships.ctaLabel')}
+        ctaHref="/contact"
+      />
+
+      <AgentSection
+        eyebrow={t('agent.eyebrow')}
+        heading={t('agent.heading')}
+        subCopy={t('agent.subCopy')}
+        ctaLabel={t('agent.ctaLabel')}
+        ctaHref="/agent"
+      />
+
+      <ContactDemoSection
+        eyebrow={t('contactDemo.eyebrow')}
+        heading={t('contactDemo.heading')}
+        body={t('contactDemo.body')}
+        cardHeading={t('contactDemo.cardHeading')}
+        ctaLabel={t('contactDemo.ctaLabel')}
+        ctaHref="/contact"
+      />
+    </main>
+  )
 }

@@ -90,6 +90,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --section-inverse-bg: #0d1422;
+  --section-inverse-fg: #f0f0f0;
 }
 
 .dark {
@@ -124,6 +126,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --section-inverse-bg: #f8f7f2;
+  --section-inverse-fg: #1a1a2e;
 }
 
 @layer base {
@@ -175,4 +179,10 @@
 }
 .dark .section-stack-card {
   box-shadow: 0 -6px 24px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* Explicit inverse backgrounds for critical sticky sections */
+.section-inverse {
+  background-color: var(--section-inverse-bg) !important;
+  color: var(--section-inverse-fg);
 }

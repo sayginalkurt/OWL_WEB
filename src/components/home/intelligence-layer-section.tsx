@@ -16,49 +16,32 @@ interface IntelligenceLayerSectionProps {
   eyebrow: string
   heading: string
   zIndex?: number
+  stackIndex?: number
   steps: [
     IntelligenceStep, IntelligenceStep, IntelligenceStep, IntelligenceStep,
     IntelligenceStep, IntelligenceStep, IntelligenceStep, IntelligenceStep,
   ]
 }
 
-export function IntelligenceLayerSection({ id, eyebrow, heading, steps, zIndex }: IntelligenceLayerSectionProps) {
-  const leftSteps = steps.slice(0, 4)
-  const rightSteps = steps.slice(4, 8)
-
+export function IntelligenceLayerSection({ id, eyebrow, heading, steps, zIndex, stackIndex }: IntelligenceLayerSectionProps) {
   return (
-    <SectionContainer dark id={id} zIndex={zIndex}>
-      <div className="mb-16">
+    <SectionContainer dark surface="inverse" id={id} zIndex={zIndex} stackIndex={stackIndex}>
+      <div className="mb-6">
         <Eyebrow dot dark>{eyebrow}</Eyebrow>
         <SectionHeading dark>{heading}</SectionHeading>
       </div>
-      <div className="grid lg:grid-cols-2 gap-x-16 gap-y-10">
-        <div className="flex flex-col gap-10">
-          {leftSteps.map((step, i) => (
-            <RevealWrapper key={step.number} delay={i * 0.1}>
-              <div>
-                <span className="block text-[11px] font-bold tracking-widest text-chart-3 mb-1">
-                  {step.number}
-                </span>
-                <h3 className="text-lg font-bold text-[var(--sd-fg-heading)]">{step.title}</h3>
-                <p className="text-sm text-[var(--sd-fg-muted)] leading-relaxed mt-2">{step.body}</p>
-              </div>
-            </RevealWrapper>
-          ))}
-        </div>
-        <div className="flex flex-col gap-10">
-          {rightSteps.map((step, i) => (
-            <RevealWrapper key={step.number} delay={0.2 + i * 0.1}>
-              <div>
-                <span className="block text-[11px] font-bold tracking-widest text-chart-3 mb-1">
-                  {step.number}
-                </span>
-                <h3 className="text-lg font-bold text-[var(--sd-fg-heading)]">{step.title}</h3>
-                <p className="text-sm text-[var(--sd-fg-muted)] leading-relaxed mt-2">{step.body}</p>
-              </div>
-            </RevealWrapper>
-          ))}
-        </div>
+      <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-4">
+        {steps.map((step, i) => (
+          <RevealWrapper key={step.number} delay={i * 0.06}>
+            <div className="h-full rounded-lg border border-[var(--sd-border)] bg-[var(--sd-surface)] p-3.5">
+              <span className="block text-[11px] font-bold tracking-widest text-chart-3 mb-1.5">
+                {step.number}
+              </span>
+              <h3 className="text-sm font-bold text-[var(--sd-fg-heading)] leading-snug">{step.title}</h3>
+              <p className="text-xs text-[var(--sd-fg-muted)] leading-relaxed mt-1.5">{step.body}</p>
+            </div>
+          </RevealWrapper>
+        ))}
       </div>
     </SectionContainer>
   )

@@ -7,11 +7,13 @@ interface ScrollIndicatorProps {
 }
 
 export function ScrollIndicator({ dark }: ScrollIndicatorProps) {
+  const stroke = dark ? 'var(--sd-fg-accent, #8899bb)' : '#475569'
+
   return (
     <div
       aria-hidden="true"
       className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center"
-      style={{ opacity: dark ? 0.18 : 0.12 }}
+      style={{ opacity: dark ? 0.35 : 0.65, color: stroke }}
     >
       <motion.svg
         width="14"
@@ -27,14 +29,14 @@ export function ScrollIndicator({ dark }: ScrollIndicatorProps) {
           y1="1"
           x2="7"
           y2="15"
-          stroke={dark ? 'var(--sd-fg-accent, #8899bb)' : 'currentColor'}
+          stroke={stroke}
           strokeWidth="1.5"
           strokeLinecap="round"
         />
         {/* arrowhead */}
         <path
           d="M2 11l5 5 5-5"
-          stroke={dark ? 'var(--sd-fg-accent, #8899bb)' : 'currentColor'}
+          stroke={stroke}
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

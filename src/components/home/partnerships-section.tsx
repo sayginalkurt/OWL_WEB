@@ -16,17 +16,18 @@ interface PartnershipsSectionProps {
   ctaLabel: string
   ctaHref: string
   zIndex?: number
+  stackIndex?: number
 }
 
-export function PartnershipsSection({ id, eyebrow, heading, body, ctaLabel, ctaHref, zIndex }: PartnershipsSectionProps) {
+export function PartnershipsSection({ id, eyebrow, heading, body, ctaLabel, ctaHref, zIndex, stackIndex }: PartnershipsSectionProps) {
   return (
-    <SectionContainer dark id={id} zIndex={zIndex}>
+    <SectionContainer dark surface="inverse" className="section-inverse" id={id} zIndex={zIndex} stackIndex={stackIndex}>
       <div className="max-w-2xl mx-auto text-center">
         <div aria-hidden className="w-12 h-px bg-chart-3 mx-auto mb-6" />
         <RevealWrapper>
           <Eyebrow dark className="justify-center">{eyebrow}</Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
-          <p className="text-base text-[var(--sd-fg-muted)] leading-relaxed mt-6 mb-10">{body}</p>
+          <p className="text-sm lg:text-base text-[var(--sd-fg-muted)] leading-relaxed mt-4 mb-8">{body}</p>
           <Link href={ctaHref} className={cn(buttonVariants({ variant: 'outline' }), 'border-[var(--sd-border)] text-[var(--sd-fg-accent)] hover:bg-[var(--sd-surface)] hover:text-[var(--sd-fg)]')}>
             {ctaLabel}
           </Link>

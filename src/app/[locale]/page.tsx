@@ -28,6 +28,7 @@ export default async function HomePage() {
     <main className="pt-16">
       <SectionNav />
       <HeroSection
+        stackIndex={0}
         eyebrow={t('hero.eyebrow')}
         headline={t('hero.headline')}
         body={t('hero.body')}
@@ -42,6 +43,7 @@ export default async function HomePage() {
 
       <BusinessSpeedSection
         zIndex={2}
+        stackIndex={1}
         id="business-speed"
         eyebrow={t('businessSpeed.eyebrow')}
         statements={[
@@ -53,6 +55,7 @@ export default async function HomePage() {
 
       <ValueSection
         zIndex={3}
+        stackIndex={2}
         id="value"
         eyebrow={t('value.eyebrow')}
         heading={t('value.heading')}
@@ -66,6 +69,7 @@ export default async function HomePage() {
 
       <ProductEcosystemSection
         zIndex={4}
+        stackIndex={3}
         id="product-ecosystem"
         eyebrow={t('productEcosystem.eyebrow')}
         heading={t('productEcosystem.heading')}
@@ -110,6 +114,7 @@ export default async function HomePage() {
 
       <IntelligenceLayerSection
         zIndex={5}
+        stackIndex={4}
         id="intelligence-layer"
         eyebrow={t('intelligenceLayer.eyebrow')}
         heading={t('intelligenceLayer.heading')}
@@ -127,6 +132,7 @@ export default async function HomePage() {
 
       <WhoWeServeSection
         zIndex={6}
+        stackIndex={5}
         id="who-we-serve"
         eyebrow={t('sectors.eyebrow')}
         heading={t('sectors.heading')}
@@ -140,6 +146,7 @@ export default async function HomePage() {
 
       <WhyOwlSection
         zIndex={7}
+        stackIndex={6}
         id="why-owl"
         eyebrow={t('whyOwl.eyebrow')}
         heading={t('whyOwl.heading')}
@@ -153,6 +160,7 @@ export default async function HomePage() {
 
       <FoundersSection
         zIndex={8}
+        stackIndex={7}
         id="founders"
         eyebrow={t('founders.eyebrow')}
         heading={t('founders.heading')}
@@ -178,6 +186,7 @@ export default async function HomePage() {
 
       <PartnershipsSection
         zIndex={9}
+        stackIndex={8}
         id="partnerships"
         eyebrow={t('partnerships.eyebrow')}
         heading={t('partnerships.heading')}
@@ -188,6 +197,7 @@ export default async function HomePage() {
 
       <AgentSection
         zIndex={10}
+        stackIndex={9}
         id="agent"
         eyebrow={t('agent.eyebrow')}
         heading={t('agent.heading')}
@@ -198,6 +208,7 @@ export default async function HomePage() {
 
       <ContactDemoSection
         zIndex={11}
+        stackIndex={10}
         id="contact-demo"
         eyebrow={t('contactDemo.eyebrow')}
         heading={t('contactDemo.heading')}

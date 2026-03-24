@@ -16,11 +16,12 @@ interface AgentSectionProps {
   ctaLabel: string
   ctaHref: string
   zIndex?: number
+  stackIndex?: number
 }
 
-export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref, zIndex }: AgentSectionProps) {
+export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref, zIndex, stackIndex }: AgentSectionProps) {
   return (
-    <SectionContainer dark id={id} zIndex={zIndex}>
+    <SectionContainer dark surface="inverse" className="section-inverse" id={id} zIndex={zIndex} stackIndex={stackIndex}>
       <div className="max-w-xl mx-auto text-center">
         <RevealWrapper>
           <Eyebrow dark className="justify-center gap-2">
@@ -28,7 +29,7 @@ export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref,
             {eyebrow}
           </Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
-          <p className="text-base text-[var(--sd-fg-muted)] leading-relaxed mt-6 mb-10">{subCopy}</p>
+          <p className="text-sm lg:text-base text-[var(--sd-fg-muted)] leading-relaxed mt-4 mb-8">{subCopy}</p>
           <Link href={ctaHref} className={buttonVariants()}>
             {ctaLabel}
           </Link>

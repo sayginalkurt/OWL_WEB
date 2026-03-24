@@ -25,6 +25,7 @@ interface ProductEcosystemSectionProps {
   intro: string
   products: ProductLayer[]
   zIndex?: number
+  stackIndex?: number
 }
 
 function ProductStack({ product }: { product: ProductLayer }) {
@@ -32,29 +33,29 @@ function ProductStack({ product }: { product: ProductLayer }) {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <div>
-      <div className="flex items-center gap-3 mb-3">
+    <div className="rounded-lg border border-[var(--sd-border)] bg-[var(--sd-surface)] p-4 sm:p-5 h-full">
+      <div className="flex items-center gap-3 mb-2">
         <Image src={product.logoSrc} alt={product.logoAlt} width={32} height={32} className="rounded" />
-        <h3 className="text-base font-bold text-[var(--sd-fg)]">{product.name}</h3>
+        <h3 className="text-sm sm:text-base font-bold text-[var(--sd-fg)]">{product.name}</h3>
         {product.comingSoon && (
           <span className="text-[9px] font-bold tracking-[0.18em] uppercase px-2 py-0.5 rounded-full border border-chart-3/40 text-chart-3/70 bg-chart-3/5">
             Coming Soon
           </span>
         )}
       </div>
-      <p className="text-sm text-[var(--sd-fg-muted)] max-w-sm mb-5">{product.descriptor}</p>
+      <p className="text-xs sm:text-sm text-[var(--sd-fg-muted)] mb-4">{product.descriptor}</p>
       <motion.div
         ref={ref}
         variants={sequentialContainer}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
-        className="flex flex-col gap-2"
+        className="grid gap-2"
       >
         {product.layers.map((layer, i) => (
           <motion.div
             key={i}
             variants={staggerItem}
-            className="w-full rounded-md px-4 py-2.5 text-sm font-medium bg-[var(--sd-surface)] border border-[var(--sd-border)] text-[var(--sd-fg-accent)] flex items-center gap-3"
+            className="w-full rounded-md px-3 py-2 text-xs sm:text-sm font-medium bg-transparent border border-[var(--sd-border)] text-[var(--sd-fg-accent)] flex items-center gap-2.5"
           >
             <span className="text-chart-3 font-bold text-[11px] tracking-widest flex-shrink-0">
               {String(i + 1).padStart(2, '0')}
@@ -67,16 +68,16 @@ function ProductStack({ product }: { product: ProductLayer }) {
   )
 }
 
-export function ProductEcosystemSection({ id, eyebrow, heading, intro, products, zIndex }: ProductEcosystemSectionProps) {
+export function ProductEcosystemSection({ id, eyebrow, heading, intro, products, zIndex, stackIndex }: ProductEcosystemSectionProps) {
   return (
-    <SectionContainer dark id={id} zIndex={zIndex}>
-      <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-20 items-start">
-        <div>
+    <SectionContainer dark surface="inverse" id={id} zIndex={zIndex} stackIndex={stackIndex}>
+      <div className="grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-8 items-start">
+        <div className="max-w-xl">
           <Eyebrow dot dark>{eyebrow}</Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
-          <p className="text-sm text-[var(--sd-fg-muted)] leading-relaxed mt-4">{intro}</p>
+          <p className="text-xs sm:text-sm text-[var(--sd-fg-muted)] leading-relaxed mt-3">{intro}</p>
         </div>
-        <div className="flex flex-col gap-12">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 lg:gap-4">
           {products.map((product, i) => (
             <RevealWrapper key={i} delay={i * 0.1}>
               <ProductStack product={product} />

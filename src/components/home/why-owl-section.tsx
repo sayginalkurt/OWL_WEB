@@ -11,15 +11,17 @@ interface Differentiator {
 }
 
 interface WhyOwlSectionProps {
+  id?: string
   eyebrow: string
   heading: string
   intro: string
   differentiators: [Differentiator, Differentiator, Differentiator]
+  zIndex?: number
 }
 
-export function WhyOwlSection({ eyebrow, heading, intro, differentiators }: WhyOwlSectionProps) {
+export function WhyOwlSection({ id, eyebrow, heading, intro, differentiators, zIndex }: WhyOwlSectionProps) {
   return (
-    <SectionContainer>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="max-w-2xl mb-14">
         <Eyebrow>{eyebrow}</Eyebrow>
         <SectionHeading>{heading}</SectionHeading>

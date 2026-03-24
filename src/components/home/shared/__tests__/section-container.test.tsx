@@ -9,7 +9,7 @@ describe('SectionContainer', () => {
 
   it('applies dark background when dark prop is true', () => {
     const { container } = render(<SectionContainer dark><p>x</p></SectionContainer>)
-    expect(container.firstChild).toHaveClass('bg-dark-mid')
+    expect(container.firstChild).toHaveClass('section-dark')
   })
 
   it('applies light background by default', () => {

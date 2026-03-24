@@ -9,16 +9,18 @@ import { SectionHeading } from './shared/section-heading'
 import { RevealWrapper } from './shared/reveal-wrapper'
 
 interface AgentSectionProps {
+  id?: string
   eyebrow: string
   heading: string
   subCopy: string
   ctaLabel: string
   ctaHref: string
+  zIndex?: number
 }
 
-export function AgentSection({ eyebrow, heading, subCopy, ctaLabel, ctaHref }: AgentSectionProps) {
+export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref, zIndex }: AgentSectionProps) {
   return (
-    <SectionContainer dark>
+    <SectionContainer dark id={id} zIndex={zIndex}>
       <div className="max-w-xl mx-auto text-center">
         <RevealWrapper>
           <Eyebrow dark className="justify-center gap-2">
@@ -26,7 +28,7 @@ export function AgentSection({ eyebrow, heading, subCopy, ctaLabel, ctaHref }: A
             {eyebrow}
           </Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
-          <p className="text-base text-[#5a6888] leading-relaxed mt-6 mb-10">{subCopy}</p>
+          <p className="text-base text-[var(--sd-fg-muted)] leading-relaxed mt-6 mb-10">{subCopy}</p>
           <Link href={ctaHref} className={buttonVariants()}>
             {ctaLabel}
           </Link>

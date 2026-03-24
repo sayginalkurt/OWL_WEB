@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
@@ -6,16 +7,18 @@ export function Footer() {
   const nav = useTranslations("nav");
 
   return (
-    <footer className="border-t border-border/40 bg-muted/30">
+    <footer className="relative z-[12] border-t border-border/40 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="text-sm font-bold text-primary-foreground">
-                  OWL
-                </span>
-              </div>
+              <Image
+                src="/images/owlgold.svg"
+                alt="OWL"
+                width={32}
+                height={32}
+                className="h-8 w-8"
+              />
               <span className="text-lg font-semibold">OWL Intelligence</span>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">

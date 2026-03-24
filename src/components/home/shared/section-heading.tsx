@@ -11,7 +11,7 @@ export function SectionHeading({ children, dark, className }: SectionHeadingProp
     <h2
       className={cn(
         'text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]',
-        dark ? 'text-[#f0f0f0]' : 'text-foreground',
+        dark ? 'text-[var(--sd-fg)]' : 'text-foreground',
         className,
       )}
     >

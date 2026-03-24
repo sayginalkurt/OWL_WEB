@@ -5,13 +5,15 @@ import { Eyebrow } from './shared/eyebrow'
 import { RevealWrapper } from './shared/reveal-wrapper'
 
 interface BusinessSpeedSectionProps {
+  id?: string
   eyebrow: string
   statements: [string, string, string]
+  zIndex?: number
 }
 
-export function BusinessSpeedSection({ eyebrow, statements }: BusinessSpeedSectionProps) {
+export function BusinessSpeedSection({ id, eyebrow, statements, zIndex }: BusinessSpeedSectionProps) {
   return (
-    <SectionContainer>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="max-w-3xl">
         <Eyebrow>{eyebrow}</Eyebrow>
         <div className="flex flex-col gap-8 mt-10">

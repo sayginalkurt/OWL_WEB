@@ -10,6 +10,7 @@ import { FoundersSection } from '@/components/home/founders-section'
 import { PartnershipsSection } from '@/components/home/partnerships-section'
 import { AgentSection } from '@/components/home/agent-section'
 import { ContactDemoSection } from '@/components/home/contact-demo-section'
+import { SectionNav } from '@/components/home/section-nav'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -24,7 +25,8 @@ export default async function HomePage() {
   const t = await getTranslations('home')
 
   return (
-    <main>
+    <main className="pt-16">
+      <SectionNav />
       <HeroSection
         eyebrow={t('hero.eyebrow')}
         headline={t('hero.headline')}
@@ -39,6 +41,8 @@ export default async function HomePage() {
       />
 
       <BusinessSpeedSection
+        zIndex={2}
+        id="business-speed"
         eyebrow={t('businessSpeed.eyebrow')}
         statements={[
           t('businessSpeed.statement1'),
@@ -48,6 +52,8 @@ export default async function HomePage() {
       />
 
       <ValueSection
+        zIndex={3}
+        id="value"
         eyebrow={t('value.eyebrow')}
         heading={t('value.heading')}
         body={t('value.body')}
@@ -59,6 +65,8 @@ export default async function HomePage() {
       />
 
       <ProductEcosystemSection
+        zIndex={4}
+        id="product-ecosystem"
         eyebrow={t('productEcosystem.eyebrow')}
         heading={t('productEcosystem.heading')}
         intro={t('productEcosystem.intro')}
@@ -85,10 +93,24 @@ export default async function HomePage() {
               t('productEcosystem.fuzzyowlLayer3'),
             ],
           },
+          {
+            logoSrc: '/images/owlgold.svg',
+            logoAlt: 'EconImpact',
+            name: t('productEcosystem.econimpactName'),
+            descriptor: t('productEcosystem.econimpactDescriptor'),
+            layers: [
+              t('productEcosystem.econimpactLayer1'),
+              t('productEcosystem.econimpactLayer2'),
+              t('productEcosystem.econimpactLayer3'),
+            ],
+            comingSoon: true,
+          },
         ]}
       />
 
       <IntelligenceLayerSection
+        zIndex={5}
+        id="intelligence-layer"
         eyebrow={t('intelligenceLayer.eyebrow')}
         heading={t('intelligenceLayer.heading')}
         steps={[
@@ -104,6 +126,8 @@ export default async function HomePage() {
       />
 
       <WhoWeServeSection
+        zIndex={6}
+        id="who-we-serve"
         eyebrow={t('sectors.eyebrow')}
         heading={t('sectors.heading')}
         context={t('sectors.context')}
@@ -115,6 +139,8 @@ export default async function HomePage() {
       />
 
       <WhyOwlSection
+        zIndex={7}
+        id="why-owl"
         eyebrow={t('whyOwl.eyebrow')}
         heading={t('whyOwl.heading')}
         intro={t('whyOwl.intro')}
@@ -126,6 +152,8 @@ export default async function HomePage() {
       />
 
       <FoundersSection
+        zIndex={8}
+        id="founders"
         eyebrow={t('founders.eyebrow')}
         heading={t('founders.heading')}
         founders={[
@@ -149,6 +177,8 @@ export default async function HomePage() {
       />
 
       <PartnershipsSection
+        zIndex={9}
+        id="partnerships"
         eyebrow={t('partnerships.eyebrow')}
         heading={t('partnerships.heading')}
         body={t('partnerships.body')}
@@ -157,6 +187,8 @@ export default async function HomePage() {
       />
 
       <AgentSection
+        zIndex={10}
+        id="agent"
         eyebrow={t('agent.eyebrow')}
         heading={t('agent.heading')}
         subCopy={t('agent.subCopy')}
@@ -165,6 +197,8 @@ export default async function HomePage() {
       />
 
       <ContactDemoSection
+        zIndex={11}
+        id="contact-demo"
         eyebrow={t('contactDemo.eyebrow')}
         heading={t('contactDemo.heading')}
         body={t('contactDemo.body')}

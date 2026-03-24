@@ -15,13 +15,16 @@ interface ProductLayer {
   name: string
   descriptor: string
   layers: [string, string, string]
+  comingSoon?: boolean
 }
 
 interface ProductEcosystemSectionProps {
+  id?: string
   eyebrow: string
   heading: string
   intro: string
-  products: [ProductLayer, ProductLayer]
+  products: ProductLayer[]
+  zIndex?: number
 }
 
 function ProductStack({ product }: { product: ProductLayer }) {
@@ -32,9 +35,14 @@ function ProductStack({ product }: { product: ProductLayer }) {
     <div>
       <div className="flex items-center gap-3 mb-3">
         <Image src={product.logoSrc} alt={product.logoAlt} width={32} height={32} className="rounded" />
-        <h3 className="text-base font-bold text-[#f0f0f0]">{product.name}</h3>
+        <h3 className="text-base font-bold text-[var(--sd-fg)]">{product.name}</h3>
+        {product.comingSoon && (
+          <span className="text-[9px] font-bold tracking-[0.18em] uppercase px-2 py-0.5 rounded-full border border-chart-3/40 text-chart-3/70 bg-chart-3/5">
+            Coming Soon
+          </span>
+        )}
       </div>
-      <p className="text-sm text-[#5a6888] max-w-sm mb-5">{product.descriptor}</p>
+      <p className="text-sm text-[var(--sd-fg-muted)] max-w-sm mb-5">{product.descriptor}</p>
       <motion.div
         ref={ref}
         variants={sequentialContainer}
@@ -46,7 +54,7 @@ function ProductStack({ product }: { product: ProductLayer }) {
           <motion.div
             key={i}
             variants={staggerItem}
-            className="w-full rounded-md px-4 py-2.5 text-sm font-medium bg-dark-surface border border-dark-border text-[#5a7aaa] flex items-center gap-3"
+            className="w-full rounded-md px-4 py-2.5 text-sm font-medium bg-[var(--sd-surface)] border border-[var(--sd-border)] text-[var(--sd-fg-accent)] flex items-center gap-3"
           >
             <span className="text-chart-3 font-bold text-[11px] tracking-widest flex-shrink-0">
               {String(i + 1).padStart(2, '0')}
@@ -59,14 +67,14 @@ function ProductStack({ product }: { product: ProductLayer }) {
   )
 }
 
-export function ProductEcosystemSection({ eyebrow, heading, intro, products }: ProductEcosystemSectionProps) {
+export function ProductEcosystemSection({ id, eyebrow, heading, intro, products, zIndex }: ProductEcosystemSectionProps) {
   return (
-    <SectionContainer dark>
+    <SectionContainer dark id={id} zIndex={zIndex}>
       <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-20 items-start">
         <div>
           <Eyebrow dot dark>{eyebrow}</Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
-          <p className="text-sm text-[#5a6888] leading-relaxed mt-4">{intro}</p>
+          <p className="text-sm text-[var(--sd-fg-muted)] leading-relaxed mt-4">{intro}</p>
         </div>
         <div className="flex flex-col gap-12">
           {products.map((product, i) => (

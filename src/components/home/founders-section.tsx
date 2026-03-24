@@ -16,9 +16,11 @@ interface Founder {
 }
 
 interface FoundersSectionProps {
+  id?: string
   eyebrow: string
   heading: string
   founders: [Founder, Founder]
+  zIndex?: number
 }
 
 function FounderBlock({ founder }: { founder: Founder }) {
@@ -50,9 +52,9 @@ function FounderBlock({ founder }: { founder: Founder }) {
   )
 }
 
-export function FoundersSection({ eyebrow, heading, founders }: FoundersSectionProps) {
+export function FoundersSection({ id, eyebrow, heading, founders, zIndex }: FoundersSectionProps) {
   return (
-    <SectionContainer>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="max-w-2xl mx-auto">
         <Eyebrow>{eyebrow}</Eyebrow>
         <SectionHeading className="mb-12">{heading}</SectionHeading>

@@ -29,7 +29,7 @@
       "metric1Label": "Provinces of field coverage across Turkey",
       "metric2Value": "15+",
       "metric2Label": "Years of institutional research experience",
-      "metric3Value": "2",
+      "metric3Value": "3",
       "metric3Label": "AI-supported decision products in the ecosystem"
     },
     "businessSpeed": {
@@ -62,7 +62,12 @@
       "fuzzyowlDescriptor": "Makes visible which variables shape decisions, how they influence each other, and how interventions affect the system as a whole.",
       "fuzzyowlLayer1": "Relational Mapping",
       "fuzzyowlLayer2": "AI-Supported Analytics",
-      "fuzzyowlLayer3": "Scenario Simulation"
+      "fuzzyowlLayer3": "Scenario Simulation",
+      "econimpactName": "EconImpact",
+      "econimpactDescriptor": "Measures the economic footprint of companies through deterministic value creation models and AI-based reporting. Delivered as a SaaS platform with expert support for custom institutional reporting.",
+      "econimpactLayer1": "Deterministic Valuation Engine",
+      "econimpactLayer2": "AI-Based Reporting",
+      "econimpactLayer3": "Expert Custom Reporting"
     },
     "intelligenceLayer": {
       "eyebrow": "How Our Intelligence Layer Works",
@@ -114,7 +119,7 @@
       "heading": "Built from a conviction, not a gap in the market",
       "beyza": {
         "quote": "We built OWL because institutions kept making critical decisions on data that was already six months old — and the technology to fix that already existed.",
-        "name": "Beyza Polat, Ph.D.",
+        "name": "Beyza Polat",
         "role": "CEO & Co-Founder",
         "credential": "Economist. Bilkent University · London School of Economics."
       },

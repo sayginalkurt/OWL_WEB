@@ -11,15 +11,17 @@ interface ValueColumn {
 }
 
 interface ValueSectionProps {
+  id?: string
   eyebrow: string
   heading: string
   body: string
   columns: [ValueColumn, ValueColumn, ValueColumn]
+  zIndex?: number
 }
 
-export function ValueSection({ eyebrow, heading, body, columns }: ValueSectionProps) {
+export function ValueSection({ id, eyebrow, heading, body, columns, zIndex }: ValueSectionProps) {
   return (
-    <SectionContainer>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="max-w-2xl mx-auto text-center mb-16">
         <Eyebrow className="justify-center">{eyebrow}</Eyebrow>
         <SectionHeading>{heading}</SectionHeading>

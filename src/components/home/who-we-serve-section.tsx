@@ -6,15 +6,17 @@ import { SectionHeading } from './shared/section-heading'
 import { RevealWrapper } from './shared/reveal-wrapper'
 
 interface WhoWeServeSectionProps {
+  id?: string
   eyebrow: string
   heading: string
   context: string
   sectors: [string,string,string,string,string,string,string,string,string]
+  zIndex?: number
 }
 
-export function WhoWeServeSection({ eyebrow, heading, context, sectors }: WhoWeServeSectionProps) {
+export function WhoWeServeSection({ id, eyebrow, heading, context, sectors, zIndex }: WhoWeServeSectionProps) {
   return (
-    <SectionContainer>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="grid lg:grid-cols-[2fr_3fr] gap-12 items-start">
         <div>
           <Eyebrow>{eyebrow}</Eyebrow>

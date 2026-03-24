@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Eyebrow } from './shared/eyebrow'
-import { ScrollCue } from './shared/scroll-cue'
+import { ScrollIndicator } from './shared/scroll-indicator'
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/motion'
 
 interface MetricCard {
@@ -25,8 +25,9 @@ interface HeroSectionProps {
 export function HeroSection({ eyebrow, headline, body, ctaPrimary, ctaSecondary, metrics }: HeroSectionProps) {
   return (
     <section
-      className="w-full min-h-[90vh] flex items-center"
-      style={{ background: 'radial-gradient(ellipse at 30% 50%, #0d1422 0%, #07090f 70%)' }}
+      id="hero"
+      className="w-full min-h-[calc(100vh-4rem)] flex items-center sticky top-16"
+      style={{ background: 'radial-gradient(ellipse at 30% 50%, #0d1422 0%, #07090f 70%)', zIndex: 1 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 w-full">
         <div className="grid lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
@@ -64,10 +65,6 @@ export function HeroSection({ eyebrow, headline, body, ctaPrimary, ctaSecondary,
                 {ctaSecondary} →
               </Link>
             </motion.div>
-
-            <motion.div variants={staggerItem}>
-              <ScrollCue />
-            </motion.div>
           </motion.div>
 
           {/* Right column — metric cards */}
@@ -93,6 +90,8 @@ export function HeroSection({ eyebrow, headline, body, ctaPrimary, ctaSecondary,
 
         </div>
       </div>
+
+      <ScrollIndicator dark />
     </section>
   )
 }

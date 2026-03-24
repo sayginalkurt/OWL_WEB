@@ -12,20 +12,22 @@ interface IntelligenceStep {
 }
 
 interface IntelligenceLayerSectionProps {
+  id?: string
   eyebrow: string
   heading: string
+  zIndex?: number
   steps: [
     IntelligenceStep, IntelligenceStep, IntelligenceStep, IntelligenceStep,
     IntelligenceStep, IntelligenceStep, IntelligenceStep, IntelligenceStep,
   ]
 }
 
-export function IntelligenceLayerSection({ eyebrow, heading, steps }: IntelligenceLayerSectionProps) {
+export function IntelligenceLayerSection({ id, eyebrow, heading, steps, zIndex }: IntelligenceLayerSectionProps) {
   const leftSteps = steps.slice(0, 4)
   const rightSteps = steps.slice(4, 8)
 
   return (
-    <SectionContainer dark>
+    <SectionContainer dark id={id} zIndex={zIndex}>
       <div className="mb-16">
         <Eyebrow dot dark>{eyebrow}</Eyebrow>
         <SectionHeading dark>{heading}</SectionHeading>
@@ -38,8 +40,8 @@ export function IntelligenceLayerSection({ eyebrow, heading, steps }: Intelligen
                 <span className="block text-[11px] font-bold tracking-widest text-chart-3 mb-1">
                   {step.number}
                 </span>
-                <h3 className="text-lg font-bold text-[#ccd]">{step.title}</h3>
-                <p className="text-sm text-[#5a6888] leading-relaxed mt-2">{step.body}</p>
+                <h3 className="text-lg font-bold text-[var(--sd-fg-heading)]">{step.title}</h3>
+                <p className="text-sm text-[var(--sd-fg-muted)] leading-relaxed mt-2">{step.body}</p>
               </div>
             </RevealWrapper>
           ))}
@@ -51,8 +53,8 @@ export function IntelligenceLayerSection({ eyebrow, heading, steps }: Intelligen
                 <span className="block text-[11px] font-bold tracking-widest text-chart-3 mb-1">
                   {step.number}
                 </span>
-                <h3 className="text-lg font-bold text-[#ccd]">{step.title}</h3>
-                <p className="text-sm text-[#5a6888] leading-relaxed mt-2">{step.body}</p>
+                <h3 className="text-lg font-bold text-[var(--sd-fg-heading)]">{step.title}</h3>
+                <p className="text-sm text-[var(--sd-fg-muted)] leading-relaxed mt-2">{step.body}</p>
               </div>
             </RevealWrapper>
           ))}

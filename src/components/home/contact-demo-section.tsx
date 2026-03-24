@@ -9,17 +9,19 @@ import { SectionHeading } from './shared/section-heading'
 import { RevealWrapper } from './shared/reveal-wrapper'
 
 interface ContactDemoSectionProps {
+  id?: string
   eyebrow: string
   heading: string
   body: string
   cardHeading: string
   ctaLabel: string
   ctaHref: string
+  zIndex?: number
 }
 
-export function ContactDemoSection({ eyebrow, heading, body, cardHeading, ctaLabel, ctaHref }: ContactDemoSectionProps) {
+export function ContactDemoSection({ id, eyebrow, heading, body, cardHeading, ctaLabel, ctaHref, zIndex }: ContactDemoSectionProps) {
   return (
-    <SectionContainer>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         <RevealWrapper>
           <Eyebrow>{eyebrow}</Eyebrow>

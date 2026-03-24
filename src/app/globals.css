@@ -135,5 +135,44 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
+}
+
+/* ── Inverted accent sections ──
+   Light mode → dark background / light text
+   Dark mode  → light background / dark text
+   NOTE: explicit bg/color on BOTH rules so Turbopack cannot inline-and-strip */
+.section-dark {
+  --sd-bg: #0d1422;
+  --sd-fg: #f0f0f0;
+  --sd-fg-muted: #5a6888;
+  --sd-fg-heading: #ccccdd;
+  --sd-surface: #0e1624;
+  --sd-border: #1a2640;
+  --sd-fg-accent: #8899bb;
+
+  background-color: #0d1422;
+  color: #f0f0f0;
+}
+
+.dark .section-dark {
+  --sd-bg: #f8f7f2;
+  --sd-fg: #1a1a2e;
+  --sd-fg-muted: #6b7280;
+  --sd-fg-heading: #2d2d44;
+  --sd-surface: #efeeea;
+  --sd-border: #d4d3ce;
+  --sd-fg-accent: #4a5568;
+
+  background-color: #f8f7f2;
+  color: #1a1a2e;
+}
+
+/* ── Stacking card shadow for sticky sections ── */
+.section-stack-card {
+  box-shadow: 0 -6px 24px -8px rgba(0, 0, 0, 0.25);
+}
+.dark .section-stack-card {
+  box-shadow: 0 -6px 24px -8px rgba(0, 0, 0, 0.4);
 }

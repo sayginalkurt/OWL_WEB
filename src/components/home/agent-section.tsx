@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { MessageSquare } from 'lucide-react'
-import { buttonVariants } from '@/components/ui/button'
 import { SectionContainer } from './shared/section-container'
 import { Eyebrow } from './shared/eyebrow'
 import { SectionHeading } from './shared/section-heading'
 import { RevealWrapper } from './shared/reveal-wrapper'
+import { homeButtonInverseOutline } from './shared/home-button'
 
 interface AgentSectionProps {
   id?: string
@@ -16,12 +16,11 @@ interface AgentSectionProps {
   ctaLabel: string
   ctaHref: string
   zIndex?: number
-  stackIndex?: number
 }
 
-export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref, zIndex, stackIndex }: AgentSectionProps) {
+export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref, zIndex }: AgentSectionProps) {
   return (
-    <SectionContainer dark surface="inverse" className="section-inverse" id={id} zIndex={zIndex} stackIndex={stackIndex}>
+    <SectionContainer dark surface="inverse" className="section-inverse" id={id} zIndex={zIndex}>
       <div className="max-w-xl mx-auto text-center">
         <RevealWrapper>
           <Eyebrow dark className="justify-center gap-2">
@@ -30,7 +29,7 @@ export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref,
           </Eyebrow>
           <SectionHeading dark>{heading}</SectionHeading>
           <p className="text-sm lg:text-base text-[var(--sd-fg-muted)] leading-relaxed mt-4 mb-8">{subCopy}</p>
-          <Link href={ctaHref} className={buttonVariants()}>
+          <Link href={ctaHref} className={`${homeButtonInverseOutline} border-[#2e4c7a] bg-[#223a60] text-[#f3f7ff] hover:bg-[#2b4774] hover:text-white`}>
             {ctaLabel}
           </Link>
         </RevealWrapper>

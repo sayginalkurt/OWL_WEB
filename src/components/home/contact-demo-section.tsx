@@ -1,12 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 import { SectionContainer } from './shared/section-container'
 import { Eyebrow } from './shared/eyebrow'
 import { SectionHeading } from './shared/section-heading'
 import { RevealWrapper } from './shared/reveal-wrapper'
+import { homeButtonPrimary } from './shared/home-button'
 
 interface ContactDemoSectionProps {
   id?: string
@@ -17,12 +16,11 @@ interface ContactDemoSectionProps {
   ctaLabel: string
   ctaHref: string
   zIndex?: number
-  stackIndex?: number
 }
 
-export function ContactDemoSection({ id, eyebrow, heading, body, cardHeading, ctaLabel, ctaHref, zIndex, stackIndex }: ContactDemoSectionProps) {
+export function ContactDemoSection({ id, eyebrow, heading, body, cardHeading, ctaLabel, ctaHref, zIndex }: ContactDemoSectionProps) {
   return (
-    <SectionContainer id={id} zIndex={zIndex} stackIndex={stackIndex}>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
         <RevealWrapper>
           <Eyebrow>{eyebrow}</Eyebrow>
@@ -35,7 +33,7 @@ export function ContactDemoSection({ id, eyebrow, heading, body, cardHeading, ct
             <p className="text-xs lg:text-sm text-muted-foreground mt-2 mb-5">
               See OWL Intelligence in action with a guided walkthrough tailored to your institution.
             </p>
-            <Link href={ctaHref} className={cn(buttonVariants())}>
+            <Link href={ctaHref} className={homeButtonPrimary}>
               {ctaLabel}
             </Link>
           </div>

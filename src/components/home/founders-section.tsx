@@ -21,45 +21,44 @@ interface FoundersSectionProps {
   heading: string
   founders: [Founder, Founder]
   zIndex?: number
-  stackIndex?: number
 }
 
 function FounderBlock({ founder }: { founder: Founder }) {
   return (
     <RevealWrapper>
-      <div className="rounded-lg border border-border bg-card/30 p-5 h-full">
-        <span aria-hidden className="block text-6xl font-extrabold leading-none text-muted-foreground/20 -mb-2 select-none">
+      <div className="rounded-xl border border-border bg-card/30 p-6 lg:p-8 h-full flex flex-col">
+        <span aria-hidden className="block text-7xl font-extrabold leading-none text-muted-foreground/15 -mb-3 select-none">
           &ldquo;
         </span>
-        <p className="text-base lg:text-lg font-semibold italic text-foreground leading-relaxed">
+        <p className="text-lg lg:text-xl font-semibold italic text-foreground leading-relaxed flex-1">
           {founder.quote}
         </p>
-        <div className="flex items-center gap-3 mt-4">
+        <div className="flex items-center gap-4 mt-6 pt-5 border-t border-border/50">
           <Image
             src={founder.photoSrc}
             alt={founder.photoAlt}
-            width={36}
-            height={36}
+            width={44}
+            height={44}
             className="rounded-full object-cover grayscale"
           />
           <div>
             <p className="text-sm font-bold text-foreground">{founder.name}</p>
             <p className="text-xs text-muted-foreground">{founder.role}</p>
+            <p className="text-xs text-muted-foreground/70 mt-0.5">{founder.credential}</p>
           </div>
         </div>
-        <p className="text-xs text-muted-foreground mt-3">{founder.credential}</p>
       </div>
     </RevealWrapper>
   )
 }
 
-export function FoundersSection({ id, eyebrow, heading, founders, zIndex, stackIndex }: FoundersSectionProps) {
+export function FoundersSection({ id, eyebrow, heading, founders, zIndex }: FoundersSectionProps) {
   return (
-    <SectionContainer surface="default" id={id} zIndex={zIndex} stackIndex={stackIndex}>
+    <SectionContainer surface="default" id={id} zIndex={zIndex}>
       <div className="max-w-6xl mx-auto">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <SectionHeading className="mb-8">{heading}</SectionHeading>
-        <div className="grid lg:grid-cols-2 gap-4 lg:gap-5">
+        <SectionHeading className="mb-10">{heading}</SectionHeading>
+        <div className="grid lg:grid-cols-2 gap-5 lg:gap-6">
           <FounderBlock founder={founders[0]} />
           <FounderBlock founder={founders[1]} />
         </div>

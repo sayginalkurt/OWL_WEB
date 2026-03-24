@@ -11,9 +11,11 @@ const props = {
 }
 
 describe('BusinessSpeedSection', () => {
-  it('renders the eyebrow', () => {
+  it('renders the left-side headline', () => {
     render(<BusinessSpeedSection {...props} />)
-    expect(screen.getByText(props.eyebrow)).toBeInTheDocument()
+    expect(screen.getByText('BUSINESS MOVES')).toBeInTheDocument()
+    expect(screen.getByText('FASTER THAN')).toBeInTheDocument()
+    expect(screen.getByText('TRADITIONAL DATA')).toBeInTheDocument()
   })
 
   it('renders all three statements', () => {

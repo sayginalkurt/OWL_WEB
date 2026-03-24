@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 
 const sections = [
   { id: 'hero', label: 'Hero' },
-  { id: 'business-speed', label: 'Speed' },
+  { id: 'business-speed', label: 'Problem' },
   { id: 'value', label: 'Value' },
   { id: 'product-ecosystem', label: 'Products' },
   { id: 'intelligence-layer', label: 'Intelligence' },
@@ -21,30 +21,40 @@ export function SectionNav() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-        if (visible.length > 0) {
-          const idx = sections.findIndex((s) => s.id === visible[0].target.id)
-          if (idx !== -1) setActiveIndex(idx)
+    const HEADER_HEIGHT = 64
+
+    const updateActive = () => {
+      const scrollY = window.scrollY
+      let closest = 0
+      let closestDist = Infinity
+      sections.forEach(({ id }, i) => {
+        const el = document.getElementById(id)
+        if (!el) return
+        const dist = Math.abs(scrollY - (el.offsetTop - HEADER_HEIGHT))
+        if (dist < closestDist) {
+          closestDist = dist
+          closest = i
         }
-      },
-      { threshold: 0.4 }
-    )
+      })
+      setActiveIndex(closest)
+    }
 
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
+    updateActive()
+    window.addEventListener('scroll', updateActive, { passive: true })
+    return () => window.removeEventListener('scroll', updateActive)
   }, [])
 
   function scrollToSection(id: string) {
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    const fn = (window as unknown as Record<string, unknown>).__scrollToSection
+    if (typeof fn === 'function') {
+      fn(id)
+    } else {
+      // Fallback: scroll to offset position
+      const el = document.getElementById(id)
+      if (el) {
+        window.scrollTo({ top: Math.max(0, el.offsetTop - 64), behavior: 'smooth' })
+      }
+    }
   }
 
   return (

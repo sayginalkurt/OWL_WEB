@@ -2,7 +2,7 @@ import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const homeButtonBase =
-  'h-10 rounded-md px-4 text-sm font-semibold tracking-[0.01em] shadow-sm transition-colors'
+  'h-10 rounded-md px-4 text-sm font-semibold tracking-[0.01em] shadow-sm transition-all duration-300'
 
 export const homeButtonPrimary = cn(
   buttonVariants({ size: 'lg' }),
@@ -20,6 +20,12 @@ export const homeButtonInversePrimary = cn(
   buttonVariants({ size: 'lg' }),
   homeButtonBase,
   'bg-[var(--sd-fg,#f0f0f0)] text-[var(--sd-bg,#0d1422)] hover:bg-[color-mix(in_oklab,var(--sd-fg,#f0f0f0)_92%,black)]'
+)
+
+export const homeButtonOwlGold = cn(
+  buttonVariants({ size: 'lg' }),
+  homeButtonBase,
+  'border border-[color:var(--color-owl-gold)]/45 bg-[color-mix(in_oklab,var(--color-owl-gold)_16%,transparent)] text-[var(--button-owl-fg,var(--foreground))] hover:bg-[color-mix(in_oklab,var(--color-owl-gold)_22%,transparent)] hover:shadow-[0_0_0_1px_color-mix(in_oklab,var(--color-owl-gold)_24%,transparent),0_16px_40px_-22px_color-mix(in_oklab,var(--color-owl-gold)_55%,transparent)]'
 )
 
 export const homeButtonInverseOutline = cn(

@@ -25,6 +25,7 @@
     "next": "16.1.7",
     "next-intl": "^4.8.3",
     "next-sanity": "^12.1.2",
+    "nodemailer": "^8.0.4",
     "openai": "^6.32.0",
     "posthog-js": "^1.361.1",
     "react": "19.2.3",

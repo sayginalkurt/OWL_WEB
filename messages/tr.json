@@ -34,6 +34,7 @@
     },
     "businessSpeed": {
       "eyebrow": "Problem",
+      "heading": "İş dünyası geleneksel veriden daha hızlı hareket eder",
       "statement1": "Statik ölçüm, değişen koşulların hızına ayak uyduramıyor.",
       "statement2": "Gecikmeli göstergeler, verilen tepkinin kalitesini zayıflatıyor.",
       "statement3": "Daha iyi kararlar, daha yüksek frekanslı ve sahaya dayalı kanıt gerektirmekte."
@@ -47,13 +48,13 @@
       "col2Title": "Analitik",
       "col2Body": "Ham sinyalleri, karar alma süreçlerine doğrudan bağlanan analitik yapılara dönüştürür.",
       "col3Title": "Yapay Zeka",
-      "col3Body": "Yönetilen yapay zeka katmanları bulguları yorumlar, örüntüleri açıklar ve karara hazır istihbarat sunar."
+      "col3Body": "Yönetilen yapay zeka katmanları bulguları yorumlar, örüntüleri açıklar ve karara hazır içgörüler sunar."
     },
     "productEcosystem": {
       "eyebrow": "Ürün Ekosistemi",
       "heading": "Saha verisini daha güçlü kararlara dönüştüren entegre yapı",
       "intro": "Ürün ekosistemimiz, sahadan gelen veriyi daha güçlü ölçüm, analiz ve karar desteğine dönüştüren bütüncül bir yapı sunar.",
-      "fwbmName": "Finansal İyilik Hali Monitörü",
+      "fwbmName": "FWBM: Finansal İyilik Hali Monitörü ©",
       "fwbmDescriptor": "Finansal İyilik Hali Monitörü, hanelerin finansal dayanıklılığını, baskı alanlarını ve beklenti yönünü sürekli olarak ölçen yeni nesil bir karar destek ürünüdür. Saha verisini ileri analitik sistemler ve yapay zekâ asistanları katmanlarıyla birleştirerek kurumsal ölçekte işler. Bu sayede kurumlar, daha güçlü hedefleme, daha iyi risk okuması ve karar desteği elde eder.",
       "fwbmLayer1": "Doğrulanmış Saha Verisi",
       "fwbmLayer2": "Yapılandırılmış Analitik",
@@ -92,7 +93,7 @@
     "sectors": {
       "eyebrow": "Kimlere Değer Üretiyoruz?",
       "heading": "Karmaşıklıkta faaliyet gösteren kurumlar için inşa edildi",
-      "context": "Dokuz sektör. Tek bir tutarlı istihbarat altyapısı.",
+      "context": "Dokuz sektör. Tek bir tutarlı içgörü altyapısı.",
       "item1": "Finans ve Bankacılık",
       "item2": "Sigorta",
       "item3": "Perakende",
@@ -105,7 +106,7 @@
     },
     "whyOwl": {
       "eyebrow": "Neden OWL Intelligence",
-      "heading": "Bir araştırma şirketi değil. Bir istihbarat altyapısı.",
+      "heading": "Bir araştırma şirketi değil. Bir içgörü altyapısı.",
       "intro": "OWL Intelligence, klasik araştırma şirketlerinden farklı olarak veriyi raporlarda bırakmaz; ürünleşmiş analitik ve karar desteğine dönüştürür. 15 yılı aşkın deneyim, 81 ile uzanan saha ağı ve in-house teknoloji kapasitesiyle, araştırmayı kurumsal ölçekte çalışan bir altyapıya çevirir.",
       "diff1Title": "Yöntem",
       "diff1Body": "Ulusal ve uluslararası projelerden beslenen derin metodolojik birikim sayesinde niceliksel, niteliksel, karma ve deneysel yöntemlerde uzman ekibimiz; güçlü danışma kurulu ve yaygın saha organizasyonuyla güvenilir, yüksek kaliteli veri üretir.",
@@ -120,14 +121,14 @@
       "beyza": {
         "quote": "OWL'u kurduk çünkü kurumlar altı aylık verilerle kritik kararlar almaya devam ediyordu — ve bunu düzeltecek teknoloji zaten mevcuttu.",
         "name": "Beyza Polat",
-        "role": "CEO ve Kurucu Ortak",
-        "credential": "Ekonomist. Bilkent Üniversitesi · London School of Economics."
+        "role": "Kurucu Ortak",
+        "credential": "Ekonomist"
       },
       "saygin": {
         "quote": "Saha araştırması bize bilmemiz gereken her şeyi söyledi. Eksik olan hiçbir zaman veri değildi — verinin ölçekte eyleme dönüştürülebileceği altyapıydı.",
         "name": "Saygın Vedat Alkurt",
         "role": "Kurucu Ortak",
-        "credential": "Sosyolog. Orta Doğu Teknik Üniversitesi. Veri odaklı araştırmada 15+ yıl deneyim."
+        "credential": "Sosyolog"
       }
     },
     "partnerships": {
@@ -140,7 +141,7 @@
       "eyebrow": "OWL Intelligence ile ilgili merak ettiklerinizi sorun",
       "heading": "OWL Intelligence hakkında merak ettiğiniz her şeyi sorun.",
       "subCopy": "Yapay zeka asistanımız ürünlerimiz, metodolojimiz ve kurumlarla nasıl çalıştığımız hakkındaki sorularınızı yanıtlamaya hazırdır.",
-      "ctaLabel": "Asistanı Aç"
+      "ctaLabel": "OWL Agent ile Konuş"
     },
     "contactDemo": {
       "eyebrow": "İletişim – Demo Talep Edin",
@@ -148,6 +149,19 @@
       "body": "Kurumunuz için araştırıyor, yatırım yapmak istiyor veya iş birliğiyle ilgileniyorsanız konuşmaya hazırız.",
       "cardHeading": "Uygulamada görmek ister misiniz?",
       "ctaLabel": "Demo Talep Et"
+    },
+    "sectionNav": {
+      "home": "Anasayfa",
+      "problem": "Problem",
+      "value": "Değer",
+      "products": "Ürünler",
+      "intelligence": "İçgörü",
+      "sectors": "Sektörler",
+      "whyOwl": "Neden OWL",
+      "founders": "Kurucular",
+      "partnerships": "Ortaklıklar",
+      "agent": "Agent",
+      "contact": "İletişim"
     }
   },
   "solutions": {
@@ -158,12 +172,48 @@
     "public": "Kamu Kurumları",
     "publicDesc": "Politika etki analizi, kamuoyu duyarlılığı takibi ve kanıta dayalı yönetişim desteği.",
     "investors": "Yatırımcılar ve ESG",
-    "investorsDesc": "Yatırım kararları için alternatif veri, ESG duyarlılık takibi ve pazar istihbaratı.",
+    "investorsDesc": "Yatırım kararları için alternatif veri, ESG duyarlılık takibi ve pazar öngörüleri.",
     "research": "Araştırma ve Strateji",
     "researchDesc": "Strateji ekipleri, danışmanlıklar ve akademik araştırma için derin analitik araçlar."
   },
+  "aboutPage": {
+    "eyebrow": "Şirket",
+    "titleLead": "OWL Intelligence",
+    "titleMain": "",
+    "description": "Gerçek saha verisine dayalı yapay zeka destekli içgörü ürünleri geliştiriyoruz.",
+    "standout": "Doğrulanmış saha verisinden karara hazır içgörüye.",
+    "bodyOne": "OWL Intelligence, Birleşik Krallık merkezli bir teknoloji ve araştırma şirketidir. Türkiye'de, Kadir Has Teknopark dahil olmak üzere kurduğu Ar-Ge ve operasyon yapılanmasıyla, doğrulanmış saha verisini eyleme dönüştürülebilir iş zekasına çeviren ticari yapay zeka ürünleri geliştiriyor.",
+    "bodyTwo": "Çalışmalarımız, yenilikçi araştırma yöntemleri ile modern yapay zekanın kesişiminde konumlanıyor. Veriyi yalnızca toplamakla yetinmiyoruz; onu anlamlı, kullanılabilir ve karar süreçlerine doğrudan katkı sunan bir yapıya dönüştürüyoruz.",
+    "bodyThree": "Amiral ürünümüz FWBM, hanehalkı düzeyindeki finansal baskıyı ve dayanıklılığı; periyodik saha çalışması, haftalık güncellenen paneller, yapay zeka destekli sorgulama altyapısı ve entegre makro veriler aracılığıyla sürekli izliyor. İkinci ürünümüz FuzzyOwl, Fuzzy Cognitive Mapping yaklaşımını stratejik karar alma süreçlerine taşıyarak kurumların karmaşık sistemleri modellemesini ve farklı senaryoları simüle etmesini sağlıyor. EconImpact ise kurumlar ve şirketler için otomatik ve yüksek standartlı ekonomik etki raporları sunuyor.",
+    "bodyFour": "Biz, en değerli bilginin otantik ve doğrulanmış toplum verisinden doğduğuna inanıyoruz; kazınarak ortaya çıkarılan dijital izlerden ya da sentetik tahminlerden değil. Bu nedenle teknoloji altyapımızı, özgün saha bilgisinin niteliğini korurken içgörüyü daha erişilebilir, daha etkileşimli ve ticari olarak daha işlevsel hale getirecek şekilde tasarlıyoruz.",
+    "indicatorOne": "Sosyal ve ekonomik araştırmada 15 yılı aşkın deneyim",
+    "indicatorTwo": "Türkiye'nin 81 ilinde ve tüm ilçelerinde saha kapasitesi",
+    "indicatorThree": "Sektörler, akademi ve uluslararası kuruluşlarla güvene dayalı ilişkiler"
+  },
+  "foundersPage": {
+    "eyebrow": "Kurucular",
+    "title": "OWL Intelligence’ı Şekillendirenler",
+    "description": "OWL Intelligence; uygulamalı ekonomi, sosyoloji, saha araştırması ve veri temelli stratejiyi bir araya getiren kurucular tarafından inşa edildi.",
+    "readMore": "Biyografinin devamı",
+    "beyza": {
+      "name": "Beyza Polat",
+      "role": "Kurucu Ortak",
+      "credential": "Uygulamalı Mikroekonomist",
+      "bioOne": "Beyza Polat, SEAL Danışmanlık'ın kurucusu ve yöneticisidir. Kamu ve özel işletmelerin karar alma süreçlerine katkıda bulunmak için büyük ölçekli veri setlerinin analizi ve nicel araştırma araçlarının geliştirilmesi ve uygulanması konusunda uzmanlığa sahip bir ekonomisttir. 2014 yılından beri Sanayi ve Teknoloji Bakanlığı, Ticaret Bakanlığı, Dünya Bankası, Birleşmiş Milletler Mülteciler Yüksek Komiserliği, Birleşmiş Milletler Kalkınma Programı, Türkiye İş Kurumu ve SAS Enstitüsü gibi kurum ve kuruluşlar ile ortak projelerde takım lideri ve/veya danışman olarak çalışmaktadır.",
+      "bioTwo": "Nicel etki değerlendirme, program değerlendirme, bölgesel ekonomik analiz, işgücü piyasası değerlendirmeleri ve sektörel ekonomik analiz konularında deneyime sahiptir. Ayrıca kamu kurumlarına ve özel sektöre veri analitiği ve etki değerlendirme konularında yönetici eğitimleri vermektedir.",
+      "bioThree": "Daha önce Özyeğin Üniversitesi'nde İktisat Bölümü'nde Öğretim Üyesi olarak çalışmış ve burada İstatistik, Ekonometri ve Uygulamalı Mikroekonometri dersleri vermiştir. Ayrıca Bilkent Üniversitesi ve LSE'de lisans ve yüksek lisans düzeyinde dersler vermiştir. Beyza, Bilkent Üniversitesi'nden İşletme lisans derecesine ve Bilkent Üniversitesi ile London School of Economics and Political Science'tan (LSE) Ekonomi alanında lisansüstü derecelerine sahiptir."
+    },
+    "saygin": {
+      "name": "Saygın Vedat Alkurt",
+      "role": "Kurucu Ortak",
+      "credential": "Sosyolog",
+      "bioOne": "15 yılı aşkın disiplinlerarası araştırma deneyimiyle, Türkiye genelinde siyaset sosyolojisi, iletişim, gençlik çalışmaları, stratejik danışmanlık ve kurumsal itibar araştırmaları gibi alanlarda çok sayıda akademik, kamusal ve sivil toplum araştırmasına ve projesine katkıda bulundu ve liderlik etti. Birleşmiş Milletler Kalkınma Programı, Avrupa Birliği kurumları ve TÜBİTAK tarafından desteklenen projelerde araştırma yöneticisi, araştırmacı ve analist olarak görev aldı. Adhoc Araştırma ve Danışmanlık'ın Genel Müdürü ve CORE Institute'un (Kolektif Araştırmalar Derneği) Yönetim Kurulu Başkanı olarak çalışmalarını sürdürmektedir. Ayrıca Kadir Has Üniversitesi İletişim Fakültesi'nde ders vermekte ve aynı üniversitenin Siyaset Bilimi ve Kamu Yönetimi Bölümü Danışma Kurulu'nda yer almaktadır.",
+      "bioTwo": "Araştırma portföyü; araştırma tasarımı, nitel ve nicel analiz, izleme-değerlendirme ve veri temelli politika danışmanlığı alanlarını kapsamaktadır.",
+      "bioThree": "Temsili araştırma modüllerini katılımcı yaklaşımlarla birleştirerek, sosyal etki yaratabilecek uygulanabilir içgörüler üretmeyi hedeflemektedir. Kariyeri boyunca, veriyi anlatıyla buluşturan yaklaşımıyla, sosyal fayda odaklı araştırmalara ve toplumsal davranış, yönetişim ve politika kesişiminde çalışmaya devam etmiştir."
+    }
+  },
   "footer": {
-    "description": "Gerçek saha verisine dayalı yapay zeka destekli istihbarat ürünleri.",
+    "description": "Gerçek saha verisine dayalı yapay zeka destekli içgörü ürünleri.",
     "products": "Ürünler",
     "company": "Şirket",
     "legal": "Yasal",
@@ -174,15 +224,40 @@
     "turkey": "Türkiye"
   },
   "contact": {
-    "title": "İletişim",
-    "description": "OWL Intelligence'ın işletmenize nasıl yardımcı olabileceğini görüşmek için ekibimizle iletişime geçin.",
+    "eyebrow": "İletişim",
+    "signal": "Kurumsal İletişim Hattı",
+    "titleLead": "Bize",
+    "titleMain": "Yazın",
+    "description": "Ürün demosu, iş birliği ya da genel sorularınız için bize kısa bir mesaj gönderin. Size geri dönelim.",
+    "directLabel": "Doğrudan E-Posta",
+    "directBody": "İsterseniz bize doğrudan e-posta da gönderebilirsiniz.",
+    "responseLabel": "Geri Dönüş Süresi",
+    "responseValue": "1 iş günü içinde",
+    "responseBody": "çoğu mesaja dönüş yapıyoruz.",
+    "officeUkLabel": "Kayıtlı Ofis",
+    "officeUkTitle": "Birleşik Krallık",
+    "officeTrLabel": "Operasyon ve Saha Ağı",
+    "officeTrTitle": "İstanbul",
+    "collaborationLabel": "Sık Başlayan Konular",
+    "collaborationOne": "FWBM, FuzzyOwl veya EconImpact için ürün demosu talepleri.",
+    "collaborationTwo": "Araştırma, ortaklık ve stratejik iş birliği görüşmeleri.",
+    "collaborationThree": "Yatırım, pilot uygulama ve kuruma özel çözüm talepleri.",
+    "formBadge": "Güvenli İletişim Formu",
+    "formTitle": "Kısaca anlatın.",
+    "formDescription": "Kısa bir not yeterli. Mesajınızı doğru kişiye yönlendirelim.",
     "name": "Ad Soyad",
-    "email": "E-posta Adresi",
-    "company": "Şirket",
+    "email": "Kurumsal E-Posta",
+    "company": "Kurum / Şirket",
     "message": "Mesaj",
-    "send": "Mesaj Gönder",
-    "success": "Teşekkürler! En kısa sürede sizinle iletişime geçeceğiz.",
-    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+    "namePlaceholder": "Adınız",
+    "emailPlaceholder": "isim@kurum.com",
+    "companyPlaceholder": "Şirket veya kurum",
+    "messagePlaceholder": "Size nasıl yardımcı olabiliriz?",
+    "send": "Mesajı Gönder",
+    "sending": "Gönderiliyor...",
+    "formFootnote": "Mesajlar info@owlintelligence.co.uk adresine ve ilgili ekip üyelerine iletilir.",
+    "success": "Teşekkürler. Mesajınız iletildi, ekibimiz kısa süre içinde size dönüş yapacak.",
+    "error": "Mesajınız şu anda gönderilemedi. Lütfen tekrar deneyin veya info@owlintelligence.co.uk adresine yazın."
   },
   "common": {
     "learnMore": "Daha Fazla",

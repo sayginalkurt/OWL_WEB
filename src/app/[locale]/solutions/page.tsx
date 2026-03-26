@@ -51,8 +51,9 @@ export default function SolutionsPage() {
   const t = useTranslations("solutions");
 
   return (
-    <div className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <main className="section-page-surface">
+      <div aria-hidden className="section-page-surface-glow" />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center">
           <Badge variant="secondary" className="mb-4">
             Solutions
@@ -97,6 +98,6 @@ export default function SolutionsPage() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

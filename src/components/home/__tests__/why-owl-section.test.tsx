@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import { WhyOwlSection } from '../why-owl-section'
 
 const props = {
@@ -22,5 +22,23 @@ describe('WhyOwlSection', () => {
     render(<WhyOwlSection {...props} />)
     expect(screen.getByText('Methodology')).toBeInTheDocument()
     expect(screen.getByText('AI Infrastructure')).toBeInTheDocument()
+  })
+
+  it('uses the shared editorial heading typography', () => {
+    render(<WhyOwlSection {...props} />)
+
+    const heading = screen.getByRole('heading', { level: 2 })
+    expect(heading.className).toContain('text-[2.5rem]')
+    expect(heading.className).toContain('leading-[0.92]')
+    expect(heading.className).toContain('tracking-[-0.05em]')
+  })
+
+  it('renders an editorial rail layout with three sequenced cards', () => {
+    render(<WhyOwlSection {...props} />)
+
+    const rail = screen.getByTestId('why-owl-rail')
+    expect(within(rail).getAllByRole('article')).toHaveLength(3)
+    expect(screen.getByText('01')).toBeInTheDocument()
+    expect(screen.getByText('03')).toBeInTheDocument()
   })
 })

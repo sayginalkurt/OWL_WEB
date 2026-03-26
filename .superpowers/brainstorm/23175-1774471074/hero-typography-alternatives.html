@@ -1,0 +1,295 @@
+<style>
+  .hero-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 24px;
+  }
+  .hero-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(8,12,20,0.94), rgba(12,18,30,0.98));
+    box-shadow: 0 30px 80px -42px rgba(0,0,0,0.55);
+    cursor: pointer;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .hero-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(136,153,187,0.45);
+    box-shadow: 0 34px 90px -42px rgba(0,0,0,0.68);
+  }
+  .hero-preview {
+    position: relative;
+    min-height: 440px;
+    padding: 28px;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(136,153,187,0.22), transparent 36%),
+      radial-gradient(circle at 16% 18%, rgba(100,120,170,0.22), transparent 26%),
+      linear-gradient(180deg, rgba(4,7,13,0.2), rgba(4,7,13,0.62));
+    color: #f3f4f6;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.8), transparent 78%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(190,203,228,0.82);
+  }
+  .hero-kicker {
+    width: 92px;
+    height: 1px;
+    margin-top: 18px;
+    background: rgba(136,153,187,0.7);
+  }
+  .hero-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .hero-copy {
+    margin-top: auto;
+    max-width: 34ch;
+  }
+  .hero-copy p {
+    margin: 18px 0 0;
+    color: rgba(230,235,244,0.74);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .hero-actions span {
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .primary {
+    background: #f5f5f5;
+    color: #0d1422;
+  }
+  .secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.92);
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .metric {
+    border-top: 1px solid rgba(255,255,255,0.14);
+    padding-top: 12px;
+  }
+  .metric strong {
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .metric span {
+    display: block;
+    margin-top: 8px;
+    color: rgba(230,235,244,0.6);
+    font-size: 11px;
+    line-height: 1.45;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  .alt-a h3 {
+    margin: 14px 0 0;
+    font-size: 62px;
+    line-height: .9;
+    letter-spacing: -.055em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .alt-a .subline {
+    margin-top: 16px;
+    font-size: 15px;
+    letter-spacing: .34em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.58);
+  }
+  .alt-b .split-head {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 108px minmax(0,1fr);
+    align-items: start;
+    margin-top: 16px;
+  }
+  .alt-b .index {
+    font-size: 12px;
+    letter-spacing: .26em;
+    color: rgba(190,203,228,0.55);
+    padding-top: 10px;
+  }
+  .alt-b h3 {
+    margin: 0;
+    font-size: 52px;
+    line-height: .93;
+    letter-spacing: -.05em;
+    font-weight: 900;
+  }
+  .alt-b .subline {
+    margin-top: 20px;
+    max-width: 20ch;
+    color: rgba(255,255,255,0.72);
+    font-size: 17px;
+    line-height: 1.35;
+  }
+  .alt-c .micro {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 16px;
+  }
+  .alt-c .micro span {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(136,153,187,0.82);
+  }
+  .alt-c .micro p {
+    margin: 0;
+    color: rgba(190,203,228,0.68);
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-size: 11px;
+  }
+  .alt-c h3 {
+    margin: 18px 0 0;
+    font-size: 56px;
+    line-height: .92;
+    letter-spacing: -.05em;
+    font-weight: 900;
+    max-width: 11ch;
+  }
+  .alt-c .subline {
+    margin-top: 18px;
+    font-size: 21px;
+    line-height: 1.18;
+    color: rgba(255,255,255,0.8);
+    max-width: 16ch;
+  }
+  .card-note {
+    padding: 16px 18px 18px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .card-note h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  .card-note p {
+    margin: 8px 0 0;
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  @media (max-width: 1100px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-preview { min-height: 360px; }
+  }
+</style>
+
+<h2>Hero Typography Alternatives</h2>
+<p class="subtitle">Same animated background, same premium editorial language as the Problem and Value sections. Compare hierarchy, calmness, and institutional tone. Click a card to mark your favorite.</p>
+
+<div class="hero-grid">
+  <div class="hero-card" data-choice="editorial-monolith" onclick="toggleSelect(this)">
+    <div class="hero-preview alt-a">
+      <div class="hero-overlay"></div>
+      <div class="hero-body">
+        <div class="eyebrow">Next-Gen Research</div>
+        <div class="hero-kicker"></div>
+        <div class="hero-copy">
+          <h3>Advanced Analytics</h3>
+          <div class="subline">Grounded in Field Data</div>
+          <p>Closest to the Problem section. One dominant statement, brutalist weight, restrained subline, and a sharper editorial silhouette.</p>
+          <div class="hero-actions">
+            <span class="primary">Explore Products</span>
+            <span class="secondary">Talk to Our Agent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-note">
+      <h3>A. Editorial Monolith</h3>
+      <p>Most direct, high-authority, and closest to the premium uppercase language already established in the sections below.</p>
+    </div>
+  </div>
+
+  <div class="hero-card" data-choice="indexed-manifesto" onclick="toggleSelect(this)">
+    <div class="hero-preview alt-b">
+      <div class="hero-overlay"></div>
+      <div class="hero-body">
+        <div class="eyebrow">Next-Gen Research</div>
+        <div class="split-head">
+          <div class="index">01 / HERO</div>
+          <div>
+            <h3>Advanced Analytics Grounded in Field Data</h3>
+            <div class="subline">A more journal-like composition that echoes the numbered cadence used in the Problem and Value sections.</div>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <p>Feels more structured and intellectual. The small left index creates continuity with the numbered editorial system in later sections.</p>
+          <div class="metrics">
+            <div class="metric"><strong>81</strong><span>Provinces</span></div>
+            <div class="metric"><strong>15+</strong><span>Years</span></div>
+            <div class="metric"><strong>3</strong><span>Products</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-note">
+      <h3>B. Indexed Manifesto</h3>
+      <p>Most systemized. Strongest bridge to the numbered editorial rhythm in the Problem and Value sections.</p>
+    </div>
+  </div>
+
+  <div class="hero-card" data-choice="dual-register" onclick="toggleSelect(this)">
+    <div class="hero-preview alt-c">
+      <div class="hero-overlay"></div>
+      <div class="hero-body">
+        <div class="eyebrow">Next-Gen Research</div>
+        <div class="micro">
+          <span></span>
+          <p>Decision Support for Institutions</p>
+        </div>
+        <div class="hero-copy">
+          <h3>Advanced Analytics</h3>
+          <div class="subline">Grounded in field data.</div>
+          <p>Uses a two-register hierarchy: bold core claim plus quieter sentence-case qualifier. Slightly more modern and less severe than the other two.</p>
+          <div class="hero-actions">
+            <span class="primary">Explore Products</span>
+            <span class="secondary">Talk to Our Agent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-note">
+      <h3>C. Dual Register</h3>
+      <p>Most elegant and contemporary. Keeps the editorial feeling, but with a softer and more refined typography rhythm.</p>
+    </div>
+  </div>
+</div>

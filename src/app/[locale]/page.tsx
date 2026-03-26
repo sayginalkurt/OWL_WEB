@@ -46,6 +46,7 @@ export default async function HomePage() {
         zIndex={2}
         id="business-speed"
         eyebrow={t('businessSpeed.eyebrow')}
+        heading={t('businessSpeed.heading')}
         statements={[
           t('businessSpeed.statement1'),
           t('businessSpeed.statement2'),

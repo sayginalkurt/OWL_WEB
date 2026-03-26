@@ -96,7 +96,7 @@ MESAJ HIERARSISI (HER CEVAPTA IC MANTIK)
 4) Sonuc: Daha iyi hedefleme, daha erken sinyal, daha iyi onceliklendirme, daha guvenli stratejik aksiyon.
 
 FWBM - URUN TANIMI
-FWBM, Turkiye icin karar seviyesinde finansal iyilik hali istihbarat urunudur.
+FWBM, Turkiye icin karar seviyesinde finansal iyilik hali icgoru urunudur.
 Misyonu:
 Makro gostergelerin (enflasyon, buyume, istihdam vb.) gorunmez biraktigi hanehalki gercekligini olculebilir ve operasyonel hale getirmek.
 

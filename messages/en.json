@@ -34,6 +34,7 @@
     },
     "businessSpeed": {
       "eyebrow": "Problem",
+      "heading": "Business moves faster than traditional data",
       "statement1": "Static measurement cannot keep pace with changing conditions.",
       "statement2": "Delayed signals weaken response quality.",
       "statement3": "Better decisions require higher-frequency, ground-level evidence."
@@ -53,7 +54,7 @@
       "eyebrow": "Product Ecosystem",
       "heading": "An integrated structure that turns field data into stronger decisions",
       "intro": "Our product ecosystem provides an integrated structure that turns field data into stronger measurement, analysis, and decision support.",
-      "fwbmName": "Financial Well-Being Monitor",
+      "fwbmName": "FWBM: Financial Well-Being Monitor ©",
       "fwbmDescriptor": "Next-generation household financial resilience measurement at institutional scale.",
       "fwbmLayer1": "Validated Field Data",
       "fwbmLayer2": "Structured Analytics",
@@ -120,14 +121,14 @@
       "beyza": {
         "quote": "We built OWL because institutions kept making critical decisions on data that was already six months old — and the technology to fix that already existed.",
         "name": "Beyza Polat",
-        "role": "CEO & Co-Founder",
-        "credential": "Economist. Bilkent University · London School of Economics."
+        "role": "Co-Founder",
+        "credential": "Economist"
       },
       "saygin": {
         "quote": "Field research told us everything we needed to know. The gap was never the data — it was the infrastructure to make it actionable at scale.",
         "name": "Saygın Vedat Alkurt",
         "role": "Co-Founder",
-        "credential": "Sociologist. Middle East Technical University. 15+ years in data-driven research."
+        "credential": "Sociologist"
       }
     },
     "partnerships": {
@@ -140,7 +141,7 @@
       "eyebrow": "Talk to Our Agent",
       "heading": "Ask anything you would like to know about OWL Intelligence.",
       "subCopy": "Our AI agent is available to answer questions about our products, methodology, and how we work with institutions.",
-      "ctaLabel": "Open Agent"
+      "ctaLabel": "Talk to OWL Agent"
     },
     "contactDemo": {
       "eyebrow": "Contact",
@@ -148,6 +149,19 @@
       "body": "Whether you're exploring for your institution, looking to invest, or interested in collaboration, we're ready to talk.",
       "cardHeading": "Ready to see it in action?",
       "ctaLabel": "Book a Demo"
+    },
+    "sectionNav": {
+      "home": "Home",
+      "problem": "Problem",
+      "value": "Value",
+      "products": "Products",
+      "intelligence": "Intelligence",
+      "sectors": "Sectors",
+      "whyOwl": "Why OWL",
+      "founders": "Founders",
+      "partnerships": "Partnerships",
+      "agent": "Agent",
+      "contact": "Contact"
     }
   },
   "solutions": {
@@ -162,6 +176,42 @@
     "research": "Research & Strategy",
     "researchDesc": "Deep analytical tools for strategy teams, consultancies, and academic research."
   },
+  "aboutPage": {
+    "eyebrow": "Company",
+    "titleLead": "OWL Intelligence",
+    "titleMain": "",
+    "description": "Building AI-powered intelligence products grounded in authentic field data.",
+    "standout": "Verified field data, shaped into decision-ready intelligence.",
+    "bodyOne": "OWL Intelligence is a UK-based technology and research company, with R&D and operations in Turkey including Kadir Has Teknopark, developing commercial AI products that transform real-world field data into actionable business intelligence.",
+    "bodyTwo": "We operate at the intersection of rigorous research methodology and modern artificial intelligence.",
+    "bodyThree": "Our flagship product, FWBM, continuously measures household-level financial stress and resilience through authentic field surveys, weekly-updated dashboards, AI-assisted querying, and integrated macro data. Our second product, FuzzyOwl, brings Fuzzy Cognitive Mapping to strategic decision-making, enabling organizations to model complex systems and simulate scenarios. EconImpact delivers self-administered, automated economic impact reports for institutions and companies.",
+    "bodyFour": "We believe that the most valuable intelligence comes from verified human data, not scraped feeds or synthetic estimates. Our technology stack is designed to preserve this authenticity while making the insights accessible, interactive, and commercially actionable.",
+    "indicatorOne": "More than 15 years in social and economic research",
+    "indicatorTwo": "Field capacity in 81 provinces and all districts across Turkey",
+    "indicatorThree": "Trusted relationships across sectors, academia, and international organizations"
+  },
+  "foundersPage": {
+    "eyebrow": "Founders",
+    "title": "The People Behind OWL Intelligence",
+    "description": "OWL Intelligence is built by founders combining applied economics, sociology, field research, and data-driven strategy.",
+    "readMore": "Read full bio",
+    "beyza": {
+      "name": "Beyza Polat",
+      "role": "Co-Founder",
+      "credential": "Applied Microeconomist",
+      "bioOne": "Beyza Polat is the founder and managing director of SEAL Consulting. She is an economist with expertise in analyzing large-scale datasets and developing and implementing quantitative research tools that support decision-making in public and private enterprises.",
+      "bioTwo": "Since 2014, she has worked as a team leader and/or consultant on joint projects with institutions including the Ministry of Industry and Technology, Ministry of Trade, the World Bank, the United Nations High Commissioner for Refugees, the United Nations Development Programme, the Turkish Employment Agency, and SAS Institute.",
+      "bioThree": "She has experience in quantitative impact evaluation, programme evaluation, regional economic analysis, labour market assessment, and sectoral economic analysis. She also provides executive training to public institutions and the private sector on data analytics and impact evaluation. She previously served as a faculty member in the Department of Economics at Ozyegin University, where she taught Statistics, Econometrics, and Applied Microeconometrics, and has also taught undergraduate and graduate courses at Bilkent University and LSE. Beyza holds a bachelor's degree in Business Administration from Bilkent University and graduate degrees in Economics from Bilkent University and the London School of Economics and Political Science."
+    },
+    "saygin": {
+      "name": "Saygın Vedat Alkurt",
+      "role": "Co-Founder",
+      "credential": "Sociologist",
+      "bioOne": "With over 15+ years of interdisciplinary research experience, he has contributed to and led numerous academic, public, and civil society projects across Turkey, particularly in fields such as political sociology, communication, youth studies, and strategic consultancy. He currently serves as the General Director of Adhoc Research and Consultancy, which he co-founded, and as the Chairperson of CORE Institute (Collective Research Association), an NGO focusing on generational change, urban mobility, and socio-cultural transformation.",
+      "bioTwo": "He is also a lecturer at Kadir Has University's Faculty of Communication and sits on the Advisory Board of the Department of Political Science and Public Administration at the same university.",
+      "bioThree": "Alkurt's portfolio spans research design, qualitative and quantitative analysis, monitoring and evaluation, and data-driven policy consulting for international organizations such as UNDP, European Union institutions, and TUBITAK. He is known for bridging data and narrative, combining robust field methodologies with participatory approaches to produce actionable insights for social impact. Throughout his career, he has maintained a strong focus on public interest research and the intersection of societal behavior, governance, and policy."
+    }
+  },
   "footer": {
     "description": "AI-powered intelligence products grounded in authentic field data.",
     "products": "Products",
@@ -174,15 +224,40 @@
     "turkey": "Türkiye"
   },
   "contact": {
-    "title": "Contact Us",
-    "description": "Get in touch with our team to discuss how OWL Intelligence can help your business.",
+    "eyebrow": "Contact",
+    "signal": "Institutional Contact Channel",
+    "titleLead": "Let's",
+    "titleMain": "Talk",
+    "description": "For product demos, partnerships, or general enquiries, send us a note and we will get back to you.",
+    "directLabel": "Direct Email",
+    "directBody": "You can also contact us directly by email.",
+    "responseLabel": "Response Window",
+    "responseValue": "Within 1 business day",
+    "responseBody": "for most enquiries.",
+    "officeUkLabel": "Registered Office",
+    "officeUkTitle": "United Kingdom",
+    "officeTrLabel": "Operations And Field Network",
+    "officeTrTitle": "Istanbul",
+    "collaborationLabel": "Typical Starting Points",
+    "collaborationOne": "Product demos for institutions exploring FWBM, FuzzyOwl, or EconImpact.",
+    "collaborationTwo": "Partnership, research, and strategic collaboration conversations.",
+    "collaborationThree": "Investor, pilot, and custom implementation enquiries.",
+    "formBadge": "Secure Contact Form",
+    "formTitle": "Tell us briefly.",
+    "formDescription": "A short note is enough. We will route it to the right person.",
     "name": "Full Name",
-    "email": "Email Address",
-    "company": "Company",
+    "email": "Work Email",
+    "company": "Institution / Company",
     "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "name@institution.com",
+    "companyPlaceholder": "Company or institution",
+    "messagePlaceholder": "How can we help?",
     "send": "Send Message",
-    "success": "Thank you! We'll be in touch shortly.",
-    "error": "Something went wrong. Please try again."
+    "sending": "Sending...",
+    "formFootnote": "Messages are sent to info@owlintelligence.co.uk and the relevant team members.",
+    "success": "Thank you. Your message has been delivered and our team will respond shortly.",
+    "error": "We could not send your message right now. Please try again or email info@owlintelligence.co.uk."
   },
   "common": {
     "learnMore": "Learn More",

@@ -17,8 +17,9 @@ export default function ProductsPage() {
   const ct = useTranslations("common");
 
   return (
-    <div className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <main className="section-page-surface">
+      <div aria-hidden className="section-page-surface-glow" />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight">{t("heroTitle")}</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -102,6 +103,6 @@ export default function ProductsPage() {
           </Card>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

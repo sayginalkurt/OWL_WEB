@@ -1,0 +1,3 @@
+{"type":"server-started","port":52824,"host":"0.0.0.0","url_host":"localhost","url":"http://localhost:52824","screen_dir":"/Users/sayginvedatalkurt/GIT/OWL_html/.superpowers/brainstorm/23175-1774471074"}
+fs.watch error: EMFILE: too many open files, watch
+{"type":"server-stopped","reason":"owner process exited"}

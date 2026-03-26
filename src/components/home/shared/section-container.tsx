@@ -10,6 +10,7 @@ interface SectionContainerProps {
   hideIndicator?: boolean
   zIndex?: number
   surface?: 'default' | 'inverse'
+  sticky?: boolean
 }
 
 export function SectionContainer({
@@ -21,6 +22,7 @@ export function SectionContainer({
   hideIndicator,
   zIndex,
   surface = 'default',
+  sticky = true,
 }: SectionContainerProps) {
   const backgroundColor =
     surface === 'inverse'
@@ -34,13 +36,14 @@ export function SectionContainer({
     <section
       id={id}
       className={cn(
-        'w-full flex items-center sticky top-16 section-stack-card relative isolate overflow-hidden',
+        'w-full flex items-center section-stack-card relative isolate overflow-hidden',
+        sticky ? 'sticky top-16' : 'top-0',
         dark ? 'section-dark' : 'bg-background',
         className
       )}
       style={{
         ...(zIndex ? { zIndex } : {}),
-        height: 'calc(100vh - 4rem)',
+        ...(sticky ? { height: 'calc(100vh - 4rem)' } : {}),
         backgroundColor,
         color,
       }}

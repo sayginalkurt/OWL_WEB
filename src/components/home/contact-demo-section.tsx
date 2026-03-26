@@ -20,25 +20,33 @@ interface ContactDemoSectionProps {
 
 export function ContactDemoSection({ id, eyebrow, heading, body, cardHeading, ctaLabel, ctaHref, zIndex }: ContactDemoSectionProps) {
   return (
-    <SectionContainer id={id} zIndex={zIndex}>
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-        <RevealWrapper>
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <SectionHeading>{heading}</SectionHeading>
-          <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mt-4">{body}</p>
-        </RevealWrapper>
-        <RevealWrapper delay={0.1}>
-          <div className="rounded-lg border border-border bg-card/35 p-6">
-            <h3 className="text-base lg:text-lg font-bold text-foreground">{cardHeading}</h3>
-            <p className="text-xs lg:text-sm text-muted-foreground mt-2 mb-5">
+    <SectionContainer id={id} zIndex={zIndex} hideIndicator className="overflow-visible">
+      <RevealWrapper>
+        <div
+          data-testid="contact-layout"
+          className="mx-auto grid max-w-6xl gap-6 rounded-[1.8rem] border border-border/80 bg-card/45 p-6 shadow-[0_22px_70px_-42px_rgba(15,23,42,0.16)] lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-10 lg:p-8"
+        >
+          <div className="max-w-3xl">
+            <Eyebrow className="mb-5 text-[0.72rem] tracking-[0.26em]">{eyebrow}</Eyebrow>
+            <SectionHeading className="max-w-[13ch] text-[2.5rem] font-black leading-[0.92] tracking-[-0.05em] sm:text-[3rem] lg:text-[3.15rem] xl:text-[3.7rem]">
+              {heading}
+            </SectionHeading>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              {body}
+            </p>
+          </div>
+
+          <div className="rounded-[1.3rem] border border-border bg-background p-5 lg:min-w-[17rem]">
+            <h3 className="text-base font-bold text-foreground lg:text-lg">{cardHeading}</h3>
+            <p className="mt-2 text-xs text-muted-foreground lg:text-sm">
               See OWL Intelligence in action with a guided walkthrough tailored to your institution.
             </p>
-            <Link href={ctaHref} className={homeButtonPrimary}>
+            <Link href={ctaHref} className={`${homeButtonPrimary} mt-5 w-full`}>
               {ctaLabel}
             </Link>
           </div>
-        </RevealWrapper>
-      </div>
+        </div>
+      </RevealWrapper>
     </SectionContainer>
   )
 }

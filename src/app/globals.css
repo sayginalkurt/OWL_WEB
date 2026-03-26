@@ -186,3 +186,23 @@
   background-color: var(--section-inverse-bg) !important;
   color: var(--section-inverse-fg);
 }
+
+.section-page-surface {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.section-page-surface-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 62% 18%, rgba(211, 175, 55, 0.1), transparent 24%);
+}
+
+.dark .section-page-surface-glow {
+  background:
+    radial-gradient(circle at 64% 16%, rgba(211, 175, 55, 0.12), transparent 26%);
+}

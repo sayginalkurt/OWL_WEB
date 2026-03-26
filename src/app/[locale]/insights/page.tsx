@@ -59,8 +59,9 @@ const placeholderInsights = [
 
 export default function InsightsPage() {
   return (
-    <div className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <main className="section-page-surface">
+      <div aria-hidden className="section-page-surface-glow" />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center">
           <Badge variant="secondary" className="mb-4">
             Insights
@@ -122,6 +123,6 @@ export default function InsightsPage() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

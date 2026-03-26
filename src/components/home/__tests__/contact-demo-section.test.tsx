@@ -20,4 +20,19 @@ describe('ContactDemoSection', () => {
     render(<ContactDemoSection {...props} />)
     expect(screen.getByRole('link', { name: 'Book a Demo' })).toHaveAttribute('href', '/contact')
   })
+
+  it('uses the shared editorial heading typography', () => {
+    render(<ContactDemoSection {...props} />)
+
+    const heading = screen.getByRole('heading', { level: 2 })
+    expect(heading.className).toContain('text-[2.5rem]')
+    expect(heading.className).toContain('leading-[0.92]')
+    expect(heading.className).toContain('tracking-[-0.05em]')
+  })
+
+  it('renders a closing contact conversion object', () => {
+    render(<ContactDemoSection {...props} />)
+
+    expect(screen.getByTestId('contact-layout')).toBeInTheDocument()
+  })
 })

@@ -55,8 +55,9 @@ const pillars = [
 
 export default function TechnologyPage() {
   return (
-    <div className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <main className="section-page-surface">
+      <div aria-hidden className="section-page-surface-glow" />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center">
           <Badge variant="secondary" className="mb-4">
             Technology
@@ -132,6 +133,6 @@ export default function TechnologyPage() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

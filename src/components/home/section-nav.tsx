@@ -1,59 +1,81 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 
 const sections = [
-  { id: 'hero', label: 'Hero' },
-  { id: 'business-speed', label: 'Problem' },
-  { id: 'value', label: 'Value' },
-  { id: 'product-ecosystem', label: 'Products' },
-  { id: 'intelligence-layer', label: 'Intelligence' },
-  { id: 'who-we-serve', label: 'Sectors' },
-  { id: 'why-owl', label: 'Why OWL' },
-  { id: 'founders', label: 'Founders' },
-  { id: 'partnerships', label: 'Partnerships' },
-  { id: 'agent', label: 'Agent' },
-  { id: 'contact-demo', label: 'Contact' },
-]
+  { id: 'hero', labelKey: 'home' },
+  { id: 'business-speed', labelKey: 'problem' },
+  { id: 'value', labelKey: 'value' },
+  { id: 'product-ecosystem', labelKey: 'products' },
+  { id: 'intelligence-layer', labelKey: 'intelligence' },
+  { id: 'who-we-serve', labelKey: 'sectors' },
+  { id: 'why-owl', labelKey: 'whyOwl' },
+  { id: 'founders', labelKey: 'founders' },
+  { id: 'partnerships', labelKey: 'partnerships' },
+  { id: 'agent', labelKey: 'agent' },
+  { id: 'contact-demo', labelKey: 'contact' },
+] as const
 
 export function SectionNav() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const t = useTranslations('home.sectionNav')
 
   useEffect(() => {
-    const HEADER_HEIGHT = 64
-
     const updateActive = () => {
-      const scrollY = window.scrollY
-      let closest = 0
+      const viewportMidpoint = window.innerHeight * 0.5
+      let active = 0
       let closestDist = Infinity
+
       sections.forEach(({ id }, i) => {
         const el = document.getElementById(id)
         if (!el) return
-        const dist = Math.abs(scrollY - (el.offsetTop - HEADER_HEIGHT))
+
+        const rect = el.getBoundingClientRect()
+        if (rect.top <= viewportMidpoint && rect.bottom >= viewportMidpoint) {
+          active = i
+          closestDist = -1
+          return
+        }
+
+        if (closestDist === -1) return
+
+        const dist = Math.min(
+          Math.abs(rect.top - viewportMidpoint),
+          Math.abs(rect.bottom - viewportMidpoint)
+        )
+
         if (dist < closestDist) {
           closestDist = dist
-          closest = i
+          active = i
         }
       })
-      setActiveIndex(closest)
+
+      setActiveIndex(active)
     }
 
     updateActive()
     window.addEventListener('scroll', updateActive, { passive: true })
-    return () => window.removeEventListener('scroll', updateActive)
+    window.addEventListener('resize', updateActive)
+
+    return () => {
+      window.removeEventListener('scroll', updateActive)
+      window.removeEventListener('resize', updateActive)
+    }
   }, [])
 
   function scrollToSection(id: string) {
     const fn = (window as unknown as Record<string, unknown>).__scrollToSection
     if (typeof fn === 'function') {
       fn(id)
-    } else {
-      // Fallback: scroll to offset position
-      const el = document.getElementById(id)
-      if (el) {
-        window.scrollTo({ top: Math.max(0, el.offsetTop - 64), behavior: 'smooth' })
-      }
+      return
+    }
+
+    const el = document.getElementById(id)
+    if (el) {
+      const top = window.scrollY + el.getBoundingClientRect().top - 64
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
     }
   }
 
@@ -62,33 +84,35 @@ export function SectionNav() {
       aria-label="Section navigation"
       className="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-end"
     >
-      {/* Vertical track line */}
       <div className="absolute right-0 top-0 bottom-0 w-px bg-[#1a2640]" />
 
-      {sections.map(({ id, label }, i) => {
+      {sections.map(({ id, labelKey }, i) => {
         const isActive = activeIndex === i
+        const label = t(labelKey)
+
         return (
           <button
             key={id}
             onClick={() => scrollToSection(id)}
             title={label}
             aria-label={`Go to ${label}`}
+            aria-current={isActive ? 'location' : undefined}
             className={cn(
               'relative flex items-center gap-2.5 py-1.5 pr-4 group transition-all duration-300',
               isActive ? 'opacity-100' : 'opacity-25 hover:opacity-60'
             )}
           >
-            {/* Section label — only visible on hover or active */}
             <span
               className={cn(
                 'text-[9px] font-semibold tracking-[0.2em] uppercase transition-all duration-300 whitespace-nowrap',
-                isActive ? 'text-chart-3 opacity-100 translate-x-0' : 'text-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2'
+                isActive
+                  ? 'text-chart-3 opacity-100 translate-x-0'
+                  : 'text-foreground opacity-0 translate-x-2 group-hover:translate-x-0 group-hover:opacity-100'
               )}
             >
               {label}
             </span>
 
-            {/* Number */}
             <span
               className={cn(
                 'text-[10px] font-bold tracking-[0.15em] transition-colors duration-300 min-w-[1.5rem] text-right',
@@ -98,7 +122,6 @@ export function SectionNav() {
               {String(i + 1).padStart(2, '0')}
             </span>
 
-            {/* Tick mark connecting to the track */}
             <span
               className={cn(
                 'absolute right-0 top-1/2 -translate-y-1/2 h-px transition-all duration-300',

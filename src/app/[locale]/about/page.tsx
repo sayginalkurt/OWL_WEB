@@ -1,92 +1,87 @@
-import { Badge } from "@/components/ui/badge";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/lib/button-variants";
 import { cn } from "@/lib/utils";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
+  const t = useTranslations("aboutPage");
+  const nav = useTranslations("nav");
+
   return (
-    <div className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-4xl">
-        <div className="text-center">
-          <Badge variant="secondary" className="mb-4">
-            About
-          </Badge>
-          <h1 className="text-4xl font-bold tracking-tight">
-            About OWL Intelligence
+    <main className="section-page-surface">
+      <div aria-hidden className="section-page-surface-glow" />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-12 lg:py-24">
+        <section className="max-w-4xl">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42">
+            {t("eyebrow")}
+          </p>
+
+          <h1 className="mt-5 max-w-[11ch] text-5xl font-black leading-[0.9] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[5.1rem]">
+            <span className="block">{t("titleLead")}</span>
+            {t("titleMain") ? (
+              <span className="mt-3 block text-foreground/55">{t("titleMain")}</span>
+            ) : null}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Building AI-powered intelligence products grounded in authentic
-            field data.
-          </p>
-        </div>
 
-        <div className="mt-12 space-y-8 text-muted-foreground">
-          <p className="text-lg leading-relaxed">
-            OWL Intelligence is a UK-based technology company developing
-            commercial AI products that transform real-world field data into
-            actionable business intelligence. We operate at the intersection of
-            rigorous research methodology and modern artificial intelligence.
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-foreground/68 sm:text-base">
+            {t("description")}
           </p>
-          <p className="leading-relaxed">
-            Our flagship product, FWBM (Field-Weighted Barometer Model),
-            delivers weekly-updated consumer and market sentiment indicators
-            built on authentic field surveys. Our second product, FuzzyOwl,
-            brings Fuzzy Cognitive Mapping to strategic decision-making,
-            enabling organizations to model complex systems and simulate
-            scenarios.
-          </p>
-          <p className="leading-relaxed">
-            We believe that the most valuable intelligence comes from verified
-            human data — not scraped feeds or synthetic estimates. Our
-            technology stack is designed to preserve this authenticity while
-            making the insights accessible, interactive, and commercially
-            actionable.
-          </p>
-        </div>
 
-        {/* Presence */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-border/50 p-6">
-            <div className="flex items-center gap-2 text-primary">
-              <MapPin className="h-5 w-5" />
-              <h3 className="font-semibold">United Kingdom</h3>
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Headquarters and corporate operations. Company registered in
-              England & Wales.
-            </p>
+          <p className="mt-10 max-w-3xl text-2xl font-semibold tracking-tight text-foreground sm:text-[2rem] lg:text-[2.35rem]">
+            {t("standout")}
+          </p>
+        </section>
+
+        <section className="mt-14 grid gap-10 border-t border-border/60 pt-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
+          <div className="space-y-6 text-sm leading-relaxed text-foreground/68 sm:text-base">
+            <p>{t("bodyOne")}</p>
+            <p>{t("bodyTwo")}</p>
+            <p>{t("bodyThree")}</p>
+            <p>{t("bodyFour")}</p>
           </div>
-          <div className="rounded-xl border border-border/50 p-6">
-            <div className="flex items-center gap-2 text-primary">
-              <MapPin className="h-5 w-5" />
-              <h3 className="font-semibold">Turkiye</h3>
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Field research operations, data collection infrastructure, and
-              market intelligence teams.
-            </p>
-          </div>
-        </div>
 
-        {/* Links */}
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
+          <div className="space-y-8">
+            <div className="grid gap-6 border-t border-border/60 pt-6 sm:grid-cols-3 sm:gap-5 sm:pt-0 sm:border-t-0">
+              <div className="border-t border-border/60 pt-4 sm:border-t-0 sm:pt-0">
+                <p className="text-2xl font-semibold tracking-tight text-foreground">15+</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/62">
+                  {t("indicatorOne")}
+                </p>
+              </div>
+              <div className="border-t border-border/60 pt-4 sm:border-t-0 sm:pt-0">
+                <p className="text-2xl font-semibold tracking-tight text-foreground">81</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/62">
+                  {t("indicatorTwo")}
+                </p>
+              </div>
+              <div className="border-t border-border/60 pt-4 sm:border-t-0 sm:pt-0">
+                <p className="text-2xl font-semibold tracking-tight text-foreground">Global</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/62">
+                  {t("indicatorThree")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="mt-14 flex flex-wrap gap-4 border-t border-border/60 pt-10">
           <Link
             href="/about/founders"
             className={cn(buttonVariants({ variant: "outline" }))}
           >
-            Meet the Founders
+            {nav("founders")}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <Link
             href="/about/investors"
             className={cn(buttonVariants({ variant: "outline" }))}
           >
-            Investors & Partners
+            {nav("investors")}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

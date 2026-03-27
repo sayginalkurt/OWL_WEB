@@ -29,7 +29,9 @@ export function ValueSection({ id, eyebrow, heading, body, columns, zIndex }: Va
             className="absolute left-0 top-1/2 hidden h-24 w-24 -translate-y-1/2 rounded-full border border-chart-3/20 lg:block"
           />
           <div className="relative z-10 max-w-2xl">
-            <Eyebrow className="mb-5 text-[0.72rem] tracking-[0.26em]">{eyebrow}</Eyebrow>
+            <Eyebrow className="mb-5 max-w-[24ch] whitespace-normal break-words text-[0.64rem] leading-relaxed tracking-[0.18em] sm:text-[0.72rem] sm:tracking-[0.26em]">
+              {eyebrow}
+            </Eyebrow>
             <SectionHeading className="max-w-[13ch] text-4xl font-black leading-[0.92] tracking-[-0.05em] sm:text-5xl lg:text-[4rem] xl:text-[4.6rem]">
               {heading}
             </SectionHeading>

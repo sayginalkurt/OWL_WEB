@@ -36,12 +36,6 @@ export function PartnershipsSection({ id, eyebrow, heading, body, ctaLabel, ctaH
           </div>
 
           <div className="flex max-w-[18rem] flex-col items-start justify-center lg:items-center lg:text-center">
-            <p className="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-[var(--sd-fg-accent)]">
-              Collaboration
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--sd-fg-muted)]">
-              Open to institutional partnership, strategic capital, and aligned long-horizon collaboration.
-            </p>
             <Link
               href={ctaHref}
               className={`${homeButtonOwlGold} mt-5 w-full [--button-owl-fg:var(--sd-fg)]`}

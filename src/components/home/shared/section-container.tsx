@@ -43,7 +43,13 @@ export function SectionContainer({
       )}
       style={{
         ...(zIndex ? { zIndex } : {}),
-        ...(sticky ? { height: 'calc(100vh - 4rem)' } : {}),
+        ...(sticky
+          ? {
+              // Use dynamic viewport height on mobile browsers; keep vh as fallback.
+              minHeight: 'calc(100vh - 4rem)',
+              height: 'calc(100dvh - 4rem)',
+            }
+          : {}),
         backgroundColor,
         color,
       }}

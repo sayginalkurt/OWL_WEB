@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, type Easing, type Variants } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
 
 const cn = (...classes: Array<string | false | null | undefined>) =>
@@ -185,7 +185,7 @@ const AetherFlowHero = ({
     };
   }, []);
 
-  const fadeUpVariants = {
+  const fadeUpVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
       opacity: 1,
@@ -193,7 +193,7 @@ const AetherFlowHero = ({
       transition: {
         delay: i * 0.2 + 0.5,
         duration: 0.8,
-        ease: "easeInOut",
+        ease: [0.42, 0, 0.58, 1] as unknown as Easing,
       },
     }),
   };

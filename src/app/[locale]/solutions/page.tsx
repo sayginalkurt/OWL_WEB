@@ -45,7 +45,7 @@ const sectors = [
     icon: <GraduationCap className="h-6 w-6" />,
     products: ["FWBM", "FuzzyOwl"],
   },
-];
+] as const;
 
 export default function SolutionsPage() {
   const t = useTranslations("solutions");
@@ -79,12 +79,12 @@ export default function SolutionsPage() {
                   {sector.icon}
                 </div>
                 <CardTitle className="text-xl">
-                  {t(sector.key as any)}
+                  {t(sector.key as Parameters<typeof t>[0])}
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col justify-between">
                 <p className="text-sm text-muted-foreground">
-                  {t(sector.descKey as any)}
+                  {t(sector.descKey as Parameters<typeof t>[0])}
                 </p>
                 <div className="mt-4 flex gap-2">
                   {sector.products.map((p) => (

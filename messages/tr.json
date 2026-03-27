@@ -14,6 +14,110 @@
     "agent": "Asistanla Konuş",
     "menu": "Menü"
   },
+  "agentPage": {
+    "eyebrow": "Asistanla Konuş",
+    "title": "Asistanla Konuş",
+    "subtitle": "Ürünlerimiz, çözümlerimiz, araştırma yaklaşımımız veya merak ettiğiniz herhangi bir konu hakkında soru yöneltin.",
+    "inputPlaceholder": "Mesajınızı yazın...",
+    "initialMessage": "Merhaba! OWL Intelligence asistanıyım. Ürünlerimizi (FWBM ve FuzzyOwl), kurumunuza uygun kullanım alanlarını ve doğru çözümü birlikte değerlendirebiliriz. Nasıl yardımcı olabilirim?",
+    "errorMessage": "Şu anda bağlanmakta sorun yaşıyorum. Lütfen tekrar deneyin veya bizimle doğrudan iletişime geçin."
+  },
+  "investorsPage": {
+    "title": "Yatırımcılar ve Ortaklar",
+    "lead": "",
+    "section1Title": "Birlikte Büyüyoruz",
+    "section1Body": "OWL Intelligence’ı yalnızca bir teknoloji girişimi olarak değil, araştırma bilgisini yeni nesil karar altyapılarına dönüştürme iddiası taşıyan bir yapı olarak görüyoruz. Bu nedenle büyümeyi yalnızca ticari genişleme olarak tanımlamıyoruz. Bizim için büyüme; doğru ortaklıklarla derinleşmek, doğru sermayeyle güçlenmek, doğru iş birlikleriyle yeni alanlar açmak anlamına geliyor. Kuruluşumuzdan bu yana taşıdığımız temel fikir şu oldu: Güvenilir saha verisi ile yapay zekâ destekli karar sistemleri bir araya geldiğinde, kurumlar dünyayı daha doğru okuyabilir, daha hızlı öğrenebilir ve daha güçlü hareket edebilir.",
+    "section2Title": "Araştırma Dünyası Değişiyor",
+    "section2Body": "Araştırma sektörü uzun yıllar boyunca büyük ölçüde dönemsel raporlar, gecikmeli içgörüler ve sınırlı karar entegrasyonları üzerinden çalıştı. Ancak artık dünya çok daha hızlı, daha kırılgan ve daha katmanlı bir yapıya sahip. Kurumların yalnızca veri toplaması yetmiyor; o veriyi süreklilik içinde işlemesi, yorumlaması ve karar süreçlerine entegre etmesi gerekiyor. Tam da bu nedenle, araştırma dünyasının klasik sınırlarının yeniden çizildiğine inanıyoruz. Bugün ihtiyaç duyulan şey yalnızca araştırma değil; yaşayan, güncellenen, sorgulanabilen ve eyleme dönüşebilen bir bilgi altyapısı. OWL Intelligence bu dönüşümün içinde konumlanıyor.",
+    "section2Tag1": "",
+    "section2Tag2": "",
+    "section2Tag3": "",
+    "section3Title": "Araştırma Pazarında Yeni Bir Eşik",
+    "section3Body": "Bugün araştırma pazarı yeni bir eşikte duruyor. Kurumlar artık yalnızca “ne olduğunu” bilmek istemiyor; “ne değişiyor”, “ne yaklaşmakta”, “hangi segmentte hangi kırılma yaşanıyor” ve “hangi karar hangi risk ya da fırsatı yaratıyor” sorularına da yanıt arıyor. Bu yeni ihtiyaç alanı, geleneksel araştırma yaklaşımı ile yeni nesil analitik ve yapay zekâ çözümleri arasında güçlü bir köprü kurulmasını zorunlu kılıyor. Biz OWL’de tam olarak bu köprüyü kurmaya odaklanıyoruz. Sahadan gelen güvenilir veriyi, karar süreçlerine doğrudan bağlanan, ölçeklenebilir ve sürekli çalışan bir zekâ katmanına dönüştürmeyi hedefliyoruz.",
+    "section3Card1Title": "",
+    "section3Card1Body": "",
+    "section3Card2Title": "",
+    "section3Card2Body": "",
+    "section3Card3Title": "",
+    "section3Card3Body": "",
+    "section4Title": "Ortaklık Bizim İçin Ne Anlama Geliyor",
+    "section4Body": "Biz ortaklığı yalnızca finansal destek ya da ticari temas olarak görmüyoruz. Ortaklık bizim için birlikte düşünmek, birlikte geliştirmek, birlikte ölçeklenmek anlamına geliyor. Ürünlerimizi büyütürken; stratejik akıl, sektörel erişim, kurumsal deneyim ve uluslararası ağların da en az sermaye kadar önemli olduğuna inanıyoruz. Bu nedenle yatırımcılarla, stratejik ortaklarla, teknoloji iş birlikleriyle ve kurumsal paydaşlarla kurduğumuz ilişkiyi uzun vadeli bir ortak inşa süreci olarak tanımlıyoruz. Bize göre en güçlü yapılar, yalnızca iyi fikirlerle değil, aynı zamanda doğru insanlarla ve ortak bir yön duygusuyla büyür.",
+    "section4Pill1": "",
+    "section4Pill2": "",
+    "section4Pill3": "",
+    "section5Title": "Neden Şimdi, Neden OWL?",
+    "section5Body": "Çünkü artık verinin kendisi tek başına yeterli değil. Esas mesele, veriyi zamanında, güvenilir biçimde ve karar üretir halde kullanabilmek. OWL Intelligence, araştırma metodolojisinin ciddiyetini modern teknolojinin hızıyla bir araya getiren bir yapı kuruyor. Bu da bizi yalnızca bir araştırma şirketi ya da yalnızca bir yazılım ürünü olmaktan çıkarıyor. Biz, araştırma ile karar arasında yeni bir operasyonel katman inşa ediyoruz. Bugünün kurumları daha sık güncellenen, daha açıklanabilir, daha savunulabilir ve daha uygulanabilir içgörülere ihtiyaç duyuyor. OWL’ün büyüme alanı tam da burada başlıyor.",
+    "section6Title": "AB Ölçeğinde Büyüme Vizyonu",
+    "section6Body": "Vizyonumuz yalnızca Türkiye ile sınırlı değil. Türkiye’de geliştirdiğimiz saha temelli, teknoloji destekli bu modeli Avrupa ölçeğinde büyüyebilecek bir karar zekâsı altyapısına dönüştürmeyi hedefliyoruz. Özellikle AB ölçeğinde, veri güvenilirliği, kurumsal dayanıklılık, tüketici davranışı, ekonomik baskı, sosyal kırılganlık ve karar destek sistemleri gibi alanlarda ciddi bir ihtiyaç olduğunu görüyoruz. OWL Intelligence, yerel gerçekliği güçlü biçimde okuyabilen ama bunu uluslararası standartlarda ürünleştirebilen bir yapı kurmak istiyor. Ölçeklenme vizyonumuz; sadece coğrafi yayılım değil, metodolojik güvenilirliği ve teknolojik kabiliyeti farklı pazarlarda yeniden üretilebilir hale getirmek üzerine kurulu.",
+    "section6Badge1": "",
+    "section6Badge2": "",
+    "section6Badge3": "",
+    "section7Title": "Uzun Vadeli Değer",
+    "section7Body": "Biz hızlı ve yüzeysel büyümeden çok, derinlikli ve kalıcı değer yaratmaya odaklanıyoruz. OWL Intelligence’ın büyüme yolculuğu; güvenilir veri, sağlam metodoloji, güçlü ürün mimarisi ve anlamlı ortaklıklar üzerine inşa ediliyor. Bu nedenle yatırımcılar, kurumsal ortaklar, teknoloji paydaşları ve uluslararası iş birlikleriyle kuracağımız ilişkileri yalnızca bugünün ihtiyacı olarak değil, geleceğin yapısını kurmanın bir parçası olarak görüyoruz. Birlikte üretmeye, birlikte düşünmeye ve birlikte büyümeye değer veren herkesle temas kurmayı önemsiyoruz.",
+    "section7Line1": "",
+    "section7Line2": "",
+    "section7Line3": "",
+    "section7Line4": "",
+    "section8Title": "Gelin Birlikte İnşa Edelim",
+    "section8Body": "Araştırma dünyasının dönüşüm geçirdiği, kurumların daha akıllı ve daha sürekli çalışan sistemlere ihtiyaç duyduğu bu dönemde, OWL Intelligence yeni bir alan açmayı hedefliyor. Eğer siz de araştırmanın geleceğine, karar altyapılarının dönüşümüne ve güvenilir verinin yeni nesil kullanım alanlarına inanıyorsanız, tanışmaktan memnuniyet duyarız. Çünkü bazı yapılar yalnızca kurulmaz; doğru ortaklıklarla birlikte büyütülür.",
+    "ctaPrimary": "İletişime Geçin",
+    "ctaSecondary": "Demo Talep Et"
+  },
+  "productsPage": {
+    "title": "Ürünler",
+    "lead": "Saha verisi, ileri analitik ve yapay zekâyı karar süreçlerine bağlayan araştırma ve içgörü modellerimiz.",
+    "featuredBadge": "Öne Çıkan",
+    "fwbmName": "FWBM",
+    "fwbmTitle": "FWBM: Finansal İyilik Hali Monitörü ©",
+    "fwbmP1": "FWBM, Türkiye için karar kalitesine uygun bir finansal iyi oluş zekâ ürünü olarak konumlanır. Haftalık güncellenen paneller, AI destekli sorgulama, düzenli analitik çıktılar ve entegre makro veri katmanlarıyla; hanelerin finansal baskısını ve dayanıklılığını sürekli ölçülebilir hale getirir.",
+    "fwbmP2": "Makro göstergelerin kaçırdığı “talep tarafı” gerçekliğini görünür kılar: gelir–gider dengesi, temel ihtiyaç baskısı, borçlanma ve tasarruf kapasitesi, beklenti ve stres dinamikleri. 81 il kapsaması, yüksek frekanslı saha akışı ve kalite kontrol odağıyla; kamu, özel sektör ve sivil toplum için hedefleme, erken uyarı ve karar desteği sağlar.",
+    "fwbmCtaPrimary": "FWBM’e Git",
+    "fwbmCtaSecondary": "İletişime Geçin",
+    "fwbmStatsCoverageLabel": "Kapsam",
+    "fwbmStatsCoverageValue": "81 ile",
+    "fwbmStatsCadenceLabel": "Periyot",
+    "fwbmStatsCadenceValue": "Haftalık",
+    "fwbmStatsSampleLabel": "Örneklem büyüklüğü",
+    "fwbmStatsSampleValue": "1,600 / ay",
+    "fuzzyowlName": "FuzzyOWL",
+    "fuzzyowlP1": "FuzzyOWL, kurumların insanların nasıl düşündüğünü ve kararların arkasındaki nedensel yapıyı anlamasına yardımcı olan, Fuzzy Cognitive Mapping temelli bir içgörü ve strateji platformudur. “Ne söylüyorlar?” sorusunun ötesine geçerek “Neyi ne sürüklüyor?” ilişkisini haritalar.",
+    "fuzzyowlP2": "Yapay zekâ destekli kümelendirme ve yorumlama katmanları; sürücü değişkenleri, kırılgan noktaları ve kaldıraç alanlarını belirler. Senaryo simülasyonlarıyla ekiplerin büyük kararları uygulamadan önce etkisini test etmesine ve daha savunulabilir stratejik öncelikler belirlemesine imkân verir.",
+    "fuzzyowlCtaPrimary": "Detaylar",
+    "fuzzyowlCtaSecondary": "Deneme Alanı",
+    "fuzzyowlSoon": "Yakında",
+    "fuzzyowlEyebrow": "Ürün",
+    "fuzzyowlTitle": "Stratejik kararlar için Fuzzy Cognitive Mapping",
+    "fuzzyowlLead": "Karmaşık sistemleri modelleyin, stratejik kararları simüle edin ve sonuçları görünür kılın. Uzman bilgisini eyleme dönük, karar hazır içgörüye dönüştürün.",
+    "fuzzyowlHowHeading": "Fuzzy Cognitive Mapping nasıl çalışır?",
+    "fuzzyowlHow1Title": "Kavramları tanımlayın",
+    "fuzzyowlHow1Body": "Stratejik sorunuz üzerinde etkisi olan temel faktörleri, değişkenleri ve kavramları belirleyin.",
+    "fuzzyowlHow2Title": "İlişkileri haritalayın",
+    "fuzzyowlHow2Body": "Kavramlar arasındaki nedensel bağlantıları, etki yönünü ve gücünü temsil eden bulanık ağırlıklarla (-1 ile +1) tanımlayın.",
+    "fuzzyowlHow3Title": "Simülasyon çalıştırın",
+    "fuzzyowlHow3Body": "Kavram değerlerini değiştirerek senaryoları etkinleştirin ve etkilerin sistem boyunca nasıl yayıldığını izleyin.",
+    "fuzzyowlHow4Title": "Analiz edin ve karar verin",
+    "fuzzyowlHow4Body": "Sonuçları karşılaştırın, kaldıraç noktalarını bulun ve daha savunulabilir kararlar alın.",
+    "fuzzyowlFeaturesHeading": "Platform Özellikleri",
+    "fuzzyowlFeature1Title": "Fuzzy Cognitive Maps",
+    "fuzzyowlFeature1Body": "Karmaşık sistemleri, ağırlıklı nedensel ilişkilerle bağlı kavramlar olarak modelleyin; uzman bilgisini hesaplanabilir bir yapıya taşıyın.",
+    "fuzzyowlFeature2Title": "Senaryo Simülasyonu",
+    "fuzzyowlFeature2Body": "“Ya şöyle olursa?” senaryolarını kavram değerlerini değiştirerek çalıştırın ve etkilerin sistem boyunca yayılımını gözlemleyin.",
+    "fuzzyowlFeature3Title": "Etkileşimli Görselleştirme",
+    "fuzzyowlFeature3Body": "Haritaları etkileşimli grafik görünümleriyle inceleyin; patikaları vurgulayarak ilişkileri daha net okuyun.",
+    "fuzzyowlFeature4Title": "Yapay Zekâ Destekli Analiz",
+    "fuzzyowlFeature4Body": "Eksik ilişkileri önerme, geri besleme döngülerini tespit etme ve harita yapısını iyileştirmede AI’dan faydalanın.",
+    "fuzzyowlFeature5Title": "Raporlanabilir Çıktılar",
+    "fuzzyowlFeature5Body": "Senaryo karşılaştırmaları, hassasiyet analizleri ve stratejik önerilerle raporlar üretin.",
+    "fuzzyowlFeature6Title": "Uzman Bilgisi Yakalama",
+    "fuzzyowlFeature6Body": "Alan bilgisini karar destek modellerine dönüştürmek için yapılandırılmış bir yaklaşımla bilgiyi sistematik biçimde toplayın.",
+    "fuzzyowlCtaHeading": "Bir sonraki stratejik kararınızı modellemeye hazır mısınız?",
+    "fuzzyowlCtaBody": "Deneme Alanı yakında açılacak. Bu sırada platformu inceleyebilir veya ekibimizle iletişime geçebilirsiniz.",
+    "econimpactName": "EconImpact",
+    "econimpactSoon": "Yakında",
+    "econimpactP1": "EconImpact, OWL Intelligence altında geliştirilen; kurumların ekonomik etkilerini daha hızlı, daha standart ve daha erişilebilir biçimde görünür kılmayı amaçlayan bir ürün olarak konumlanır. Şirketlerin veya kurumların faaliyetlerinin ekonomi genelinde yarattığı toplam katkıyı ortaya koyar; böylece kullanıcılar yalnızca doğrudan etkileri değil, tedarik zinciri, istihdam ve gelir kanalları üzerinden oluşan daha geniş ekonomik etkiyi de okuyabilir.",
+    "econimpactP2": "Ürün, klasik ekonomik etki çalışmalarını danışmanlık temelli bir hizmet olmaktan çıkarıp dijital bir iş akışına dönüştürmeyi hedefler. Kurumsal kullanıcı; platforma kaydolur, temel verileri aktarır ve raporu dashboard ile indirilebilir formatlarda üretir. Çıktılar toplam üretim etkisi, katma değer, emek geliri ve istihdam gibi göstergeler etrafında; doğrudan, dolaylı ve tetiklenen etkiler ayrımıyla sunularak yatırımcı iletişimi, kurumsal iletişim, kamu ilişkileri ve stratejik karar süreçlerine bağlanır.",
+    "econimpactCtaPrimary": "İletişime Geçin"
+  },
   "home": {
     "meta": {
       "title": "OWL Intelligence — Saha Verisine Dayalı İleri Analitik",
@@ -21,7 +125,7 @@
     },
     "hero": {
       "eyebrow": "Yeni Nesil Araştırma",
-      "headline": "Saha Verisine Bağlı İleri Analitik",
+      "headline": "İleri Analitik %100 Doğrulanmış Saha Verisi",
       "body": "OWL Intelligence, doğrulanmış saha verisi, yapılandırılmış analitiği ve yönetişim çerçevesiyle yönetilen yapay zekâyı bir araya getirerek kurumlar için karar destek ürünleri geliştirir.",
       "ctaPrimary": "Ürünleri Keşfet",
       "ctaSecondary": "Asistanla Konuş",
@@ -41,7 +145,7 @@
     },
     "value": {
       "eyebrow": "OWL Intelligence Nasıl Değer Yaratır",
-      "heading": "Ölçüm, analitik ve yapay zeka tek bir karar destek katmanında",
+      "heading": "Ölçüm, analitik ve yapay zeka tek bir karar destek katmanında.",
       "body": "OWL Intelligence, ölçüm, analitik ve yapay zekâyı tek bir karar destek katmanında buluşturur. Sahadaki gerçekliği düzenli olarak izler, sinyalleri işler ve bunları kurumsal kullanıma uygun hale getirir. Böylece değişimi yalnızca görmek değil, zamanında anlamlandırmak mümkün olur.",
       "col1Title": "Ölçüm",
       "col1Body": "Yapılandırılmış saha çalışması ve doğrulanmış veri hatları aracılığıyla gerçek dünya koşullarını sürekli izler.",
@@ -92,7 +196,7 @@
     },
     "sectors": {
       "eyebrow": "Kimlere Değer Üretiyoruz?",
-      "heading": "Karmaşıklıkta faaliyet gösteren kurumlar için inşa edildi",
+      "heading": "Çok katmanlı dinamiklerle çalışan kurumlar için geliştirildi.",
       "context": "Dokuz sektör. Tek bir tutarlı içgörü altyapısı.",
       "item1": "Finans ve Bankacılık",
       "item2": "Sigorta",
@@ -106,7 +210,7 @@
     },
     "whyOwl": {
       "eyebrow": "Neden OWL Intelligence",
-      "heading": "Bir araştırma şirketi değil. Bir içgörü altyapısı.",
+      "heading": "Bir araştırma şirketi değil.\n\nBir içgörü altyapısı.",
       "intro": "OWL Intelligence, klasik araştırma şirketlerinden farklı olarak veriyi raporlarda bırakmaz; ürünleşmiş analitik ve karar desteğine dönüştürür. 15 yılı aşkın deneyim, 81 ile uzanan saha ağı ve in-house teknoloji kapasitesiyle, araştırmayı kurumsal ölçekte çalışan bir altyapıya çevirir.",
       "diff1Title": "Yöntem",
       "diff1Body": "Ulusal ve uluslararası projelerden beslenen derin metodolojik birikim sayesinde niceliksel, niteliksel, karma ve deneysel yöntemlerde uzman ekibimiz; güçlü danışma kurulu ve yaygın saha organizasyonuyla güvenilir, yüksek kaliteli veri üretir.",
@@ -117,36 +221,36 @@
     },
     "founders": {
       "eyebrow": "Kurucular",
-      "heading": "Pazar boşluğundan değil, bir inançtan doğdu",
+      "heading": "Var olanı kopyalamak için değil, eksik olanı inşa etmek için kuruldu.",
       "beyza": {
-        "quote": "OWL'u kurduk çünkü kurumlar altı aylık verilerle kritik kararlar almaya devam ediyordu — ve bunu düzeltecek teknoloji zaten mevcuttu.",
+        "quote": "Biz OWL’u bir teknoloji üretmek için değil, karar almayı çağın gerçekliğine taşımak için kurduk.",
         "name": "Beyza Polat",
         "role": "Kurucu Ortak",
         "credential": "Ekonomist"
       },
       "saygin": {
-        "quote": "Saha araştırması bize bilmemiz gereken her şeyi söyledi. Eksik olan hiçbir zaman veri değildi — verinin ölçekte eyleme dönüştürülebileceği altyapıydı.",
+        "quote": "Bilgi zaten vardı; dağınık, gecikmeli ve atıl haldeydi. OWL’ün çıkış noktası, onu çalışır bir altyapıya dönüştürmek oldu.",
         "name": "Saygın Vedat Alkurt",
         "role": "Kurucu Ortak",
         "credential": "Sosyolog"
       }
     },
     "partnerships": {
-      "eyebrow": "Ortaklık, Yatırım ve Kurumsal İş Birliği İçin",
-      "heading": "Birlikte inşa etmek ve büyümek isteyenlere açığız",
-      "body": "OWL Intelligence, birlikte üretmek, büyümek ve yeni alanlar açmak isteyen paydaşlar için açık bir yapıdır. Stratejik ortaklıkları ve kurumsal iş birliklerini gelecek vizyonumuzun doğal bir parçası olarak görüyoruz.",
+      "eyebrow": "İş birliği",
+      "heading": "Birlikte inşa etmek ve büyümek isteyen paydaşlarla bir araya geliyoruz.",
+      "body": "Kurumsal ortaklıklara, stratejik sermayeye ve ortak vizyona dayalı uzun vadeli iş birliklerine açığız.",
       "ctaLabel": "İletişime Geçin"
     },
     "agent": {
-      "eyebrow": "OWL Intelligence ile ilgili merak ettiklerinizi sorun",
-      "heading": "OWL Intelligence hakkında merak ettiğiniz her şeyi sorun.",
-      "subCopy": "Yapay zeka asistanımız ürünlerimiz, metodolojimiz ve kurumlarla nasıl çalıştığımız hakkındaki sorularınızı yanıtlamaya hazırdır.",
+      "eyebrow": "OWL INTELLIGENCE HAKKINDA DAHA FAZLASINI ÖĞRENİN",
+      "heading": "Teknolojimiz, çalışma modelimiz ve odak alanlarımızla ilgili sorularınızı iletin.",
+      "subCopy": "Yapay zeka asistanımız ürünlerimiz, metodolojimiz ve kurumlarla nasıl çalıştığımız hakkındaki sorularınızı yanıtlamaya hazır.",
       "ctaLabel": "OWL Agent ile Konuş"
     },
     "contactDemo": {
-      "eyebrow": "İletişim – Demo Talep Edin",
-      "heading": "Bir konuşma başlatın.",
-      "body": "Kurumunuz için araştırıyor, yatırım yapmak istiyor veya iş birliğiyle ilgileniyorsanız konuşmaya hazırız.",
+      "eyebrow": "DEMO TALEP EDİN",
+      "heading": "Kurumunuza uygun kullanım alanlarını görmek için demo talep edin.",
+      "body": "Kurumunuza uygun kullanım alanlarını görmek için demo talep edin.",
       "cardHeading": "Uygulamada görmek ister misiniz?",
       "ctaLabel": "Demo Talep Et"
     },
@@ -226,8 +330,8 @@
   "contact": {
     "eyebrow": "İletişim",
     "signal": "Kurumsal İletişim Hattı",
-    "titleLead": "Bize",
-    "titleMain": "Yazın",
+    "titleLead": "Bize Yazın",
+    "titleMain": "",
     "description": "Ürün demosu, iş birliği ya da genel sorularınız için bize kısa bir mesaj gönderin. Size geri dönelim.",
     "directLabel": "Doğrudan E-Posta",
     "directBody": "İsterseniz bize doğrudan e-posta da gönderebilirsiniz.",
@@ -268,5 +372,92 @@
     "backToHome": "Ana Sayfaya Dön",
     "language": "Dil",
     "loading": "Yükleniyor..."
+  },
+  "technologyPage": {
+    "eyebrow": "Teknoloji",
+    "heroTitle": "Teknoloji, Yapay Zekâ ve Veri Altyapısı",
+    "heroLead": "OWL Intelligence’ta teknoloji, araştırmanın üzerine eklenen bir unsur değil; veriyi toplama, doğrulama, yapılandırma, analiz etme ve içgörüye dönüştürme sürecimizin temel altyapısıdır. Gelişmiş yapay zekâ sistemlerini, bulut tabanlı veri mimarisini, güvenilir dış veri kaynaklarını ve üretime hazır yazılım araçlarını bir araya getiriyoruz.",
+    "sections": {
+      "aiPartnersHeading": "Yapay Zekâ Ortakları",
+      "aiPartnersBody": "Yapay zekâ tarafında OpenAI, Google Gemini ve Anthropic gibi küresel teknoloji ortaklarının sunduğu öncü modellerden yararlanıyoruz. Bu sistemler; analiz, sınıflandırma, özetleme, anomali tespiti, veri yorumlama ve akıllı arayüz tasarımı gibi birçok alanda iş akışımızı destekliyor.",
+      "aiPartnersBandLabel": "Model sağlayıcıları",
+      "engineeringHeading": "Ürün ve Mühendislik",
+      "engineeringBody": "Ürün ve mühendislik tarafında ise Supabase, Next.js, Railway ve Sanity gibi modern teknolojilerle güvenli, esnek ve ölçeklenebilir platformlar geliştiriyoruz. Bu yapı, hem yüksek performanslı hem de kurumsal kullanıma uygun dijital çözümler sunmamızı sağlıyor.",
+      "engineeringBandLabel": "Teknoloji yığını",
+      "sourcesHeading": "Güvenilir Dış Kaynaklar",
+      "sourcesBody": "Sistemlerimizi, özgün saha verisini IMF, TCMB, TÜİK, Dünya Bankası, Eurostat ve OECD gibi güvenilir ulusal ve uluslararası veri kaynaklarıyla birleştirecek şekilde kurguluyoruz. Böylece kurumlara, yalnızca veri değil; bağlamı güçlü, karşılaştırılabilir ve karar almaya uygun içgörüler sunuyoruz.",
+      "sourcesBandLabel": "Veri kaynakları"
+    },
+    "logoItems": {
+      "openai": "OpenAI",
+      "gemini": "Gemini",
+      "anthropic": "Anthropic",
+      "supabase": "Supabase",
+      "nextjs": "Next.js",
+      "railway": "Railway",
+      "sanity": "Sanity",
+      "imf": "IMF",
+      "tcmb": "TCMB",
+      "tuik": "TÜİK",
+      "worldBank": "Dünya Bankası",
+      "eurostat": "Eurostat",
+      "oecd": "OECD"
+    },
+    "capabilities": {
+      "heading": "Teknoloji ve Yapay Zekâ",
+      "lead": "Teknoloji altyapımız, saha araştırmasının metodolojik gücünü gelişmiş yapay zekâ ile birleştirerek; temeli sağlam, şeffaf ve ticari değeri yüksek içgörü ürünleri sunar.",
+      "pillars": {
+        "authenticFieldData": {
+          "title": "Otantik Saha Verisi",
+          "description": "Temelimiz, Türkiye ve ötesinde yürütülen gerçek saha araştırmasıdır — yapılandırılmış anketler, görüşmeler ve gözlemsel veri toplama. Kazınmış (scraped) ya da sentetik veriden farklı olarak veri setlerimiz, doğrulanmış insan davranışı ve duyarlılığını yansıtır."
+        },
+        "proprietaryMethodology": {
+          "title": "Özgün Metodoloji (FWBM)",
+          "description": "Field-Weighted Barometer Model (FWBM), demografik temsiliyeti, bölgesel farklılıkları ve zamansal tutarlılığı dikkate alan özgün bir ağırlıklandırma yöntemi kullanır — istatistiksel olarak sağlam ve ticari açıdan anlamlı göstergeler üretir."
+        },
+        "aiPoweredAnalysis": {
+          "title": "Yapay Zekâ Destekli Analiz (Monet)",
+          "description": "Yapay zekâ katmanımız Monet; karmaşık veri setlerini yorumlar, yükselen eğilimleri tespit eder, doğal dilde içgörüler üretir ve etkileşimli ajanımızı çalıştırır — içgörüyü her seviyedeki karar verici için erişilebilir kılar."
+        },
+        "fuzzyCognitiveMapping": {
+          "title": "Bulanık Bilişsel Haritalama (FuzzyOwl)",
+          "description": "FuzzyOwl, karmaşık nedensel sistemleri modellemek için Fuzzy Cognitive Map (FCM) yaklaşımını uygular. Bu matematiksel çerçeve, uzman bilgisini ağırlıklı yönlü grafikler olarak temsil eder ve stratejik planlama için senaryo simülasyonunu destekler."
+        },
+        "dataIntegrityGovernance": {
+          "title": "Veri Bütünlüğü ve Yönetişim",
+          "description": "Toplama protokollerinden kalite güvenceye, güvenli depolamadan uyumlu işleme süreçlerine kadar sıkı bir veri yönetişimi uygularız. Veri hattımız denetlenebilirlik ve şeffaflık için tasarlanmıştır."
+        },
+        "multiLanguageIntelligence": {
+          "title": "Çok Dilli İçgörü",
+          "description": "Platformumuz İngilizce ve Türkçe dillerinde yerel olarak çalışır; içerik, analiz ve yapay zekâ etkileşimleri her iki dilde de sunulur — uluslararası paydaşlar için çapraz pazar içgörüsünü destekler."
+        }
+      }
+    },
+    "methodology": {
+      "heading": "Araştırma Metodolojimiz",
+      "lead": "OWL Intelligence ürünleri; veri kalitesini, istatistiksel geçerliliği ve ticari relevansı her aşamada güvence altına alan çok aşamalı bir araştırma süreci üzerine kuruludur.",
+      "steps": {
+        "design": {
+          "number": "01",
+          "title": "Tasarım",
+          "desc": "Örnekleme stratejisiyle anket ve araştırma tasarımı"
+        },
+        "collect": {
+          "number": "02",
+          "title": "Toplama",
+          "desc": "Kalite kontrolleriyle saha verisi toplama"
+        },
+        "process": {
+          "number": "03",
+          "title": "İşleme",
+          "desc": "Temizleme, ağırlıklandırma ve istatistiksel analiz"
+        },
+        "deliver": {
+          "number": "04",
+          "title": "Sunum",
+          "desc": "Yapay zekâ destekli içgörüler ve etkileşimli paneller"
+        }
+      }
+    }
   }
 }

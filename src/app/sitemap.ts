@@ -5,8 +5,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://owlintelligence.co.
 const staticPages = [
   "",
   "/products",
-  "/products/fwbm",
-  "/products/fwbm/demo",
+  "/products/econimpact",
   "/products/fuzzyowl",
   "/products/fuzzyowl/playground",
   "/solutions",

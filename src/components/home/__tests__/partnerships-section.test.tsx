@@ -40,9 +40,7 @@ describe('PartnershipsSection', () => {
 
     const layout = screen.getByTestId('partnerships-layout')
     expect(layout.className).toContain('lg:items-center')
-
-    const collaboration = screen.getByText('Collaboration')
-    expect(collaboration.parentElement?.className).not.toContain('border')
+    expect(screen.queryByText('Collaboration')).not.toBeInTheDocument()
   })
 
   it('uses the owl gold CTA style with a subtle hover instead of an invert hover', () => {

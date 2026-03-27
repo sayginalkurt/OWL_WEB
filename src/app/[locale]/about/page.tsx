@@ -13,10 +13,6 @@ export default function AboutPage() {
       <div aria-hidden className="section-page-surface-glow" />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-12 lg:py-24">
         <section className="max-w-4xl">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42">
-            {t("eyebrow")}
-          </p>
-
           <h1 className="mt-5 max-w-[11ch] text-5xl font-black leading-[0.9] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[5.1rem]">
             <span className="block">{t("titleLead")}</span>
             {t("titleMain") ? (

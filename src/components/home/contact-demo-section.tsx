@@ -38,9 +38,6 @@ export function ContactDemoSection({ id, eyebrow, heading, body, cardHeading, ct
 
           <div className="rounded-[1.3rem] border border-border bg-background p-5 lg:min-w-[17rem]">
             <h3 className="text-base font-bold text-foreground lg:text-lg">{cardHeading}</h3>
-            <p className="mt-2 text-xs text-muted-foreground lg:text-sm">
-              See OWL Intelligence in action with a guided walkthrough tailored to your institution.
-            </p>
             <Link href={ctaHref} className={`${homeButtonPrimary} mt-5 w-full`}>
               {ctaLabel}
             </Link>

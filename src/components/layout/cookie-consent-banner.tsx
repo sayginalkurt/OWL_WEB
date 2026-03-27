@@ -37,7 +37,9 @@ export function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- keep hydration-safe gating without changing behavior
     setVisible(!hasAcceptedCookieConsent());
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- keep hydration-safe gating without changing behavior
     setReady(true);
   }, []);
 

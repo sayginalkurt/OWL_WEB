@@ -37,16 +37,20 @@ export async function getInsights(
 
   const filter = filters.join(" && ");
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return client.fetch(
-    `*[${filter}] | order(publishedAt desc) {
-      "title": title[$locale],
-      "excerpt": excerpt[$locale],
-      slug, category, tags, publishedAt,
-      "author": author->{ name, "role": role[$locale], image }
-    }` as any,
-    { locale, category: category ?? "", tag: tag ?? "" } as any
-  );
+  const query: string = `*[${filter}] | order(publishedAt desc) {
+    "title": title[$locale],
+    "excerpt": excerpt[$locale],
+    slug, category, tags, publishedAt,
+    "author": author->{ name, "role": role[$locale], image }
+  }`;
+
+  const params: Record<string, unknown> = {
+    locale,
+    ...(category ? { category } : {}),
+    ...(tag ? { tag } : {}),
+  };
+
+  return client.fetch(query, params);
 }
 
 // Fetch a single insight by slug
@@ -106,13 +110,16 @@ export async function getFaqs(locale: string, productKey?: string) {
 
   const filter = filters.join(" && ");
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return client.fetch(
-    `*[${filter}] | order(order asc) {
-      "question": question[$locale],
-      "answer": answer[$locale],
-      category
-    }` as any,
-    { locale, productKey: productKey ?? "" } as any
-  );
+  const query: string = `*[${filter}] | order(order asc) {
+    "question": question[$locale],
+    "answer": answer[$locale],
+    category
+  }`;
+
+  const params: Record<string, unknown> = {
+    locale,
+    ...(productKey ? { productKey } : {}),
+  };
+
+  return client.fetch(query, params);
 }

@@ -33,6 +33,7 @@ interface ProductEcosystemSectionProps {
 const uploadedLogoMap: Record<string, StaticImageData> = {
   FWBM: fwbmLogo,
   FuzzyOwl: fuzzyOwlLogo,
+  FuzzyOWL: fuzzyOwlLogo,
   EconImpact: econImpactLogo,
 }
 
@@ -125,7 +126,6 @@ export function ProductEcosystemSection({ id, eyebrow, heading, intro, products,
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const heroProduct = products[0]
   const orbitProducts = products.slice(1)
-  const activeProduct = products[activeIndex] ?? heroProduct
   const previewProduct = previewIndex === null ? null : (products[previewIndex] ?? heroProduct)
   const openProduct = openIndex === null ? null : (products[openIndex] ?? heroProduct)
 
@@ -186,11 +186,6 @@ export function ProductEcosystemSection({ id, eyebrow, heading, intro, products,
               <p className="max-w-xl text-sm leading-relaxed text-[var(--sd-fg-muted)]">
                 {intro}
               </p>
-              <div className="mt-5 flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.24em] text-[var(--sd-fg-accent)]">
-                <span>{String(products.length).padStart(2, '0')} Products</span>
-                <span aria-hidden className="h-px w-10 bg-[var(--sd-fg-accent)]/50" />
-                <span>Eclipse Stage</span>
-              </div>
             </div>
           </RevealWrapper>
         </div>
@@ -264,36 +259,6 @@ export function ProductEcosystemSection({ id, eyebrow, heading, intro, products,
 
         </div>
 
-        <RevealWrapper delay={0.08}>
-          <div
-            data-testid="product-spotlight"
-            className="grid gap-4 border-t border-[var(--sd-border)] pt-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-8"
-          >
-            <div>
-              <p className="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-[var(--sd-fg-accent)]">
-                Spotlight
-              </p>
-              <h3 className="mt-3 max-w-[22ch] text-[1.1rem] font-bold tracking-tight text-[var(--sd-fg)] sm:text-[1.3rem]">
-                {activeProduct?.name}
-              </h3>
-            </div>
-            <div className="grid gap-4">
-              <p className="max-w-2xl text-sm leading-relaxed text-[var(--sd-fg-muted)] sm:text-[0.98rem]">
-                {activeProduct?.descriptor}
-              </p>
-              <div className="grid gap-2 sm:grid-cols-3 sm:gap-4">
-                {activeProduct?.layers.map((layer, i) => (
-                  <div key={layer} className="border-t border-[var(--sd-border)] pt-2.5">
-                    <span className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[var(--sd-fg-accent)]">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--sd-fg)]">{layer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </RevealWrapper>
       </div>
 
       <Dialog open={openProduct !== null} onOpenChange={(open) => !open && setOpenIndex(null)}>

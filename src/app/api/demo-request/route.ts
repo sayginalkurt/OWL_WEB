@@ -12,9 +12,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // TODO: Insert into Supabase demo_requests / contact_submissions table
-    console.log("Demo request:", { name, email, company, product, type });
-
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(

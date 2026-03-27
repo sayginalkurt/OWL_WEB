@@ -40,12 +40,14 @@ export function Footer() {
             <h3 className="text-sm font-semibold">{t("products")}</h3>
             <ul className="mt-3 space-y-2">
               <li>
-                <Link
-                  href="/products/fwbm"
+                <a
+                  href="https://www.fwbm.com.tr"
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   {nav("fwbm")}
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -57,7 +59,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#product-ecosystem"
+                  href="/products/econimpact"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   EconImpact

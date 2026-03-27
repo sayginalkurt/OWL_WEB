@@ -9,10 +9,12 @@ export function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- preserve existing mount-gating behavior
     setMounted(true)
     const stored = localStorage.getItem('theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     const isDark = stored === 'dark' || (!stored && prefersDark)
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- preserve existing theme initialization behavior
     setDark(isDark)
     document.documentElement.classList.toggle('dark', isDark)
   }, [])

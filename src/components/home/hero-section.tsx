@@ -28,6 +28,11 @@ function splitHeroHeadline(headline: string) {
     return { monolith, support: `Grounded in ${support}` }
   }
 
+  const verifiedMatch = headline.match(/^(.*?)\s+(%100\s+Doğrulanmış[\s\S]+)$/i)
+  if (verifiedMatch) {
+    return { monolith: verifiedMatch[1], support: verifiedMatch[2] }
+  }
+
   const bagliMatch = headline.match(/^(.*?\bBağlı)\s+(.*)$/)
   if (bagliMatch) {
     return { monolith: bagliMatch[2], support: bagliMatch[1] }
@@ -45,7 +50,9 @@ export function HeroSection({ eyebrow, headline, body, ctaPrimary, ctaSecondary,
       className="dark w-full flex items-center relative overflow-hidden bg-[#07090f] text-white"
       style={{
         zIndex: 1,
-        height: 'calc(100vh - 4rem)',
+        // Use dynamic viewport height on mobile browsers; keep vh as fallback.
+        minHeight: 'calc(100vh - 4rem)',
+        height: 'calc(100dvh - 4rem)',
       }}
     >
       <div data-testid="hero-background" className="absolute inset-0 h-full w-full z-0">

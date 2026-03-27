@@ -32,7 +32,7 @@ export function IntelligenceLayerSection({ id, eyebrow, heading, steps, zIndex }
       hideIndicator
       sticky={false}
       className="overflow-visible"
-      innerClassName="min-h-[calc(100vh-4rem)] justify-center py-10 sm:py-14 lg:py-16"
+      innerClassName="min-h-[calc(100vh-4rem)] [min-height:calc(100dvh-4rem)] justify-center py-10 sm:py-14 lg:py-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="max-w-5xl">

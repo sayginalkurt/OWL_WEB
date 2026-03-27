@@ -14,6 +14,110 @@
     "agent": "Talk to Agent",
     "menu": "Menu"
   },
+  "agentPage": {
+    "eyebrow": "Talk to Agent",
+    "title": "Talk to Agent",
+    "subtitle": "Ask about our products, solutions, methodology, or anything else.",
+    "inputPlaceholder": "Type your message...",
+    "initialMessage": "Hello! I'm the OWL Intelligence assistant. I can help you understand our products (FWBM and FuzzyOwl), explore use cases relevant to your institution, and find the right next step. How can I help you today?",
+    "errorMessage": "I'm having trouble connecting right now. Please try again or contact us directly."
+  },
+  "investorsPage": {
+    "title": "Investors & Partners",
+    "lead": "",
+    "section1Title": "We Grow Together",
+    "section1Body": "We do not see OWL Intelligence merely as a technology venture. We see it as a structure built to transform research knowledge into next-generation decision infrastructure. For that reason, growth is not just about commercial expansion for us. Growth means deepening through the right partnerships, strengthening through the right capital, and opening new fields of value through meaningful collaboration. From the very beginning, our core belief has been clear: when reliable field data meets AI-powered decision systems, institutions gain the ability to read the world more accurately, learn faster, and act with greater confidence.",
+    "section2Title": "Research Is Changing",
+    "section2Body": "For many years, the research industry operated largely through periodic reports, delayed insights, and limited integration into real decision processes. That model is no longer enough. The world is now faster, more fragile, and more layered. Institutions do not only need data; they need systems that can process it continuously, interpret it meaningfully, and connect it directly to decision-making. This is why we believe the boundaries of research are being redefined. What is needed today is not just research, but a living information infrastructure that can be updated, queried, and translated into action. OWL Intelligence is built within that shift.",
+    "section2Tag1": "",
+    "section2Tag2": "",
+    "section2Tag3": "",
+    "section3Title": "A New Threshold in the Research Market",
+    "section3Body": "The research market is entering a new threshold. Institutions no longer want to know only what happened. They also want to understand what is changing, what is emerging, which segments are under pressure, and which decisions may create risk or opportunity. This new demand requires a much stronger bridge between traditional research practice and the new generation of analytics and AI systems. At OWL, that is precisely where we position ourselves. Our focus is to turn reliable field-based data into a scalable, continuously operating intelligence layer that connects directly to institutional decision workflows.",
+    "section3Card1Title": "",
+    "section3Card1Body": "",
+    "section3Card2Title": "",
+    "section3Card2Body": "",
+    "section3Card3Title": "",
+    "section3Card3Body": "",
+    "section4Title": "Our Partnership Philosophy",
+    "section4Body": "We do not define partnership as financial support alone, nor as a transactional business relationship. To us, partnership means thinking together, building together, and scaling together. As we grow our products, we believe strategic perspective, sectoral reach, institutional experience, and international networks matter just as much as capital. That is why we approach our relationships with investors, strategic partners, technology collaborators, and institutional stakeholders as part of a long-term co-building process. The strongest organizations are not built only through strong ideas, but also through the right people and a shared sense of direction.",
+    "section4Pill1": "",
+    "section4Pill2": "",
+    "section4Pill3": "",
+    "section5Title": "Why Now, Why OWL?",
+    "section5Body": "Because data alone is no longer enough. The real issue is whether data can be used in a timely, reliable, and decision-ready way. OWL Intelligence is building a structure that combines the rigor of research methodology with the speed of modern technology. That makes us more than a research company and more than a software product. We are building a new operational layer between research and decision-making. Institutions today require insights that are more frequent, more explainable, more defensible, and more actionable. This is exactly where OWL’s growth opportunity begins.",
+    "section6Title": "A Vision for EU-Scale Growth",
+    "section6Body": "Our vision is not limited to Türkiye. We aim to grow the field-based, technology-enabled model we are building here into a decision-intelligence infrastructure that can scale across Europe. At EU scale, we see substantial demand in areas such as data reliability, institutional resilience, consumer behavior, economic pressure, social vulnerability, and decision support systems. OWL Intelligence is designed to combine a deep understanding of local realities with the ability to productize that understanding to international standards. Our scaling vision is not only geographical. It is also about making methodological rigor and technological capability reproducible across markets.",
+    "section6Badge1": "",
+    "section6Badge2": "",
+    "section6Badge3": "",
+    "section7Title": "Long-Term Value",
+    "section7Body": "We are focused less on fast and superficial expansion, and more on building durable and meaningful value. The growth journey of OWL Intelligence is being built on reliable data, strong methodology, robust product architecture, and aligned partnerships. For that reason, we see our relationships with investors, institutional partners, technology stakeholders, and international collaborators not simply as immediate opportunities, but as part of building the structure of the future. We value engaging with those who believe in building, thinking, and growing together over the long term.",
+    "section7Line1": "",
+    "section7Line2": "",
+    "section7Line3": "",
+    "section7Line4": "",
+    "section8Title": "Let’s Build Together",
+    "section8Body": "At a moment when the research world is being reshaped and institutions need smarter, more continuous systems, OWL Intelligence aims to open a new path. If you believe in the future of research, the transformation of decision infrastructure, and the next-generation use of reliable data, we would be glad to connect. Some structures are not simply launched; they are built and grown through the right partnerships.",
+    "ctaPrimary": "Get in Touch",
+    "ctaSecondary": "Request a Demo"
+  },
+  "productsPage": {
+    "title": "Products",
+    "lead": "Our research and insight models that connect field data, advanced analytics, and AI to decision workflows.",
+    "featuredBadge": "Featured",
+    "fwbmName": "FWBM",
+    "fwbmTitle": "FWBM: Financial Well-Being Monitor ©",
+    "fwbmP1": "FWBM is positioned as a decision-grade financial well-being intelligence product for Türkiye. With weekly-updated dashboards, AI-assisted querying, recurring analytics, and integrated macro data, it makes household financial stress and resilience continuously measurable.",
+    "fwbmP2": "It surfaces the demand-side reality macro indicators miss: income–expenditure balance, basic needs pressure, borrowing and savings capacity, expectations, and stress dynamics. With nationwide coverage and a quality-control-first field pipeline, it supports targeting, early-warning, and decision support for public, private, and civil-society actors.",
+    "fwbmCtaPrimary": "Visit FWBM",
+    "fwbmCtaSecondary": "Get in touch",
+    "fwbmStatsCoverageLabel": "Coverage",
+    "fwbmStatsCoverageValue": "81 provinces",
+    "fwbmStatsCadenceLabel": "Cadence",
+    "fwbmStatsCadenceValue": "Weekly",
+    "fwbmStatsSampleLabel": "Sample size",
+    "fwbmStatsSampleValue": "1,600 / month",
+    "fuzzyowlName": "FuzzyOWL",
+    "fuzzyowlP1": "FuzzyOWL is a premium causal insight and strategy platform built on Fuzzy Cognitive Mapping. It helps organizations move beyond “what people say” to understand what drives what—mapping the structure behind perception and decision-making.",
+    "fuzzyowlP2": "AI-assisted clustering and interpretation identify driver variables, fragile points, and leverage areas. Scenario simulation lets teams test strategic change before acting, enabling clearer prioritization and more defensible decisions in complex environments.",
+    "fuzzyowlCtaPrimary": "Learn more",
+    "fuzzyowlCtaSecondary": "Playground",
+    "fuzzyowlSoon": "Coming soon",
+    "fuzzyowlEyebrow": "Product",
+    "fuzzyowlTitle": "Fuzzy Cognitive Mapping for Strategic Decision-Making",
+    "fuzzyowlLead": "Model complex systems, simulate strategic decisions, and visualize outcomes. Turn expert knowledge into actionable, decision-ready insight.",
+    "fuzzyowlHowHeading": "How Fuzzy Cognitive Mapping Works",
+    "fuzzyowlHow1Title": "Define concepts",
+    "fuzzyowlHow1Body": "Identify the key factors, variables, and concepts that influence your strategic question.",
+    "fuzzyowlHow2Title": "Map relationships",
+    "fuzzyowlHow2Body": "Draw causal connections between concepts with fuzzy weights (-1 to +1) representing influence strength and direction.",
+    "fuzzyowlHow3Title": "Run simulations",
+    "fuzzyowlHow3Body": "Activate scenarios by changing concept values and observe how effects propagate through the system.",
+    "fuzzyowlHow4Title": "Analyze & decide",
+    "fuzzyowlHow4Body": "Compare outcomes, identify leverage points, and make data-informed strategic decisions.",
+    "fuzzyowlFeaturesHeading": "Platform Features",
+    "fuzzyowlFeature1Title": "Fuzzy Cognitive Maps",
+    "fuzzyowlFeature1Body": "Model complex systems as interconnected concepts with weighted causal relationships—capturing expert knowledge in a computable structure.",
+    "fuzzyowlFeature2Title": "Scenario Simulation",
+    "fuzzyowlFeature2Body": "Run what-if scenarios by adjusting concept values and observing how changes propagate through the system.",
+    "fuzzyowlFeature3Title": "Interactive Visualization",
+    "fuzzyowlFeature3Body": "Explore your maps with interactive graph views—highlighting pathways to understand complex relationships.",
+    "fuzzyowlFeature4Title": "AI-Enhanced Analysis",
+    "fuzzyowlFeature4Body": "Use AI to suggest missing relationships, identify feedback loops, and refine map structure.",
+    "fuzzyowlFeature5Title": "Deliverable Reports",
+    "fuzzyowlFeature5Body": "Generate reports with scenario comparisons, sensitivity analyses, and strategic recommendations.",
+    "fuzzyowlFeature6Title": "Expert Knowledge Capture",
+    "fuzzyowlFeature6Body": "A structured method for eliciting and encoding domain expertise into decision-support models.",
+    "fuzzyowlCtaHeading": "Ready to model your next strategic decision?",
+    "fuzzyowlCtaBody": "Playground access is coming soon. In the meantime, explore the platform overview or get in touch with our team.",
+    "econimpactName": "EconImpact",
+    "econimpactSoon": "Coming soon",
+    "econimpactP1": "EconImpact is positioned as a product developed under OWL Intelligence to make economic impact measurement faster, more standardized, and more accessible for institutions. It helps organizations make their total contribution visible—not only through direct activity, but also through wider channels such as supply chains, employment, and income effects.",
+    "econimpactP2": "The product aims to turn classical economic impact studies from a consultancy-only service into a digital workflow. Institutional users register on the platform, upload the required inputs, and generate an impact report through dashboards and downloadable outputs. Results are structured around total output, value added, labor income, and employment, and can be decomposed into direct, indirect, and induced effects—supporting investor communications, corporate storytelling, public affairs, and strategic decision-making.",
+    "econimpactCtaPrimary": "Get in touch"
+  },
   "home": {
     "meta": {
       "title": "OWL Intelligence — Advanced Analytics Grounded in Field Data",
@@ -106,7 +210,7 @@
     },
     "whyOwl": {
       "eyebrow": "Why OWL Intelligence",
-      "heading": "Not a research firm. An intelligence infrastructure.",
+      "heading": "Not a research firm.\n\nAn intelligence infrastructure.",
       "intro": "Unlike conventional research firms, OWL Intelligence does not leave data confined to reports; it turns data into productized analytics and decision support. With more than 15 years of experience, a field network spanning all 81 provinces of Turkey, and in-house technology capabilities, it transforms research into an infrastructure that operates at institutional scale.",
       "diff1Title": "Methodology",
       "diff1Body": "Drawing on deep methodological expertise shaped by national and international projects, our team specializes in quantitative, qualitative, mixed, and experimental methods.",
@@ -117,15 +221,15 @@
     },
     "founders": {
       "eyebrow": "Founders",
-      "heading": "Built from a conviction, not a gap in the market",
+      "heading": "It was founded not to copy what already exists, but to build what is missing.",
       "beyza": {
-        "quote": "We built OWL because institutions kept making critical decisions on data that was already six months old — and the technology to fix that already existed.",
+        "quote": "We did not found OWL simply to build technology; we founded it to bring decision-making into the reality of our time.",
         "name": "Beyza Polat",
         "role": "Co-Founder",
         "credential": "Economist"
       },
       "saygin": {
-        "quote": "Field research told us everything we needed to know. The gap was never the data — it was the infrastructure to make it actionable at scale.",
+        "quote": "The knowledge was already there; fragmented, delayed, and underused. OWL began with the idea of turning it into a working infrastructure.",
         "name": "Saygın Vedat Alkurt",
         "role": "Co-Founder",
         "credential": "Sociologist"
@@ -133,20 +237,20 @@
     },
     "partnerships": {
       "eyebrow": "Partnerships, Investment & Institutional Collaboration",
-      "heading": "Open to those who want to build and grow together",
-      "body": "OWL Intelligence is open to working with stakeholders who want to build, grow, and open up new areas together. We see strategic partnerships and institutional collaboration as a natural part of our long-term vision.",
+      "heading": "We work with stakeholders who want to build and grow together.",
+      "body": "Open to institutional partnership, strategic capital, and aligned long-horizon collaboration.",
       "ctaLabel": "Get in Touch"
     },
     "agent": {
-      "eyebrow": "Talk to Our Agent",
-      "heading": "Ask anything you would like to know about OWL Intelligence.",
-      "subCopy": "Our AI agent is available to answer questions about our products, methodology, and how we work with institutions.",
+      "eyebrow": "LEARN MORE ABOUT OWL INTELLIGENCE",
+      "heading": "Share your questions about our technology, operating model, and focus areas.",
+      "subCopy": "Our AI agent is ready to answer questions about our products, methodology, and how we work with institutions.",
       "ctaLabel": "Talk to OWL Agent"
     },
     "contactDemo": {
-      "eyebrow": "Contact",
-      "heading": "Start a conversation.",
-      "body": "Whether you're exploring for your institution, looking to invest, or interested in collaboration, we're ready to talk.",
+      "eyebrow": "REQUEST A DEMO",
+      "heading": "Request a demo to explore use cases relevant to your institution.",
+      "body": "Request a demo to explore use cases relevant to your institution.",
       "cardHeading": "Ready to see it in action?",
       "ctaLabel": "Book a Demo"
     },
@@ -268,5 +372,92 @@
     "backToHome": "Back to Home",
     "language": "Language",
     "loading": "Loading..."
+  },
+  "technologyPage": {
+    "eyebrow": "Technology",
+    "heroTitle": "Technology, AI, and Data Infrastructure",
+    "heroLead": "At OWL Intelligence, technology is not an add-on to research. It is the core infrastructure behind how we collect, validate, structure, analyze, and activate data. We bring together advanced AI systems, cloud-based architecture, trusted external databases, and production-ready software tools to turn raw information into reliable intelligence.",
+    "sections": {
+      "aiPartnersHeading": "AI Partners",
+      "aiPartnersBody": "On the AI side, we work with leading models and tools from globally trusted technology partners such as OpenAI, Google Gemini, and Anthropic. These systems support analysis, classification, summarization, anomaly detection, data interpretation, and intelligent interface design across our workflow.",
+      "aiPartnersBandLabel": "Model providers",
+      "engineeringHeading": "Product & Engineering",
+      "engineeringBody": "On the product and engineering side, we build secure, flexible, and scalable platforms using modern technologies such as Supabase, Next.js, Railway, and Sanity. This stack allows us to deliver high-performance digital products that are both operationally robust and ready for institutional use.",
+      "engineeringBandLabel": "Stack",
+      "sourcesHeading": "Trusted External Sources",
+      "sourcesBody": "Our systems are designed to combine proprietary field data with trusted national and international sources such as the IMF, CBRT (TCMB), TurkStat (TÜİK), the World Bank, Eurostat, and the OECD. This enables us to provide insights that are not only data-driven, but also contextual, comparable, and decision-ready.",
+      "sourcesBandLabel": "Data sources"
+    },
+    "logoItems": {
+      "openai": "OpenAI",
+      "gemini": "Gemini",
+      "anthropic": "Anthropic",
+      "supabase": "Supabase",
+      "nextjs": "Next.js",
+      "railway": "Railway",
+      "sanity": "Sanity",
+      "imf": "IMF",
+      "tcmb": "TCMB",
+      "tuik": "TÜİK",
+      "worldBank": "World Bank",
+      "eurostat": "Eurostat",
+      "oecd": "OECD"
+    },
+    "capabilities": {
+      "heading": "Technology & AI",
+      "lead": "Our technology stack combines rigorous field research methodology with advanced AI to deliver intelligence products that are grounded, transparent, and commercially valuable.",
+      "pillars": {
+        "authenticFieldData": {
+          "title": "Authentic Field Data",
+          "description": "Our foundation is real-world field research — structured surveys, interviews, and observational data collected across Turkiye and beyond. Unlike scraped or synthetic data, our datasets reflect verified human behavior and sentiment."
+        },
+        "proprietaryMethodology": {
+          "title": "Proprietary Methodology (FWBM)",
+          "description": "The Field-Weighted Barometer Model (FWBM) uses a proprietary weighting methodology that adjusts for demographic representation, regional variation, and temporal consistency — ensuring statistically robust, commercially relevant indicators."
+        },
+        "aiPoweredAnalysis": {
+          "title": "AI-Powered Analysis (Monet)",
+          "description": "Our AI layer (Monet) interprets complex datasets, detects emerging trends, generates natural-language insights, and powers our interactive agent — making intelligence accessible to decision-makers at every level."
+        },
+        "fuzzyCognitiveMapping": {
+          "title": "Fuzzy Cognitive Mapping (FuzzyOwl)",
+          "description": "FuzzyOwl applies Fuzzy Cognitive Map (FCM) theory to model complex causal systems. This mathematical framework captures expert knowledge as weighted directed graphs and supports scenario simulation for strategic planning."
+        },
+        "dataIntegrityGovernance": {
+          "title": "Data Integrity & Governance",
+          "description": "We maintain rigorous data governance — from collection protocols and quality assurance to secure storage and compliant processing. Our data pipeline is designed for auditability and transparency."
+        },
+        "multiLanguageIntelligence": {
+          "title": "Multi-Language Intelligence",
+          "description": "Our platform operates natively in English and Turkish, with content, analysis, and AI interactions available in both languages — supporting cross-market intelligence for international stakeholders."
+        }
+      }
+    },
+    "methodology": {
+      "heading": "Our Research Methodology",
+      "lead": "OWL Intelligence products are built on a multi-stage research process that ensures data quality, statistical validity, and commercial relevance at every step.",
+      "steps": {
+        "design": {
+          "number": "01",
+          "title": "Design",
+          "desc": "Survey and research design with sampling strategy"
+        },
+        "collect": {
+          "number": "02",
+          "title": "Collect",
+          "desc": "Field data collection with quality controls"
+        },
+        "process": {
+          "number": "03",
+          "title": "Process",
+          "desc": "Cleaning, weighting, and statistical analysis"
+        },
+        "deliver": {
+          "number": "04",
+          "title": "Deliver",
+          "desc": "AI-enhanced insights and interactive dashboards"
+        }
+      }
+    }
   }
 }

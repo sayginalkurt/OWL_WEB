@@ -104,7 +104,7 @@ export default function ProductFinderPage() {
             Which OWL product fits your need?
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Answer a few questions and we'll recommend the right product.
+            Answer a few questions and we&apos;ll recommend the right product.
           </p>
         </div>
 
@@ -152,10 +152,10 @@ export default function ProductFinderPage() {
                         weekly-updated dashboards.
                       </p>
                       <Link
-                        href="/products/fwbm"
+                        href="/products"
                         className={cn(buttonVariants({ size: "lg" }), "mt-6")}
                       >
-                        Explore FWBM
+                        Explore Products
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </>
@@ -188,12 +188,14 @@ export default function ProductFinderPage() {
                         modeling. We recommend exploring both products.
                       </p>
                       <div className="mt-6 flex justify-center gap-4">
-                        <Link
-                          href="/products/fwbm"
+                        <a
+                          href="https://fwbm.com.tr"
+                          target="_blank"
+                          rel="noreferrer"
                           className={cn(buttonVariants())}
                         >
                           FWBM
-                        </Link>
+                        </a>
                         <Link
                           href="/products/fuzzyowl"
                           className={cn(buttonVariants({ variant: "outline" }))}

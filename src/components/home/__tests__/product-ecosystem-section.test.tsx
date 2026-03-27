@@ -38,19 +38,10 @@ describe('ProductEcosystemSection', () => {
     expect(screen.getByAltText('FuzzyOwl')).toBeInTheDocument()
   })
 
-  it('defaults the spotlight to FWBM', () => {
+  it('does not render the Spotlight block', () => {
     render(<ProductEcosystemSection {...props} />)
-    const spotlight = screen.getByTestId('product-spotlight')
-    expect(within(spotlight).getByText('FWBM: Financial Well-Being Monitor ©')).toBeInTheDocument()
-    expect(within(spotlight).getByText('Next-generation household financial resilience.')).toBeInTheDocument()
-  })
-
-  it('updates the spotlight when hovering another logo', () => {
-    render(<ProductEcosystemSection {...props} />)
-    fireEvent.mouseEnter(screen.getByTestId('product-node-FuzzyOwl'))
-    const spotlight = screen.getByTestId('product-spotlight')
-    expect(within(spotlight).getByText('FuzzyOwl')).toBeInTheDocument()
-    expect(within(spotlight).getByText('Makes visible which variables shape decisions.')).toBeInTheDocument()
+    expect(screen.queryByTestId('product-spotlight')).toBeNull()
+    expect(screen.queryByText('Spotlight')).not.toBeInTheDocument()
   })
 
   it('shows a lightweight preview near the active logo on hover', () => {

@@ -1,3 +1,9 @@
 ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@swc/core'
+  - core-js
+  - esbuild
+  - msw
+  - protobufjs
   - sharp
   - unrs-resolver

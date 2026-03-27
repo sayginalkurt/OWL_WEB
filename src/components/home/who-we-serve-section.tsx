@@ -41,7 +41,7 @@ export function WhoWeServeSection({ id, eyebrow, heading, context, sectors, zInd
       sticky={false}
       hideIndicator
       className="overflow-visible"
-      innerClassName="min-h-[calc(100vh-4rem)] justify-center py-10 sm:py-14 lg:py-16"
+      innerClassName="min-h-[calc(100vh-4rem)] [min-height:calc(100dvh-4rem)] justify-center py-10 sm:py-14 lg:py-16"
     >
       <div className="grid h-full content-center gap-8 lg:gap-10">
         <div className="max-w-4xl">

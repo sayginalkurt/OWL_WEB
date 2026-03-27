@@ -60,11 +60,7 @@ export default function ContactPage() {
       <div className="relative mx-auto min-h-[calc(100vh-4rem)] max-w-6xl px-4 py-16 sm:px-6 lg:px-12 lg:py-24">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <section className="max-w-3xl">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42">
-              {t("eyebrow")}
-            </p>
-
-            <h1 className="mt-5 max-w-[10ch] text-5xl font-black uppercase leading-[0.9] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[5.1rem]">
+            <h1 className="mt-5 max-w-[10ch] text-5xl font-black leading-[0.9] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[5.1rem]">
               <span className="block">{t("titleLead")}</span>
               <span className="mt-3 block text-foreground/55">{t("titleMain")}</span>
             </h1>

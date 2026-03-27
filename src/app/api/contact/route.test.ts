@@ -45,15 +45,13 @@ describe("POST /api/contact", () => {
     expect(body.secret).toBe("test-secret");
   });
 
-  it("re-POSTs to Location when WebApp responds with 302", async () => {
-    fetchMock
-      .mockResolvedValueOnce(
-        new Response("", {
-          status: 302,
-          headers: { location: "https://script.googleusercontent.com/macros/echo?x=y" },
-        })
-      )
-      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true, emailSent: true }), { status: 200 }));
+  it("treats 302 from WebApp as success without following redirect", async () => {
+    fetchMock.mockResolvedValueOnce(
+      new Response("", {
+        status: 302,
+        headers: { location: "https://script.googleusercontent.com/macros/echo?x=y" },
+      })
+    );
 
     const response = await POST(
       new Request("http://localhost/api/contact", {
@@ -68,10 +66,7 @@ describe("POST /api/contact", () => {
     );
 
     expect(response.status).toBe(200);
-    expect(fetchMock).toHaveBeenCalledTimes(2);
-    expect(fetchMock.mock.calls[1]?.[0]).toBe(
-      "https://script.googleusercontent.com/macros/echo?x=y"
-    );
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   it("rejects incomplete submissions", async () => {

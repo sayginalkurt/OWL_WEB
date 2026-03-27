@@ -125,11 +125,13 @@ export async function POST(req: NextRequest) {
       }
 
       // Apps Script frequently responds 302 to script.googleusercontent.com.
-      // Many clients turn POST->GET on 302/303, so we follow manually and re-POST.
-      let res = await postJson(webAppUrl);
-      if ((res.status === 301 || res.status === 302 || res.status === 303) && res.headers.get("location")) {
-        const redirected = res.headers.get("location")!;
-        res = await postJson(redirected);
+      // Apps Script may respond with 302/303 redirect after running doPost.
+      // Following that redirect can turn POST->GET or hit endpoints that reject POST.
+      // Treat 302/303 as success and do not follow.
+      const res = await postJson(webAppUrl);
+
+      if (res.status === 302 || res.status === 303) {
+        return NextResponse.json({ success: true });
       }
 
       if (!res.ok) {

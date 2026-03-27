@@ -14,8 +14,7 @@
  * 6) Copy deployment URL into Railway env CONTACT_SHEETS_WEBAPP_URL
  *
  * Request:
- * - POST JSON body: { name, email, company, message, honeypot?, meta? }
- * - Header: X-OWL-Contact-Secret: <secret>
+ * - POST JSON body: { secret, name, email, company, message, honeypot?, meta? }
  */
 
 const MAX_NAME = 120;
@@ -27,6 +26,10 @@ function jsonResponse(code, payload) {
   return ContentService.createTextOutput(JSON.stringify(payload)).setMimeType(
     ContentService.MimeType.JSON
   );
+}
+
+function doGet() {
+  return jsonResponse(200, { ok: true, message: "Use POST to submit contact form." });
 }
 
 function getProp_(key) {
@@ -93,18 +96,14 @@ function sendEmail_(submission) {
 
 function doPost(e) {
   try {
-    const secretHeader =
-      (e && e.parameter && e.parameter.secret) ||
-      (e && e.headers && (e.headers["X-OWL-Contact-Secret"] || e.headers["x-owl-contact-secret"])) ||
-      "";
-
     const expected = getProp_("OWL_CONTACT_SECRET");
     if (!expected) return jsonResponse(500, { error: "Server not configured" });
-    if (String(secretHeader) !== String(expected))
-      return jsonResponse(401, { error: "Unauthorized" });
 
     const raw = e && e.postData && e.postData.contents ? e.postData.contents : "{}";
     const payload = JSON.parse(raw);
+    const provided = normalize_(payload.secret || (e && e.parameter && e.parameter.secret));
+    if (!provided || String(provided) !== String(expected))
+      return jsonResponse(401, { error: "Unauthorized" });
 
     const checked = validate_(payload);
     if (!checked.ok) return jsonResponse(400, { error: checked.error });

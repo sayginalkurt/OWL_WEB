@@ -41,9 +41,8 @@ describe("POST /api/contact", () => {
     );
     const init = fetchMock.mock.calls[0]?.[1] as RequestInit;
     expect(init.method).toBe("POST");
-    expect((init.headers as Record<string, string>)["X-OWL-Contact-Secret"]).toBe(
-      "test-secret"
-    );
+    const body = JSON.parse(String(init.body));
+    expect(body.secret).toBe("test-secret");
   });
 
   it("rejects incomplete submissions", async () => {

@@ -94,9 +94,9 @@ export async function POST(req: NextRequest) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-OWL-Contact-Secret": secret,
         },
         body: JSON.stringify({
+          secret,
           name: submission.name,
           email: submission.email,
           company: submission.company,

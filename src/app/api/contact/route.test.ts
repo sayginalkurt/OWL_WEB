@@ -18,7 +18,9 @@ describe("POST /api/contact", () => {
   });
 
   it("sends a validated contact submission via Sheets WebApp", async () => {
-    fetchMock.mockResolvedValue(new Response(JSON.stringify({ success: true }), { status: 200 }));
+    fetchMock.mockResolvedValue(
+      new Response(JSON.stringify({ success: true, emailSent: true }), { status: 200 })
+    );
 
     const response = await POST(
       new Request("http://localhost/api/contact", {
@@ -51,7 +53,7 @@ describe("POST /api/contact", () => {
           headers: { location: "https://script.googleusercontent.com/macros/echo?x=y" },
         })
       )
-      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true }), { status: 200 }));
+      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true, emailSent: true }), { status: 200 }));
 
     const response = await POST(
       new Request("http://localhost/api/contact", {

@@ -140,6 +140,17 @@ export async function POST(req: NextRequest) {
           { status: 500 }
         );
       }
+
+      const result = (await res.json().catch(() => null)) as
+        | { success?: boolean; emailSent?: boolean; error?: string }
+        | null;
+      if (!result?.success || !result.emailSent) {
+        console.error("Contact Sheets WebApp email failed:", result);
+        return NextResponse.json(
+          { error: "Contact form is temporarily unavailable" },
+          { status: 500 }
+        );
+      }
     } finally {
       clearTimeout(timeout);
     }

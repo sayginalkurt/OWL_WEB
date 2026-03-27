@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import ContactPage from "./page";
 
@@ -45,9 +45,7 @@ vi.mock("next-intl", () => ({
 
 describe("ContactPage", () => {
   beforeEach(() => {
-    // This module reads env at import time in the client component.
-    // Ensure it's unset by default for the "not configured" test.
-    delete process.env.NEXT_PUBLIC_GOOGLE_FORM_EMBED_URL;
+    vi.stubGlobal("fetch", vi.fn());
   });
 
   it("renders the blueprint contact details and direct email link", () => {
@@ -63,11 +61,39 @@ describe("ContactPage", () => {
     expect(screen.getByText(/Kadir Has Teknopark/i)).toBeInTheDocument();
   });
 
-  it("shows a configuration hint when Google Form is not set", async () => {
+  it("submits the form and shows the sent state", async () => {
+    vi.mocked(fetch).mockResolvedValue({
+      ok: true,
+    } as Response);
+
     render(<ContactPage />);
 
-    expect(
-      screen.getByText(/NEXT_PUBLIC_GOOGLE_FORM_EMBED_URL/i)
-    ).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText("Full Name"), {
+      target: { value: "Jane Doe" },
+    });
+    fireEvent.change(screen.getByLabelText("Work Email"), {
+      target: { value: "jane@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText("Institution / Company"), {
+      target: { value: "OWL Partner" },
+    });
+    fireEvent.change(screen.getByLabelText("Message"), {
+      target: { value: "We want to discuss a product demo." },
+    });
+
+    fireEvent.submit(
+      screen.getByRole("button", { name: "Send Message" }).closest("form")!
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText(translations.success)).toBeInTheDocument();
+    });
+
+    expect(fetch).toHaveBeenCalledWith(
+      "/api/contact",
+      expect.objectContaining({
+        method: "POST",
+      })
+    );
   });
 });

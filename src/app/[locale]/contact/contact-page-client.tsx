@@ -1,17 +1,55 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const publicEmail = "info@owlintelligence.co.uk";
-const googleFormEmbedUrl = process.env.NEXT_PUBLIC_GOOGLE_FORM_EMBED_URL ?? "";
 
 const offices = {
   uk: "OWL INTELLIGENCE LTD / LONDON 71-75 Shelton Street Covent Garden London WC2H 9JQ - UNITED KINGDOM",
   tr: "OWL INTELLIGENCE A.Ş. / İSTANBUL Kadir Has Teknopark Selimpaşa Mah. 1010. Sk. No: 10/1 İç Kapı No: 79 Silivri - TÜRKİYE",
 };
 
+type FormStatus = "idle" | "sending" | "sent" | "error";
+
 export default function ContactPageClient() {
   const t = useTranslations("contact");
+  const [status, setStatus] = useState<FormStatus>("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          company: data.get("company"),
+          message: data.get("message"),
+          honeypot: data.get("__hp"),
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+        return;
+      }
+
+      setStatus("error");
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <main className="relative overflow-hidden bg-background text-foreground">
@@ -82,40 +120,106 @@ export default function ContactPageClient() {
               {t("formDescription")}
             </p>
 
-            <div className="mt-8">
-              {googleFormEmbedUrl ? (
-                <div className="space-y-4">
-                  <div className="overflow-hidden rounded-2xl border border-border/60 bg-background/60 shadow-[0_22px_70px_-42px_rgba(15,23,42,0.16)]">
-                    <iframe
-                      title="Contact form"
-                      src={googleFormEmbedUrl}
-                      className="h-[820px] w-full"
-                      loading="lazy"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <p className="text-xs leading-relaxed text-foreground/44">
-                    If the embedded form doesn’t load, open it in a new tab:{" "}
-                    <a
-                      className="underline underline-offset-4"
-                      href={googleFormEmbedUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {googleFormEmbedUrl}
-                    </a>
-                  </p>
+            <form onSubmit={handleSubmit} className="mt-8 space-y-5" autoComplete="off">
+              <div className="hidden" aria-hidden>
+                <label htmlFor="__hp">Leave empty</label>
+                <input
+                  id="__hp"
+                  name="__hp"
+                  tabIndex={-1}
+                  autoComplete="new-password"
+                  inputMode="none"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                >
+                  {t("name")}
+                </label>
+                <Input
+                  id="name"
+                  name="name"
+                  required
+                  placeholder={t("namePlaceholder")}
+                  className="h-12 rounded-none border-x-0 border-t-0 border-b border-border bg-transparent px-0 text-foreground placeholder:text-foreground/32 focus-visible:border-[#9e7d20] focus-visible:ring-0 dark:focus-visible:border-[#d3af37]"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                >
+                  {t("email")}
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder={t("emailPlaceholder")}
+                  className="h-12 rounded-none border-x-0 border-t-0 border-b border-border bg-transparent px-0 text-foreground placeholder:text-foreground/32 focus-visible:border-[#9e7d20] focus-visible:ring-0 dark:focus-visible:border-[#d3af37]"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="company"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                >
+                  {t("company")}
+                </label>
+                <Input
+                  id="company"
+                  name="company"
+                  placeholder={t("companyPlaceholder")}
+                  className="h-12 rounded-none border-x-0 border-t-0 border-b border-border bg-transparent px-0 text-foreground placeholder:text-foreground/32 focus-visible:border-[#9e7d20] focus-visible:ring-0 dark:focus-visible:border-[#d3af37]"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                >
+                  {t("message")}
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  required
+                  placeholder={t("messagePlaceholder")}
+                  className="min-h-36 rounded-none border-x-0 border-t-0 border-b border-border bg-transparent px-0 py-2 text-foreground placeholder:text-foreground/32 focus-visible:border-[#9e7d20] focus-visible:ring-0 dark:focus-visible:border-[#d3af37]"
+                />
+              </div>
+
+              <div className="pt-3">
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={status === "sending"}
+                  className="h-11 rounded-full bg-[#d3af37] px-6 text-[#0d1422] hover:bg-[#ddbb4f]"
+                >
+                  {status === "sending" ? t("sending") : t("send")}
+                </Button>
+
+                <p className="mt-4 max-w-sm text-xs leading-relaxed text-foreground/44">
+                  {t("formFootnote")}
+                </p>
+
+                <div aria-live="polite" className="min-h-5 pt-4">
+                  {status === "sent" && (
+                    <p className="text-sm text-emerald-300">{t("success")}</p>
+                  )}
+                  {status === "error" && (
+                    <p className="text-sm text-rose-300">{t("error")}</p>
+                  )}
                 </div>
-              ) : (
-                <div className="rounded-2xl border border-border/60 bg-background/60 p-6 text-sm text-foreground/70">
-                  Google Form is not configured yet. Set{" "}
-                  <code className="rounded bg-muted px-1.5 py-0.5 text-foreground">
-                    NEXT_PUBLIC_GOOGLE_FORM_EMBED_URL
-                  </code>{" "}
-                  in your Railway environment variables.
-                </div>
-              )}
-            </div>
+              </div>
+            </form>
           </section>
         </div>
       </div>

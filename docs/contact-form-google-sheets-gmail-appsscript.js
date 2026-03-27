@@ -113,9 +113,16 @@ function doPost(e) {
     const sheet = ss.getSheets()[0];
 
     appendRow_(sheet, checked.value, payload.meta || {});
-    sendEmail_(checked.value);
-
-    return jsonResponse(200, { success: true });
+    try {
+      sendEmail_(checked.value);
+      return jsonResponse(200, { success: true, emailSent: true });
+    } catch (emailErr) {
+      return jsonResponse(500, {
+        success: false,
+        emailSent: false,
+        error: String(emailErr && emailErr.message ? emailErr.message : emailErr),
+      });
+    }
   } catch (err) {
     return jsonResponse(500, { error: String(err && err.message ? err.message : err) });
   }

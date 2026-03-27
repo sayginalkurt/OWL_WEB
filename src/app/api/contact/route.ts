@@ -90,36 +90,47 @@ export async function POST(req: NextRequest) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 12_000);
     try {
-      const res = await fetch(webAppUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const payload = JSON.stringify({
+        secret,
+        name: submission.name,
+        email: submission.email,
+        company: submission.company,
+        message: submission.message,
+        meta: {
+          userAgent: req.headers.get("user-agent") ?? "",
+          ip,
         },
-        body: JSON.stringify({
-          secret,
-          name: submission.name,
-          email: submission.email,
-          company: submission.company,
-          message: submission.message,
-          meta: {
-            userAgent: req.headers.get("user-agent") ?? "",
-            ip,
-          },
-          recipients,
-          subject: `New OWL contact enquiry from ${submission.name}`,
-          html: `
-            <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
-              <h2 style="margin-bottom: 16px;">New contact form submission</h2>
-              <p><strong>Name:</strong> ${escapeHtml(submission.name)}</p>
-              <p><strong>Email:</strong> ${escapeHtml(submission.email)}</p>
-              <p><strong>Institution / Company:</strong> ${escapeHtml(submission.company)}</p>
-              <p><strong>Message:</strong></p>
-              <p style="white-space: pre-wrap;">${escapeHtml(submission.message)}</p>
-            </div>
-          `,
-        }),
-        signal: controller.signal,
+        recipients,
+        subject: `New OWL contact enquiry from ${submission.name}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
+            <h2 style="margin-bottom: 16px;">New contact form submission</h2>
+            <p><strong>Name:</strong> ${escapeHtml(submission.name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(submission.email)}</p>
+            <p><strong>Institution / Company:</strong> ${escapeHtml(submission.company)}</p>
+            <p><strong>Message:</strong></p>
+            <p style="white-space: pre-wrap;">${escapeHtml(submission.message)}</p>
+          </div>
+        `,
       });
+
+      async function postJson(url: string) {
+        return fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: payload,
+          redirect: "manual",
+          signal: controller.signal,
+        });
+      }
+
+      // Apps Script frequently responds 302 to script.googleusercontent.com.
+      // Many clients turn POST->GET on 302/303, so we follow manually and re-POST.
+      let res = await postJson(webAppUrl);
+      if ((res.status === 301 || res.status === 302 || res.status === 303) && res.headers.get("location")) {
+        const redirected = res.headers.get("location")!;
+        res = await postJson(redirected);
+      }
 
       if (!res.ok) {
         const text = await res.text().catch(() => "");

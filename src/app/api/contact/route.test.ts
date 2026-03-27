@@ -18,9 +18,7 @@ describe("POST /api/contact", () => {
   });
 
   it("sends a validated contact submission via Sheets WebApp", async () => {
-    fetchMock.mockResolvedValue(
-      new Response(JSON.stringify({ success: true }), { status: 200 })
-    );
+    fetchMock.mockResolvedValue(new Response(JSON.stringify({ success: true }), { status: 200 }));
 
     const response = await POST(
       new Request("http://localhost/api/contact", {
@@ -43,6 +41,35 @@ describe("POST /api/contact", () => {
     expect(init.method).toBe("POST");
     const body = JSON.parse(String(init.body));
     expect(body.secret).toBe("test-secret");
+  });
+
+  it("re-POSTs to Location when WebApp responds with 302", async () => {
+    fetchMock
+      .mockResolvedValueOnce(
+        new Response("", {
+          status: 302,
+          headers: { location: "https://script.googleusercontent.com/macros/echo?x=y" },
+        })
+      )
+      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true }), { status: 200 }));
+
+    const response = await POST(
+      new Request("http://localhost/api/contact", {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Jane Doe",
+          email: "jane@example.com",
+          company: "OWL Partner",
+          message: "We want to talk about a pilot.",
+        }),
+      }) as never
+    );
+
+    expect(response.status).toBe(200);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock.mock.calls[1]?.[0]).toBe(
+      "https://script.googleusercontent.com/macros/echo?x=y"
+    );
   });
 
   it("rejects incomplete submissions", async () => {

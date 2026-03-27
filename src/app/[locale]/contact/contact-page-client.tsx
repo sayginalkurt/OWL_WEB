@@ -35,6 +35,7 @@ export default function ContactPageClient() {
           email: data.get("email"),
           company: data.get("company"),
           message: data.get("message"),
+          honeypot: data.get("website"),
         }),
       });
 
@@ -120,6 +121,10 @@ export default function ContactPageClient() {
             </p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+              <div className="hidden" aria-hidden>
+                <label htmlFor="website">Website</label>
+                <input id="website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
               <div>
                 <label
                   htmlFor="name"

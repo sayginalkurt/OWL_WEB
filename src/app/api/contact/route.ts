@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 import { z } from "zod";
 
 export const runtime = "nodejs";
@@ -9,6 +8,7 @@ const contactSubmissionSchema = z.object({
   email: z.string().trim().email().max(200),
   company: z.string().trim().max(200).optional().or(z.literal("")),
   message: z.string().trim().min(1).max(4000),
+  honeypot: z.string().trim().max(200).optional().or(z.literal("")),
 });
 
 const defaultRecipients = [
@@ -17,31 +17,13 @@ const defaultRecipients = [
   "sayginalkurt@fwbm.com.tr",
 ];
 
-function getMailConfig() {
-  const host = process.env.CONTACT_SMTP_HOST;
-  const port = Number(process.env.CONTACT_SMTP_PORT ?? "465");
-  const user = process.env.CONTACT_SMTP_USER;
-  const pass = process.env.CONTACT_SMTP_PASS;
-  const fromEmail = process.env.CONTACT_FROM_EMAIL ?? user;
-  const fromName = process.env.CONTACT_FROM_NAME ?? "OWL Intelligence";
+function getRecipients() {
   const recipients = (process.env.CONTACT_TO_EMAILS ?? defaultRecipients.join(","))
     .split(",")
     .map((value) => value.trim())
     .filter(Boolean);
 
-  if (!host || !user || !pass || !fromEmail || Number.isNaN(port) || recipients.length === 0) {
-    return null;
-  }
-
-  return {
-    host,
-    port,
-    user,
-    pass,
-    fromEmail,
-    fromName,
-    recipients,
-  };
+  return recipients.length ? recipients : defaultRecipients;
 }
 
 function escapeHtml(value: string) {
@@ -65,9 +47,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const config = getMailConfig();
-    if (!config) {
-      console.error("Contact mail configuration is incomplete.");
+    // Honeypot: treat as success but ignore (basic spam mitigation)
+    if (parsed.data.honeypot && parsed.data.honeypot.trim()) {
+      return NextResponse.json({ success: true });
+    }
+
+    const webAppUrl = process.env.CONTACT_SHEETS_WEBAPP_URL;
+    const secret = process.env.CONTACT_SHEETS_SECRET;
+    const recipients = getRecipients();
+
+    if (!webAppUrl || !secret) {
+      console.error("Contact Sheets configuration is incomplete.");
       return NextResponse.json(
         { error: "Contact form is temporarily unavailable" },
         { status: 500 }
@@ -79,46 +69,79 @@ export async function POST(req: NextRequest) {
       company: parsed.data.company?.trim() || "Not provided",
     };
 
-    const transporter = nodemailer.createTransport({
-      host: config.host,
-      port: config.port,
-      secure: config.port === 465,
-      auth: {
-        user: config.user,
-        pass: config.pass,
-      },
-    });
+    // Best-effort, in-memory rate limit (per instance) to reduce spam/abuse.
+    // 30 requests / 10 minutes per IP.
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+    const now = Date.now();
+    const windowMs = 10 * 60 * 1000;
+    const limit = 30;
+    // @ts-expect-error - attach to global to persist across requests
+    globalThis.__owlContactRateLimit ??= new Map<string, number[]>();
+    // @ts-expect-error - attached above
+    const store: Map<string, number[]> = globalThis.__owlContactRateLimit;
+    const arr = (store.get(ip) ?? []).filter((t) => now - t < windowMs);
+    if (arr.length >= limit) {
+      store.set(ip, arr);
+      return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+    }
+    arr.push(now);
+    store.set(ip, arr);
 
-    await transporter.sendMail({
-      from: `"${config.fromName}" <${config.fromEmail}>`,
-      to: config.recipients,
-      replyTo: submission.email,
-      subject: `New OWL contact enquiry from ${submission.name}`,
-      text: [
-        "New contact form submission",
-        "",
-        `Name: ${submission.name}`,
-        `Email: ${submission.email}`,
-        `Institution / Company: ${submission.company}`,
-        "",
-        "Message:",
-        submission.message,
-      ].join("\n"),
-      html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
-          <h2 style="margin-bottom: 16px;">New contact form submission</h2>
-          <p><strong>Name:</strong> ${escapeHtml(submission.name)}</p>
-          <p><strong>Email:</strong> ${escapeHtml(submission.email)}</p>
-          <p><strong>Institution / Company:</strong> ${escapeHtml(submission.company)}</p>
-          <p><strong>Message:</strong></p>
-          <p style="white-space: pre-wrap;">${escapeHtml(submission.message)}</p>
-        </div>
-      `,
-    });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12_000);
+    try {
+      const res = await fetch(webAppUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-OWL-Contact-Secret": secret,
+        },
+        body: JSON.stringify({
+          name: submission.name,
+          email: submission.email,
+          company: submission.company,
+          message: submission.message,
+          meta: {
+            userAgent: req.headers.get("user-agent") ?? "",
+            ip,
+          },
+          recipients,
+          subject: `New OWL contact enquiry from ${submission.name}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
+              <h2 style="margin-bottom: 16px;">New contact form submission</h2>
+              <p><strong>Name:</strong> ${escapeHtml(submission.name)}</p>
+              <p><strong>Email:</strong> ${escapeHtml(submission.email)}</p>
+              <p><strong>Institution / Company:</strong> ${escapeHtml(submission.company)}</p>
+              <p><strong>Message:</strong></p>
+              <p style="white-space: pre-wrap;">${escapeHtml(submission.message)}</p>
+            </div>
+          `,
+        }),
+        signal: controller.signal,
+      });
+
+      if (!res.ok) {
+        const text = await res.text().catch(() => "");
+        console.error("Contact Sheets WebApp failed:", res.status, text);
+        return NextResponse.json(
+          { error: "Contact form is temporarily unavailable" },
+          { status: 500 }
+        );
+      }
+    } finally {
+      clearTimeout(timeout);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Contact form submission failed:", error);
+    if (error instanceof Error && error.name === "AbortError") {
+      return NextResponse.json(
+        { error: "Contact form is temporarily unavailable" },
+        { status: 503 }
+      );
+    }
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

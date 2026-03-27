@@ -1,31 +1,26 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { POST } from "./route";
 
-const sendMail = vi.fn();
-
-vi.mock("nodemailer", () => ({
-  default: {
-    createTransport: vi.fn(() => ({
-      sendMail,
-    })),
-  },
-}));
+const fetchMock = vi.fn();
 
 describe("POST /api/contact", () => {
   beforeEach(() => {
-    sendMail.mockReset();
-    process.env.CONTACT_SMTP_HOST = "mail.owlintelligence.co.uk";
-    process.env.CONTACT_SMTP_PORT = "465";
-    process.env.CONTACT_SMTP_USER = "post@owlintelligence.co.uk";
-    process.env.CONTACT_SMTP_PASS = "password";
+    fetchMock.mockReset();
+    // @ts-expect-error - override global fetch for tests
+    globalThis.fetch = fetchMock;
+
+    process.env.CONTACT_SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/test/exec";
+    process.env.CONTACT_SHEETS_SECRET = "test-secret";
     process.env.CONTACT_FROM_EMAIL = "post@owlintelligence.co.uk";
     process.env.CONTACT_FROM_NAME = "OWL Intelligence";
     process.env.CONTACT_TO_EMAILS =
       "info@owlintelligence.co.uk,beyzapolat@fwbm.com.tr,sayginalkurt@fwbm.com.tr";
   });
 
-  it("sends a validated contact submission via SMTP", async () => {
-    sendMail.mockResolvedValue({ messageId: "test" });
+  it("sends a validated contact submission via Sheets WebApp", async () => {
+    fetchMock.mockResolvedValue(
+      new Response(JSON.stringify({ success: true }), { status: 200 })
+    );
 
     const response = await POST(
       new Request("http://localhost/api/contact", {
@@ -40,11 +35,14 @@ describe("POST /api/contact", () => {
     );
 
     expect(response.status).toBe(200);
-    expect(sendMail).toHaveBeenCalledWith(
-      expect.objectContaining({
-        replyTo: "jane@example.com",
-        subject: "New OWL contact enquiry from Jane Doe",
-      })
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock.mock.calls[0]?.[0]).toBe(
+      "https://script.google.com/macros/s/test/exec"
+    );
+    const init = fetchMock.mock.calls[0]?.[1] as RequestInit;
+    expect(init.method).toBe("POST");
+    expect((init.headers as Record<string, string>)["X-OWL-Contact-Secret"]).toBe(
+      "test-secret"
     );
   });
 
@@ -61,11 +59,11 @@ describe("POST /api/contact", () => {
     );
 
     expect(response.status).toBe(400);
-    expect(sendMail).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  it("fails safely when SMTP env vars are missing", async () => {
-    delete process.env.CONTACT_SMTP_PASS;
+  it("fails safely when Sheets env vars are missing", async () => {
+    delete process.env.CONTACT_SHEETS_WEBAPP_URL;
 
     const response = await POST(
       new Request("http://localhost/api/contact", {
@@ -80,6 +78,24 @@ describe("POST /api/contact", () => {
     );
 
     expect(response.status).toBe(500);
-    expect(sendMail).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("treats honeypot submissions as success without calling WebApp", async () => {
+    const response = await POST(
+      new Request("http://localhost/api/contact", {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Jane Doe",
+          email: "jane@example.com",
+          company: "OWL Partner",
+          message: "We want to talk about a pilot.",
+          honeypot: "spam",
+        }),
+      }) as never
+    );
+
+    expect(response.status).toBe(200);
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 });

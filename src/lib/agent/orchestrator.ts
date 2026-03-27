@@ -2,9 +2,16 @@ import OpenAI from "openai";
 import { getSystemPrompt } from "./prompts";
 import type { AgentMessage } from "./types";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+let openaiClient: OpenAI | null = null;
+
+function getOpenAIClient() {
+  if (!openaiClient && process.env.OPENAI_API_KEY) {
+    openaiClient = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  return openaiClient;
+}
 
 export async function runAgent(
   messages: AgentMessage[],
@@ -17,7 +24,7 @@ export async function runAgent(
   try {
     const systemPrompt = getSystemPrompt(locale);
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAIClient()!.chat.completions.create({
       model: "gpt-4o",
       messages: [
         { role: "system", content: systemPrompt },

@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/lib/button-variants";
 import { cn } from "@/lib/utils";
@@ -7,10 +8,28 @@ import { ArrowRight } from "lucide-react";
 import fwbmLogo from "../../../../owlcontent/images/productlogos/FWBM.png";
 import fuzzyOwlLogo from "../../../../owlcontent/images/productlogos/EconImpact.png";
 import econImpactLogo from "../../../../owlcontent/images/productlogos/FuzzyOWL.png";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { isSupportedLocale } from "@/lib/seo/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  const locale = isSupportedLocale(rawLocale) ? rawLocale : "en";
+  const t = await getTranslations({ locale, namespace: "productsPage" });
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/products",
+    title: t("title"),
+    description: t("lead"),
+  });
+}
 
 export default function ProductsPage() {
   const t = useTranslations("productsPage");
-  const ct = useTranslations("common");
 
   return (
     <main className="section-page-surface">

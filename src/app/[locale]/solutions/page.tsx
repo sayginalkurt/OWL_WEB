@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { type Metadata } from "next";
 import {
   Card,
   CardContent,
@@ -13,6 +14,8 @@ import {
   TrendingUp,
   GraduationCap,
 } from "lucide-react";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { isSupportedLocale } from "@/lib/seo/site";
 
 const sectors = [
   {
@@ -46,6 +49,36 @@ const sectors = [
     products: ["FWBM", "FuzzyOwl"],
   },
 ] as const;
+
+const META_BY_LOCALE: Record<"en" | "tr", { title: string; description: string }> = {
+  en: {
+    title: "Solutions",
+    description:
+      "Explore OWL Intelligence solutions by sector, combining authentic field data with AI-powered analysis.",
+  },
+  tr: {
+    title: "Cozumler",
+    description:
+      "OWL Intelligence sektor bazli cozumlerini kesfedin; sahadan gelen gercek veriyi yapay zeka destekli analizle birlestirir.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = isSupportedLocale(rawLocale) ? rawLocale : "en";
+  const localized = META_BY_LOCALE[locale];
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/solutions",
+    title: localized.title,
+    description: localized.description,
+  });
+}
 
 export default function SolutionsPage() {
   const t = useTranslations("solutions");

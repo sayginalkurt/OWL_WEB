@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
-
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://owlintelligence.co.uk";
+import { locales } from "@/i18n/config";
+import { toAbsoluteUrl } from "@/lib/seo/site";
 
 const staticPages = [
   "",
@@ -20,19 +20,25 @@ const staticPages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = ["en", "tr"];
   const entries: MetadataRoute.Sitemap = [];
 
   for (const page of staticPages) {
     for (const locale of locales) {
+      const languages: Record<string, string> = {
+        en: toAbsoluteUrl(`/en${page}`),
+        tr: toAbsoluteUrl(`/tr${page}`),
+      };
+
       entries.push({
-        url: `${baseUrl}/${locale}${page}`,
-        lastModified: new Date(),
+        url: toAbsoluteUrl(`/${locale}${page}`),
+        alternates: {
+          languages,
+        },
         changeFrequency: page === "" ? "daily" : "weekly",
         priority: page === "" ? 1 : 0.8,
       });
     }
   }
 
-  return entries;
+  return entries.sort((a, b) => a.url.localeCompare(b.url));
 }

@@ -12,14 +12,20 @@ import { AgentSection } from '@/components/home/agent-section'
 import { ContactDemoSection } from '@/components/home/contact-demo-section'
 import { SectionNav } from '@/components/home/section-nav'
 import { SectionSnapController } from '@/components/home/section-snap-controller'
+import { buildPageMetadata } from '@/lib/seo/metadata'
+import { isSupportedLocale } from '@/lib/seo/site'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params
+  const { locale: rawLocale } = await params
+  const locale = isSupportedLocale(rawLocale) ? rawLocale : 'en'
   const t = await getTranslations({ locale, namespace: 'home' })
-  return {
+
+  return buildPageMetadata({
+    locale,
+    pathname: '/',
     title: t('meta.title'),
     description: t('meta.description'),
-  }
+  })
 }
 
 export default async function HomePage() {

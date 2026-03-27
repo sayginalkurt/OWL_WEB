@@ -5,6 +5,9 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CookieConsentBanner } from "@/components/layout/cookie-consent-banner";
+import { buildJsonLd } from "@/components/seo/jsonld";
+import { organizationSchema } from "@/lib/seo/schema/organization";
+import { websiteSchema } from "@/lib/seo/schema/website";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -28,6 +31,8 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider>
       <div lang={locale} className="flex min-h-screen flex-col">
+        {buildJsonLd(organizationSchema(), "organization-jsonld")}
+        {buildJsonLd(websiteSchema(locale), "website-jsonld")}
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />

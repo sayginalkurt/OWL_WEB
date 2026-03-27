@@ -5,6 +5,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 
@@ -21,6 +23,8 @@ import oecdLogo from "../../../../owlcontent/databaselogo/oecd.png";
 import tcmbLogo from "../../../../owlcontent/databaselogo/tcmb.png";
 import tuikLogo from "../../../../owlcontent/databaselogo/tuik.png";
 import worldBankLogo from "../../../../owlcontent/databaselogo/worldbank.png";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { isSupportedLocale } from "@/lib/seo/site";
 
 function LogoBand({
   headingId,
@@ -75,6 +79,23 @@ function LogoBand({
       </ul>
     </section>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = isSupportedLocale(rawLocale) ? rawLocale : "en";
+  const t = await getTranslations({ locale, namespace: "technologyPage" });
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/technology",
+    title: t("heroTitle"),
+    description: t("heroLead"),
+  });
 }
 
 export default function TechnologyPage() {

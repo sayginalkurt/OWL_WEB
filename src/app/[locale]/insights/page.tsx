@@ -1,10 +1,13 @@
 import { Badge } from "@/components/ui/badge";
+import type { Metadata } from "next";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { isSupportedLocale } from "@/lib/seo/site";
 
 const placeholderInsights = [
   {
@@ -56,6 +59,36 @@ const placeholderInsights = [
     tags: ["FWBM", "Retail", "Forecasting"],
   },
 ];
+
+const META_BY_LOCALE: Record<"en" | "tr", { title: string; description: string }> = {
+  en: {
+    title: "Insights",
+    description:
+      "Research reports, case studies, and practical intelligence insights from OWL Intelligence.",
+  },
+  tr: {
+    title: "Icgoruler",
+    description:
+      "OWL Intelligence tarafindan yayimlanan arastirma raporlari, vaka calismalari ve uygulanabilir icgoruler.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = isSupportedLocale(rawLocale) ? rawLocale : "en";
+  const localized = META_BY_LOCALE[locale];
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/insights",
+    title: localized.title,
+    description: localized.description,
+  });
+}
 
 export default function InsightsPage() {
   return (

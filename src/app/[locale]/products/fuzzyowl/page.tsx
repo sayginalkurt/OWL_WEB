@@ -1,10 +1,31 @@
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/lib/button-variants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { isSupportedLocale } from "@/lib/seo/site";
 
 import fuzzyOwlLogo from "../../../../../owlcontent/images/productlogos/FuzzyOWL.png";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = isSupportedLocale(rawLocale) ? rawLocale : "en";
+  const t = await getTranslations({ locale, namespace: "productsPage" });
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/products/fuzzyowl",
+    title: t("fuzzyowlName"),
+    description: t("fuzzyowlLead"),
+  });
+}
 
 export default function FuzzyOwlPage() {
   const t = useTranslations("productsPage");

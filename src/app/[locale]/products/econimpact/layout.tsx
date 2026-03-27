@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import ContactPageClient from "./contact-page-client";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { isSupportedLocale } from "@/lib/seo/site";
 
@@ -11,16 +10,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = isSupportedLocale(rawLocale) ? rawLocale : "en";
-  const t = await getTranslations({ locale, namespace: "contact" });
+  const t = await getTranslations({ locale, namespace: "productsPage" });
 
   return buildPageMetadata({
     locale,
-    pathname: "/contact",
-    title: `${t("titleLead")} ${t("titleMain")}`.trim(),
-    description: t("description"),
+    pathname: "/products/econimpact",
+    title: t("econimpactName"),
+    description: t("econimpactP1"),
   });
 }
 
-export default function ContactPage() {
-  return <ContactPageClient />;
+export default function EconImpactLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return children;
 }

@@ -1,7 +1,28 @@
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/lib/button-variants";
 import { cn } from "@/lib/utils";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { isSupportedLocale } from "@/lib/seo/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = isSupportedLocale(rawLocale) ? rawLocale : "en";
+  const t = await getTranslations({ locale, namespace: "investorsPage" });
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/about/investors",
+    title: t("title"),
+    description: t("section1Body"),
+  });
+}
 
 export default function InvestorsPage() {
   const t = useTranslations("investorsPage");

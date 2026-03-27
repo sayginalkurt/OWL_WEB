@@ -7,7 +7,7 @@ export async function getProduct(productKey: string, locale: string) {
       "title": title[$locale],
       "description": description[$locale],
       "modules": modules[]{"name": name[$locale], "body": body[$locale]},
-      slug, images, pricing, productKey
+      slug, images, pricing, productKey, seo, _updatedAt
     }`,
     { productKey, locale }
   );
@@ -19,7 +19,7 @@ export async function getSolutions(locale: string) {
     `*[_type == "solution"] | order(order asc) {
       "title": title[$locale],
       "body": body[$locale],
-      slug, icon, relatedProducts[]->{ productKey, "title": title[$locale] }
+      slug, icon, relatedProducts[]->{ productKey, "title": title[$locale] }, seo, _updatedAt
     }`,
     { locale }
   );
@@ -40,7 +40,7 @@ export async function getInsights(
   const query: string = `*[${filter}] | order(publishedAt desc) {
     "title": title[$locale],
     "excerpt": excerpt[$locale],
-    slug, category, tags, publishedAt,
+    slug, category, tags, publishedAt, seo, _updatedAt,
     "author": author->{ name, "role": role[$locale], image }
   }`;
 
@@ -60,7 +60,7 @@ export async function getInsight(slug: string, locale: string) {
       "title": title[$locale],
       "body": body[$locale],
       "excerpt": excerpt[$locale],
-      slug, category, tags, publishedAt,
+      slug, category, tags, publishedAt, seo, _updatedAt,
       "author": author->{ name, "role": role[$locale], image }
     }`,
     { slug, locale }
@@ -96,7 +96,7 @@ export async function getPage(slug: string, locale: string) {
     `*[_type == "page" && slug.current == $slug][0]{
       "title": title[$locale],
       "body": body[$locale],
-      slug
+      slug, seo, _updatedAt
     }`,
     { slug, locale }
   );

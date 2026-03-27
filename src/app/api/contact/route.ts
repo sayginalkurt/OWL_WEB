@@ -11,30 +11,6 @@ const contactSubmissionSchema = z.object({
   honeypot: z.string().trim().max(200).optional().or(z.literal("")),
 });
 
-const defaultRecipients = [
-  "info@owlintelligence.co.uk",
-  "beyzapolat@fwbm.com.tr",
-  "sayginalkurt@fwbm.com.tr",
-];
-
-function getRecipients() {
-  const recipients = (process.env.CONTACT_TO_EMAILS ?? defaultRecipients.join(","))
-    .split(",")
-    .map((value) => value.trim())
-    .filter(Boolean);
-
-  return recipients.length ? recipients : defaultRecipients;
-}
-
-function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -54,7 +30,6 @@ export async function POST(req: NextRequest) {
 
     const webAppUrl = process.env.CONTACT_SHEETS_WEBAPP_URL;
     const secret = process.env.CONTACT_SHEETS_SECRET;
-    const recipients = getRecipients();
 
     if (!webAppUrl || !secret) {
       console.error("Contact Sheets configuration is incomplete.");
@@ -100,18 +75,6 @@ export async function POST(req: NextRequest) {
           userAgent: req.headers.get("user-agent") ?? "",
           ip,
         },
-        recipients,
-        subject: `New OWL contact enquiry from ${submission.name}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
-            <h2 style="margin-bottom: 16px;">New contact form submission</h2>
-            <p><strong>Name:</strong> ${escapeHtml(submission.name)}</p>
-            <p><strong>Email:</strong> ${escapeHtml(submission.email)}</p>
-            <p><strong>Institution / Company:</strong> ${escapeHtml(submission.company)}</p>
-            <p><strong>Message:</strong></p>
-            <p style="white-space: pre-wrap;">${escapeHtml(submission.message)}</p>
-          </div>
-        `,
       });
 
       async function postJson(url: string) {

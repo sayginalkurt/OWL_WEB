@@ -98,7 +98,7 @@ export default function AgentPageClient() {
               <CardContent className="flex flex-1 flex-col overflow-hidden p-5 sm:p-6">
                 <div className="flex items-center justify-between gap-4 border-b border-border/50 pb-4">
                   <div>
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/45">
+                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[color:var(--color-owl-gold)]">
                       {locale === "tr" ? "OWLAsistanı" : "OWLAssistant"}
                     </p>
                   </div>

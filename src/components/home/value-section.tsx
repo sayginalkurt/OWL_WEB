@@ -21,7 +21,7 @@ interface ValueSectionProps {
 
 export function ValueSection({ id, eyebrow, heading, body, columns, zIndex }: ValueSectionProps) {
   return (
-    <SectionContainer id={id} zIndex={zIndex} relaxViewportHeightOnMobile>
+    <SectionContainer id={id} zIndex={zIndex}>
       <div className="grid min-w-0 items-center gap-10 max-lg:py-2 lg:h-full lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-14">
         <div className="relative flex min-h-0 min-w-0 flex-col justify-center border-b border-border/70 pb-8 max-lg:min-h-0 lg:h-full lg:min-h-[18rem] lg:border-b-0 lg:border-r lg:pb-0 lg:pr-14">
           <div

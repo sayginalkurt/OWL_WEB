@@ -68,7 +68,7 @@ export function HeroSection({ eyebrow, headline, body, ctaPrimary, ctaSecondary,
           className="relative z-10 flex max-w-5xl flex-col items-center"
         >
           <motion.div variants={staggerItem}>
-            <Eyebrow className="mb-5 text-[0.72rem] tracking-[0.26em] !text-white/78">
+            <Eyebrow className="mb-5 text-[0.72rem] tracking-[0.26em]">
               {eyebrow}
             </Eyebrow>
           </motion.div>

@@ -72,7 +72,7 @@ export default function ContactPageClient() {
 
             <div className="mt-12 space-y-8">
               <div>
-                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-[color:var(--color-owl-gold)]">
                   {t("directLabel")}
                 </p>
                 <a
@@ -88,7 +88,7 @@ export default function ContactPageClient() {
 
               <div className="grid gap-8 border-t border-border/60 pt-8 sm:grid-cols-2">
                 <div>
-                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-[color:var(--color-owl-gold)]">
                     {t("officeUkTitle")}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-foreground/68">
@@ -96,7 +96,7 @@ export default function ContactPageClient() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-[color:var(--color-owl-gold)]">
                     {t("officeTrTitle")}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-foreground/68">
@@ -134,7 +134,7 @@ export default function ContactPageClient() {
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--color-owl-gold)]"
                 >
                   {t("name")}
                 </label>
@@ -150,7 +150,7 @@ export default function ContactPageClient() {
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--color-owl-gold)]"
                 >
                   {t("email")}
                 </label>
@@ -167,7 +167,7 @@ export default function ContactPageClient() {
               <div>
                 <label
                   htmlFor="company"
-                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--color-owl-gold)]"
                 >
                   {t("company")}
                 </label>
@@ -182,7 +182,7 @@ export default function ContactPageClient() {
               <div>
                 <label
                   htmlFor="message"
-                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-foreground/42"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--color-owl-gold)]"
                 >
                   {t("message")}
                 </label>

@@ -3,16 +3,14 @@ import { cn } from '@/lib/utils'
 interface EyebrowProps {
   children: React.ReactNode
   dot?: boolean
-  dark?: boolean
   className?: string
 }
 
-export function Eyebrow({ children, dot, dark, className }: EyebrowProps) {
+export function Eyebrow({ children, dot, className }: EyebrowProps) {
   return (
     <p
       className={cn(
-        'flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase mb-4',
-        dark ? 'text-[var(--sd-fg-accent,#8899bb)]' : 'text-muted-foreground',
+        'mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[color:var(--color-owl-gold)]',
         className,
       )}
     >

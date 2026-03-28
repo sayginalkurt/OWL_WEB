@@ -44,7 +44,7 @@ export default function FuzzyOwlPage() {
               className="h-12 w-12 object-contain"
               priority
             />
-            <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[#9e7d20]">
+            <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[color:var(--color-owl-gold)]">
               {t("fuzzyowlEyebrow")}
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function FuzzyOwlPage() {
                   className="rounded-[1.6rem] border border-border/60 bg-background/60 p-6 shadow-[0_22px_70px_-42px_rgba(15,23,42,0.10)]"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="mt-0.5 text-[0.8rem] font-bold tracking-[0.26em] text-[#9e7d20]">
+                    <span className="mt-0.5 text-[0.8rem] font-bold tracking-[0.26em] text-[color:var(--color-owl-gold)]">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <div>
@@ -143,7 +143,7 @@ export default function FuzzyOwlPage() {
                 key={feature.title}
                 className="rounded-[1.8rem] border border-border/60 bg-background/60 p-6 shadow-[0_22px_70px_-42px_rgba(15,23,42,0.12)]"
               >
-                <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[#9e7d20]">
+                <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[color:var(--color-owl-gold)]">
                   {String(idx + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-3 text-base font-semibold tracking-tight text-foreground">

@@ -47,7 +47,7 @@ function LogoBand({
     <section aria-labelledby={headingId}>
       <h3
         id={headingId}
-        className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42"
+        className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-[color:var(--color-owl-gold)]"
       >
         {label}
       </h3>
@@ -115,10 +115,7 @@ export default function TechnologyPage() {
       <div aria-hidden className="section-page-surface-glow" />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-12 lg:py-24">
         <section className="max-w-4xl">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-foreground/42">
-            {t("eyebrow")}
-          </p>
-          <h1 className="mt-5 text-5xl font-black leading-[0.9] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[5.1rem]">
+          <h1 className="text-5xl font-black leading-[0.9] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[5.1rem]">
             {t("heroTitle")}
           </h1>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-foreground/68 sm:text-base">

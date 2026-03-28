@@ -36,9 +36,7 @@ export function IntelligenceLayerSection({ id, eyebrow, heading, steps, zIndex }
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="max-w-5xl">
-          <Eyebrow dot dark className="mb-4 text-[0.72rem] tracking-[0.26em]">
-            {eyebrow}
-          </Eyebrow>
+          <Eyebrow className="mb-4 text-[0.72rem] tracking-[0.26em]">{eyebrow}</Eyebrow>
           <SectionHeading
             dark
             className="max-w-[23ch] text-[2.5rem] font-black leading-[0.92] tracking-[-0.05em] sm:text-[3rem] lg:text-[3.15rem] xl:text-[3.7rem]"

@@ -57,7 +57,7 @@ export default function InvestorsPage() {
                   className="grid gap-6 border-t border-border/60 pt-10 first:border-t-0 first:pt-0 lg:grid-cols-[minmax(0,10rem)_minmax(0,1fr)] lg:gap-10"
                 >
                   <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-5">
-                    <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[#9e7d20]">
+                    <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[color:var(--color-owl-gold)]">
                       {String(index + 1).padStart(2, "0")}
                     </p>
                     <span
@@ -77,32 +77,33 @@ export default function InvestorsPage() {
                 </section>
               ))}
 
-              <section className="relative overflow-hidden rounded-[1.9rem] border border-[#d3af37]/18 bg-[#fbf7ea] p-7 shadow-[0_22px_70px_-42px_rgba(15,23,42,0.16)] sm:p-9">
+              <section className="relative overflow-hidden rounded-[1.9rem] border border-[color:var(--color-owl-gold)]/35 bg-card p-7 text-card-foreground shadow-[0_22px_70px_-42px_rgba(15,23,42,0.14)] sm:p-9 dark:border-[color:var(--color-owl-gold)]/28 dark:shadow-[0_22px_70px_-42px_rgba(0,0,0,0.42)]">
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(211,175,55,0.10),transparent_40%),radial-gradient(circle_at_84%_24%,rgba(136,153,187,0.08),transparent_46%)]"
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,color-mix(in_oklab,var(--color-owl-gold)_14%,transparent),transparent_42%),radial-gradient(circle_at_88%_20%,color-mix(in_oklab,var(--color-owl-gold)_8%,transparent),transparent_48%)] dark:bg-[radial-gradient(circle_at_18%_18%,color-mix(in_oklab,var(--color-owl-gold)_18%,transparent),transparent_45%),radial-gradient(circle_at_88%_20%,color-mix(in_oklab,var(--color-owl-gold)_10%,transparent),transparent_50%)]"
                 />
-                <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#d3af37]/85" />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-[radial-gradient(circle_at_50%_0%,rgba(211,175,55,0.18),transparent_62%)]"
+                  className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[color:var(--color-owl-gold)]/55"
                 />
-                <div className="relative max-w-3xl">
-                  <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[#9e7d20]">
+                <div className="relative z-[1] max-w-3xl">
+                  <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[color:var(--color-owl-gold)]">
                     08
                   </p>
-                  <h2 className="mt-4 text-3xl font-black tracking-tight text-foreground sm:text-[2.25rem] lg:text-[2.6rem]">
+                  <h2 className="mt-4 text-3xl font-black tracking-tight text-card-foreground sm:text-[2.25rem] lg:text-[2.6rem]">
                     {t("section8Title")}
                   </h2>
-                  <p className="mt-6 text-sm leading-[1.85] text-foreground/70 sm:text-base">
+                  <p className="mt-6 text-sm leading-[1.85] text-card-foreground/75 sm:text-base">
                     {t("section8Body")}
                   </p>
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/contact"
                       className={cn(
-                        buttonVariants({ variant: "default" }),
-                        "h-11 rounded-full bg-[#d3af37] px-6 text-[#0d1422] shadow-[0_18px_60px_-28px_rgba(211,175,55,0.75)] hover:bg-[#ddbb4f]"
+                        "inline-flex h-11 shrink-0 items-center justify-center rounded-full border border-transparent px-6 text-sm font-medium whitespace-nowrap transition-colors",
+                        "bg-[#d3af37] text-[#0d1422] shadow-[0_18px_60px_-28px_rgba(211,175,55,0.5)]",
+                        "hover:bg-[#ddbb4f] hover:text-[#0d1422]",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d3af37]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       )}
                     >
                       {t("ctaPrimary")}
@@ -111,7 +112,8 @@ export default function InvestorsPage() {
                       href="/contact"
                       className={cn(
                         buttonVariants({ variant: "outline" }),
-                        "h-11 rounded-full border-[#0d1422]/20 bg-transparent px-6 text-[#0d1422] hover:bg-[#0d1422]/5 hover:text-[#0d1422] dark:hover:text-[#0d1422]"
+                        "h-11 rounded-full border-[color:var(--color-owl-gold)]/50 bg-card/40 px-6 text-card-foreground backdrop-blur-sm",
+                        "hover:bg-[color-mix(in_oklab,var(--color-owl-gold)_14%,var(--card))] hover:text-card-foreground"
                       )}
                     >
                       {t("ctaSecondary")}

@@ -173,7 +173,7 @@ export function ProductEcosystemSection({ id, eyebrow, heading, intro, products,
         <div className="grid items-end gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
           <RevealWrapper>
             <div className="max-w-3xl">
-              <Eyebrow dot dark className="mb-5 text-[0.72rem] tracking-[0.26em]">
+              <Eyebrow className="mb-5 text-[0.72rem] tracking-[0.26em]">
                 {eyebrow}
               </Eyebrow>
               <SectionHeading dark className="max-w-[17ch] text-[2.5rem] font-black leading-[0.92] tracking-[-0.05em] sm:text-[3rem] lg:text-[3.15rem] xl:text-[3.7rem]">

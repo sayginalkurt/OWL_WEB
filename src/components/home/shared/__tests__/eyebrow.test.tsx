@@ -11,4 +11,9 @@ describe('Eyebrow', () => {
     const { container } = render(<Eyebrow dot>LABEL</Eyebrow>)
     expect(container.querySelector('[aria-hidden]')).toBeInTheDocument()
   })
+
+  it('uses owl gold for label color', () => {
+    render(<Eyebrow>Label</Eyebrow>)
+    expect(screen.getByText('Label').className).toContain('text-[color:var(--color-owl-gold)]')
+  })
 })

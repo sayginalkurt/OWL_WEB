@@ -62,17 +62,19 @@ export function WhoWeServeSection({ id, eyebrow, heading, context, sectors, zInd
             {sectors.map((sector, i) => (
               <article
                 key={sector}
-                className="group relative flex h-[8.5rem] overflow-hidden rounded-[1rem] border border-border/80 bg-card/55 px-2 py-3 shadow-[0_20px_55px_-38px_rgba(15,23,42,0.25)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-[0_28px_70px_-42px_rgba(15,23,42,0.35)] sm:h-[9.5rem] sm:px-3 sm:py-4 xl:h-[19rem] xl:items-end xl:rounded-[1.15rem] xl:px-3 xl:py-4"
+                className="group relative flex h-[8.5rem] overflow-hidden rounded-[1rem] border border-border/80 bg-card/55 px-2 py-3 shadow-[0_20px_55px_-38px_rgba(15,23,42,0.25)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-[0_28px_70px_-42px_rgba(15,23,42,0.35)] sm:h-[9.5rem] sm:px-3 sm:py-4 max-xl:flex xl:block xl:h-[19rem] xl:rounded-[1.15rem] xl:px-3 xl:py-4"
               >
-                <div className="absolute left-2 top-2 sm:left-3 sm:top-3">
+                {/* Phone & tablet: index top-right. Desktop: index top-left (editorial). */}
+                <div className="absolute right-2 top-2 sm:right-3 sm:top-3 xl:left-3 xl:right-auto xl:top-3">
                   <span className="text-[0.68rem] font-bold tracking-[0.24em] text-muted-foreground transition-colors duration-300 group-hover:text-background/70">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <div className="flex h-full w-full items-end justify-end xl:items-end xl:justify-end">
+                {/* Phone & tablet: horizontal label, top-right. Desktop (xl+): vertical type, anchored top-right. */}
+                <div className="flex h-full w-full items-start justify-end pt-8 sm:pt-9 xl:absolute xl:inset-0 xl:items-start xl:justify-end xl:pt-11 xl:pr-3">
                   <h3
                     data-testid={`sector-label-${String(i + 1).padStart(2, '0')}`}
-                    className="[writing-mode:vertical-rl] rotate-180 max-h-full text-[0.78rem] font-bold leading-none tracking-[-0.02em] text-right text-foreground transition-colors duration-300 group-hover:text-background sm:text-[0.84rem] xl:text-[1rem]"
+                    className="w-full max-w-full text-right text-[0.72rem] font-bold leading-snug tracking-[-0.02em] text-foreground transition-colors duration-300 group-hover:text-background sm:text-[0.78rem] max-xl:rotate-0 xl:max-h-[calc(100%-2.75rem)] xl:w-auto xl:text-[1rem] xl:font-bold xl:leading-none xl:[writing-mode:vertical-rl] xl:rotate-180"
                   >
                     {sector}
                   </h3>

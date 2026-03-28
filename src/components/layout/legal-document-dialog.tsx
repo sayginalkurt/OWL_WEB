@@ -53,7 +53,7 @@ export function LegalDocumentDialog({
           <div className="border-b border-border/70 bg-muted/[0.28] px-5 pb-5 pt-6 sm:px-8 lg:px-12">
             <div className="flex items-start justify-between gap-4">
               <LegalDialogHeader className="gap-3 pr-2">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[#9e7d20]">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[color:var(--color-owl-gold)]">
                   {document.eyebrow}
                 </p>
                 <LegalDialogTitle className="max-w-[34ch] text-[1.35rem] font-semibold tracking-[-0.03em] text-foreground sm:text-[1.6rem] lg:text-[1.75rem]">

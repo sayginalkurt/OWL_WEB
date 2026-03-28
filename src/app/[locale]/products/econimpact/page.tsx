@@ -26,7 +26,7 @@ export default function EconImpactPage() {
               className="h-12 w-12 object-contain"
               priority
             />
-            <span className="rounded-full border border-border/70 bg-background/60 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#9e7d20]">
+            <span className="rounded-full border border-border/70 bg-background/60 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--color-owl-gold)]">
               {t("econimpactSoon")}
             </span>
           </div>

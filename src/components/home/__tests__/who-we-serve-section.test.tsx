@@ -62,15 +62,16 @@ describe('WhoWeServeSection', () => {
     expect(matrix.className).toContain('xl:grid-cols-9')
   })
 
-  it('renders rotated sector labels on the right edge', () => {
+  it('right-aligns sector labels on small screens and uses vertical type on xl+', () => {
     render(<WhoWeServeSection {...props} />)
 
     const firstCard = within(screen.getByTestId('who-we-serve-matrix')).getAllByRole('article')[0]
     expect(firstCard.className).toContain('group')
 
     const sectorLabel = screen.getByTestId('sector-label-01')
-    expect(sectorLabel.className).toContain('[writing-mode:vertical-rl]')
-    expect(sectorLabel.className).toContain('rotate-180')
+    expect(sectorLabel.className).toContain('text-right')
+    expect(sectorLabel.className).toContain('xl:[writing-mode:vertical-rl]')
+    expect(sectorLabel.className).toContain('xl:rotate-180')
   })
 
   it('uses a flexible non-sticky section shell', () => {

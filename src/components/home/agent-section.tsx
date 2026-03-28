@@ -27,8 +27,7 @@ export function AgentSection({ id, eyebrow, heading, subCopy, ctaLabel, ctaHref,
           className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center lg:gap-10"
         >
           <div className="max-w-3xl">
-            <Eyebrow dark className="mb-5 gap-2 text-[0.72rem] tracking-[0.26em]">
-              <MessageSquare className="h-3 w-3" aria-hidden />
+            <Eyebrow className="mb-5 text-[0.72rem] tracking-[0.26em]">
               {eyebrow}
             </Eyebrow>
             <SectionHeading dark className="max-w-[14ch] text-[2.5rem] font-black leading-[0.92] tracking-[-0.05em] sm:text-[3rem] lg:text-[3.15rem] xl:text-[3.7rem]">

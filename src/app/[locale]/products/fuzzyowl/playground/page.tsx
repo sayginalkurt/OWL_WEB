@@ -298,8 +298,8 @@ export default function FuzzyOwlPlayground() {
                   <CardTitle className="text-lg">Simulation History</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
+                  <div className="-mx-1 touch-pan-x overflow-x-auto overscroll-x-contain px-1 [scrollbar-gutter:stable]">
+                    <table className="w-full min-w-max text-sm">
                       <thead>
                         <tr className="border-b">
                           <th className="pb-2 text-left font-medium">Step</th>

@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import fwbmLogo from "../../../../owlcontent/images/productlogos/FWBM.png";
-import fuzzyOwlLogo from "../../../../owlcontent/images/productlogos/EconImpact.png";
-import econImpactLogo from "../../../../owlcontent/images/productlogos/FuzzyOWL.png";
+import fuzzyOwlLogo from "../../../../owlcontent/images/productlogos/FuzzyOWL.png";
+import econImpactLogo from "../../../../owlcontent/images/productlogos/EconImpact.png";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { isSupportedLocale } from "@/lib/seo/site";
 
@@ -52,7 +52,7 @@ export default function ProductsPage() {
             />
             <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-start">
               <div className="max-w-3xl">
-                <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[#9e7d20]">
+                <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-[color:var(--color-owl-gold)]">
                   {t("featuredBadge")}
                 </p>
                 <h2 className="mt-4 text-3xl font-black tracking-tight text-foreground sm:text-[2.25rem] lg:text-[2.6rem]">
@@ -171,7 +171,7 @@ export default function ProductsPage() {
                   <h3 className="text-2xl font-black tracking-tight text-foreground sm:text-[2.1rem]">
                     {t("econimpactName")}
                   </h3>
-                  <span className="rounded-full border border-border/70 bg-background/60 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#9e7d20]">
+                  <span className="rounded-full border border-border/70 bg-background/60 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--color-owl-gold)]">
                     {t("econimpactSoon")}
                   </span>
                 </div>

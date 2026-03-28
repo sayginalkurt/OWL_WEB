@@ -11,6 +11,8 @@ interface SectionContainerProps {
   zIndex?: number
   surface?: 'default' | 'inverse'
   sticky?: boolean
+  /** Below `lg`, use min-height only so tall content can extend the section (avoids clipping on small screens). */
+  relaxViewportHeightOnMobile?: boolean
 }
 
 export function SectionContainer({
@@ -23,6 +25,7 @@ export function SectionContainer({
   zIndex,
   surface = 'default',
   sticky = true,
+  relaxViewportHeightOnMobile = false,
 }: SectionContainerProps) {
   const backgroundColor =
     surface === 'inverse'
@@ -38,17 +41,22 @@ export function SectionContainer({
       className={cn(
         'w-full flex items-center section-stack-card relative isolate overflow-hidden',
         sticky ? 'sticky top-16' : 'top-0',
+        sticky && relaxViewportHeightOnMobile && 'lg:h-[calc(100dvh-4rem)]',
         dark ? 'section-dark' : 'bg-background',
         className
       )}
       style={{
         ...(zIndex ? { zIndex } : {}),
         ...(sticky
-          ? {
-              // Use dynamic viewport height on mobile browsers; keep vh as fallback.
-              minHeight: 'calc(100vh - 4rem)',
-              height: 'calc(100dvh - 4rem)',
-            }
+          ? relaxViewportHeightOnMobile
+            ? {
+                minHeight: 'calc(100dvh - 4rem)',
+              }
+            : {
+                // Use dynamic viewport height on mobile browsers; keep vh as fallback.
+                minHeight: 'calc(100vh - 4rem)',
+                height: 'calc(100dvh - 4rem)',
+              }
           : {}),
         backgroundColor,
         color,

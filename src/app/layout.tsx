@@ -40,8 +40,11 @@ export const metadata: Metadata = {
     images: [toAbsoluteUrl("/OWLLogo.png")],
   },
   icons: {
-    icon: "/OWLLogo.png",
-    shortcut: "/OWLLogo.png",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/OWLLogo.png", type: "image/png" },
+    ],
+    shortcut: "/icon.svg",
     apple: "/OWLLogo.png",
   },
 };
